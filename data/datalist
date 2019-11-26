@@ -1,20 +1,32 @@
-hpc_cv: hpc_cv
-pathology: pathology
-solubility_test: solubility_test
-two_class_example: two_class_example
-biomass: biomass
-okc: okc
-credit_data: credit_data
-covers: covers
-small_fine_foods: training_data  testing_data
-attrition: attrition
-two_class_dat: two_class_dat
-drinks: drinks
-lending_club: lending_club
-wa_churn: wa_churn
-check_times: check_times
-Chicago: Chicago stations
-okc_text: okc_text
-
-
-
+ad_data: 
+attrition: 
+biomass: 
+cars_prices: 
+cells: 
+check_times: 
+Chicago: 
+concrete: 
+covers: 
+credit_data: 
+drinks: 
+gss: 
+hpc_cv: 
+hpc_data: 
+lending_club: 
+meats: 
+mlc_churn: 
+oil: 
+oils: 
+okc_text: 
+okc: 
+parabolic: 
+pathology: 
+pd_speech: 
+Sacramento: 
+scat: 
+small_fine_foods: 
+Smithsonian: 
+solubility_test: 
+two_class_dat: 
+two_class_example: 
+wa_churn: 
