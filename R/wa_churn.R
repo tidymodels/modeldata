@@ -1,4 +1,4 @@
-#' Watson Churn Data
+#' Watson churn data
 #'
 #' @details These data were downloaded from the IBM Watson site
 #'  (see below) in September 2018. The data contain a factor for

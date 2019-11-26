@@ -3,7 +3,7 @@
 \docType{data}
 \name{wa_churn}
 \alias{wa_churn}
-\title{Watson Churn Data}
+\title{Watson churn data}
 \source{
 IBM Watson Analytics https://ibm.co/2sOvyvy
 }
@@ -11,7 +11,7 @@ IBM Watson Analytics https://ibm.co/2sOvyvy
 \item{wa_churn}{a data frame}
 }
 \description{
-Watson Churn Data
+Watson churn data
 }
 \details{
 These data were downloaded from the IBM Watson site

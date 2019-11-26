@@ -3,7 +3,7 @@
 \docType{data}
 \name{scat}
 \alias{scat}
-\title{Morphometric Data on Scat}
+\title{Morphometric data on scat}
 \source{
 Reid, R. E. B. (2015). A morphometric modeling approach to
 distinguishing among bobcat, coyote and gray fox scats. \emph{Wildlife

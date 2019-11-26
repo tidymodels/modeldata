@@ -1,4 +1,4 @@
-#' OkCupid Data
+#' OkCupid data
 #'
 #' These are a sample of columns of users of OkCupid dating website. The data
 #' are from Kim and Escobedo-Land (2015). Permission to use this data set was

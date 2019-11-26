@@ -1,4 +1,4 @@
-#' Alzheimer'’s disease data
+#' Alzheimer's disease data
 #'
 #' @details
 #' Craig-Schapiro et al. (2011) describe a clinical study of 333 patients,

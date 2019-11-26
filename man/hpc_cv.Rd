@@ -3,7 +3,7 @@
 \docType{data}
 \name{hpc_cv}
 \alias{hpc_cv}
-\title{Class Probability Predictions}
+\title{Class probability predictions}
 \source{
 Kuhn, M., Johnson, K. (2013) \emph{Applied Predictive
 Modeling}, Springer
@@ -12,7 +12,7 @@ Modeling}, Springer
 \item{hpc_cv}{a data frame}
 }
 \description{
-Class Probability Predictions
+Class probability predictions
 }
 \details{
 This data frame contains the predicted classes and

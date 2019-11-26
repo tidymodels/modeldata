@@ -3,15 +3,15 @@
 \docType{data}
 \name{drinks}
 \alias{drinks}
-\title{Sample Time Series Data}
+\title{Sample time series data}
 \source{
 The Federal Reserve Bank of St. Louis website https://fred.stlouisfed.org/series/S4248SM144NCEN
 }
 \value{
-\item{drinks}{a data frame}
+\item{drinks}{a tibble}
 }
 \description{
-Sample Time Series Data
+Sample time series data
 }
 \details{
 Drink sales. The exact name of the series from FRED is:

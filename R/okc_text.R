@@ -1,6 +1,6 @@
-#' OkCupid Text Data
+#' OkCupid text data
 #'
-#'   These are a sample of columns and users of OkCupid dating
+#' These are a sample of columns and users of OkCupid dating
 #'  website. The data are from Kim and Escobedo-Land (2015).
 #'  Permission to use this data set was explicitly granted by
 #'  OkCupid. The data set contains 10 text fields filled out by

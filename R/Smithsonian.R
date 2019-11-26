@@ -1,5 +1,4 @@
-
-#' Smithsonian Museums
+#' Smithsonian museums
 #'
 #' Geocodes for the Smithsonian museums (circa 2018).
 #'

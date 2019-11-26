@@ -1,5 +1,4 @@
-
-#' Sample Time Series Data
+#' Sample time series data
 #'
 #' @details Drink sales. The exact name of the series from FRED is:
 #' "Merchant Wholesalers, Except Manufacturers' Sales Branches and Offices
@@ -8,7 +7,7 @@
 #' @name drinks
 #' @aliases drinks
 #' @docType data
-#' @return \item{drinks}{a data frame}
+#' @return \item{drinks}{a tibble}
 #'
 #' @source The Federal Reserve Bank of St. Louis website https://fred.stlouisfed.org/series/S4248SM144NCEN
 #'

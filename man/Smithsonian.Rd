@@ -3,7 +3,7 @@
 \docType{data}
 \name{Smithsonian}
 \alias{Smithsonian}
-\title{Smithsonian Museums}
+\title{Smithsonian museums}
 \source{
 https://en.wikipedia.org/wiki/List_of_Smithsonian_museums
 }

@@ -3,7 +3,7 @@
 \docType{data}
 \name{Sacramento}
 \alias{Sacramento}
-\title{Sacramento CA Home Prices}
+\title{Sacramento CA home prices}
 \source{
 SpatialKey website:
 \url{https://support.spatialkey.com/spatialkey-sample-csv-data}

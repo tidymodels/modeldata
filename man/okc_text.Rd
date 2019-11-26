@@ -3,7 +3,7 @@
 \docType{data}
 \name{okc_text}
 \alias{okc_text}
-\title{OkCupid Text Data}
+\title{OkCupid text data}
 \source{
 Kim, A. Y., and A. Escobedo-Land. 2015. "OkCupid Data for
 Introductory Statistics and Data Science Courses." \emph{Journal of

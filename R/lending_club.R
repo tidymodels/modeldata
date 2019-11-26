@@ -1,4 +1,4 @@
-#' Loan Data
+#' Loan data
 #'
 #' @details These data were downloaded from the Lending Club
 #'  access site (see below) and are from the first quarter of 2016.

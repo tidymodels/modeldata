@@ -6,12 +6,12 @@
 \alias{bivariate_train}
 \alias{bivariate_test}
 \alias{bivariate_val}
-\title{Example Bivariate Classification Data}
+\title{Example bivariate classification data}
 \value{
 \item{bivariate_train, bivariate_test, bivariate_val}{tibbles}
 }
 \description{
-Example Bivariate Classification Data
+Example bivariate classification data
 }
 \details{
 These data are a simplified version of the segmentation data contained

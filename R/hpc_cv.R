@@ -1,4 +1,4 @@
-#' Class Probability Predictions
+#' Class probability predictions
 #'
 #' @details This data frame contains the predicted classes and
 #'  class probabilities for a linear discriminant analysis model fit

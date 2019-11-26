@@ -1,4 +1,4 @@
-#' Morphometric Data on Scat
+#' Morphometric data on scat
 #'
 #' Reid (2015) collected data on animal feses in coastal California. The data
 #' consist of DNA verified species designations as well as fields related to

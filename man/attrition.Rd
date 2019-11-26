@@ -3,7 +3,7 @@
 \docType{data}
 \name{attrition}
 \alias{attrition}
-\title{Job Attrition}
+\title{Job attrition}
 \source{
 The IBM Watson Analytics Lab website https://www.ibm.com/communities/analytics/watson-analytics-blog/hr-employee-attrition/
 }
@@ -11,7 +11,7 @@ The IBM Watson Analytics Lab website https://www.ibm.com/communities/analytics/w
 \item{attrition}{a data frame}
 }
 \description{
-Job Attrition
+Job attrition
 }
 \details{
 These data are from the IBM Watson Analytics Lab.

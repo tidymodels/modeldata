@@ -1,4 +1,4 @@
-#' Example Bivariate Classification Data
+#' Example bivariate classification data
 #'
 #' @details These data are a simplified version of the segmentation data contained
 #' in `caret`. There are three columns: `A` and `B` are predictors and the column

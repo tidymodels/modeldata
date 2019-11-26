@@ -3,7 +3,7 @@
 \docType{data}
 \name{covers}
 \alias{covers}
-\title{Raw Cover Type Data}
+\title{Raw cover type data}
 \source{
 https://archive.ics.uci.edu/ml/machine-learning-databases/covtype/covtype.info
 }

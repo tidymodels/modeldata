@@ -3,7 +3,7 @@
 \docType{data}
 \name{lending_club}
 \alias{lending_club}
-\title{Loan Data}
+\title{Loan data}
 \source{
 Lending Club Statistics https://www.lendingclub.com/info/download-data.action
 }
@@ -11,7 +11,7 @@ Lending Club Statistics https://www.lendingclub.com/info/download-data.action
 \item{lending_club}{a data frame}
 }
 \description{
-Loan Data
+Loan data
 }
 \details{
 These data were downloaded from the Lending Club

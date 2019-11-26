@@ -3,7 +3,7 @@
 \docType{data}
 \name{ad_data}
 \alias{ad_data}
-\title{Alzheimer'’s disease data}
+\title{Alzheimer's disease data}
 \source{
 Kuhn, M., Johnson, K. (2013) \emph{Applied Predictive Modeling}, Springer.
 
@@ -15,7 +15,7 @@ Alzheimer's Disease Diagnosis and Prognosis. PLoS ONE 6(4): e18850.
 \item{ad_data}{a tibble}
 }
 \description{
-Alzheimer'’s disease data
+Alzheimer's disease data
 }
 \details{
 Craig-Schapiro et al. (2011) describe a clinical study of 333 patients,

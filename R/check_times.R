@@ -1,5 +1,4 @@
-
-#' Execution Time Data
+#' Execution time data
 #'
 #' These data were collected from the CRAN web page for 13,626 R
 #' packages. The time to complete the standard package checking

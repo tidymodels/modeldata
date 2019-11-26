@@ -3,7 +3,7 @@
 \docType{data}
 \name{credit_data}
 \alias{credit_data}
-\title{Credit Data}
+\title{Credit data}
 \source{
 https://github.com/gastonstat/CreditScoring,
 http://bit.ly/2kkBFrk

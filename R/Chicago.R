@@ -1,4 +1,4 @@
-#' Chicago Ridership Data
+#' Chicago ridership data
 #'
 #' @details These data are from Kuhn and Johnson (2020) and contain an
 #'  _abbreviated_ training set for modeling the number of people (in thousands)

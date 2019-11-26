@@ -1,4 +1,4 @@
-#' Biomass Data
+#' Biomass data
 #'
 #' Ghugare et al (2014) contains a data set where different biomass fuels are
 #' characterized by the amount of certain molecules (carbon, hydrogen, oxygen,

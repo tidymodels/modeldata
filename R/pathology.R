@@ -1,4 +1,4 @@
-#' Liver Pathology Data
+#' Liver pathology data
 #'
 #' @details These data have the results of a _x_-ray examination
 #'  to determine whether liver is abnormal or not (in the `scan`

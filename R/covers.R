@@ -1,6 +1,4 @@
-
-
-#' Raw Cover Type Data
+#' Raw cover type data
 #'
 #' These data are raw data describing different types of forest cover-types
 #'   from the UCI Machine Learning Database (see link below). There is one

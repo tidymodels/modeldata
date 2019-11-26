@@ -1,4 +1,4 @@
-#' Solubility Predictions from MARS Model
+#' Solubility predictions from MARS model
 #'
 #' @details For the solubility data in Kuhn and Johnson (2013),
 #'  these data are the test set results for the MARS model. The

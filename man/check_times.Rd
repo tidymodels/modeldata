@@ -3,7 +3,7 @@
 \docType{data}
 \name{check_times}
 \alias{check_times}
-\title{Execution Time Data}
+\title{Execution time data}
 \source{
 CRAN
 }

@@ -3,7 +3,7 @@
 \docType{data}
 \name{pathology}
 \alias{pathology}
-\title{Liver Pathology Data}
+\title{Liver pathology data}
 \source{
 Altman, D.G., Bland, J.M. (1994) ``Diagnostic tests 1:
 sensitivity and specificity,'' \emph{British Medical Journal},
@@ -13,7 +13,7 @@ vol 308, 1552.
 \item{pathology}{a data frame}
 }
 \description{
-Liver Pathology Data
+Liver pathology data
 }
 \details{
 These data have the results of a \emph{x}-ray examination

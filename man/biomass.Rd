@@ -3,7 +3,7 @@
 \docType{data}
 \name{biomass}
 \alias{biomass}
-\title{Biomass Data}
+\title{Biomass data}
 \source{
 Ghugare, S. B., Tiwary, S., Elangovan, V., and Tambe, S. S. (2013).
 Prediction of Higher Heating Value of Solid Biomass Fuels Using Artificial

@@ -1,4 +1,4 @@
-#' Job Attrition
+#' Job attrition
 #'
 #' @details These data are from the IBM Watson Analytics Lab.
 #'  The website describes the data with \dQuote{Uncover the

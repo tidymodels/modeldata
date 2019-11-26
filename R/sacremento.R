@@ -1,4 +1,4 @@
-#' Sacramento CA Home Prices
+#' Sacramento CA home prices
 #'
 #' This data frame contains house and sale price data for 932 homes in
 #' Sacramento CA.  The original data were obtained from the website for the

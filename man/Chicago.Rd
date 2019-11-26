@@ -4,7 +4,7 @@
 \name{Chicago}
 \alias{Chicago}
 \alias{stations}
-\title{Chicago Ridership Data}
+\title{Chicago ridership data}
 \source{
 Kuhn and Johnson (2020), \emph{Feature Engineering and Selection},
 Chapman and Hall/CRC . \url{https://bookdown.org/max/FES/} and
@@ -14,7 +14,7 @@ Chapman and Hall/CRC . \url{https://bookdown.org/max/FES/} and
 \item{Chicago}{a tibble} \item{stations}{a vector of station names}
 }
 \description{
-Chicago Ridership Data
+Chicago ridership data
 }
 \details{
 These data are from Kuhn and Johnson (2020) and contain an
