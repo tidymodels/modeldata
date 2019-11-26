@@ -11,4 +11,4 @@ Encoding: UTF-8
 LazyData: false
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.0.1.9000
-url: https://github.com/tidymodels/modeldata
+URL: https://github.com/tidymodels/modeldata
