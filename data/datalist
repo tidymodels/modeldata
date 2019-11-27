@@ -1,20 +1,30 @@
-hpc_cv: hpc_cv
-pathology: pathology
-solubility_test: solubility_test
-two_class_example: two_class_example
-biomass: biomass
-okc: okc
-credit_data: credit_data
-covers: covers
-small_fine_foods: training_data  testing_data
+ad_data: ad_data
 attrition: attrition
-two_class_dat: two_class_dat
-drinks: drinks
-lending_club: lending_club
-wa_churn: wa_churn
+biomass: biomass
+car_prices: car_prices
+cells: cells
 check_times: check_times
 Chicago: Chicago stations
+concrete: concrete
+covers: covers
+credit_data: credit_data
+drinks: drinks
+hpc_cv: hpc_cv
+hpc_data: hpc_data
+lending_club: lending_club
+meats: meats
+mlc_churn: mlc_churn
+oils: oils
 okc_text: okc_text
-
-
-
+okc: okc
+parabolic: parabolic
+pathology: pathology
+pd_speech: pd_speech
+Sacramento: Sacramento
+scat: scat
+small_fine_foods: testing_data training_data
+Smithsonian: Smithsonian
+solubility_test: solubility_test
+two_class_dat: two_class_dat
+two_class_example: two_class_example
+wa_churn: wa_churn
