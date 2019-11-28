@@ -19,8 +19,7 @@
 #' @aliases mlc_churn
 #' @docType data
 #' @return \item{mlc_churn}{a tibble}
-#' @source \url{http://www.sgi.com/tech/mlc/},
-#' \url{http://www.rulequest.com/see5-examples.html}
+#' @source \url{http://www.sgi.com/tech/mlc/}
 #' @keywords datasets
 NULL
 
