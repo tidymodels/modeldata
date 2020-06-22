@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>High-performance computing system data — hpc_data • modeldata</title>
+<title>Ames Housing Data — ames • modeldata</title>
 
 
 <!-- jquery -->
@@ -42,15 +42,15 @@
 
 
 
-<meta property="og:title" content="High-performance computing system data — hpc_data" />
-<meta property="og:description" content="Kuhn and Johnson (2013) describe a data set where characteristics of unix
-jobs were used to classify there completion times as either very fast
-(1 min or less, VF), fast (1–50 min, F), moderate (5–30 min, M), or
-long (greater than 30 min, L)." />
+<meta property="og:title" content="Ames Housing Data — ames" />
+<meta property="og:description" content="A data set from De Cock (2011) has 82 fields were recored for 2,930
+properties in Ames IA. This version is copies from the AmesHousing package
+but does not include a few quality columns that appear to be outcomes
+rather than predictors." />
 <meta name="twitter:card" content="summary" />
 
 
-
+<meta name="robots" content="noindex">
 
 <!-- mathjax -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
@@ -90,7 +90,7 @@ long (greater than 30 min, L)." />
         <a class="navbar-brand" href="../index.html">modeldata</a>
         <div class="info hidden-xs hidden-sm">
           <span class="partof">part of <a href="https://github.com/tidymodels">tidymodels</a></span>
-          <span class="version version-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.2</span>
+          <span class="version version-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.0.2.9000</span>
         </div>
       </div>
     </div>
@@ -127,33 +127,45 @@ long (greater than 30 min, L)." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>High-performance computing system data</h1>
-    <small class="dont-index">Source: <a href='https://github.com/tidymodels/tidymodels/blob/master/R/hpc_data.R'><code>R/hpc_data.R</code></a></small>
-    <div class="hidden name"><code>hpc_data.Rd</code></div>
+    <h1>Ames Housing Data</h1>
+    <small class="dont-index">Source: <a href='https://github.com/tidymodels/tidymodels/blob/master/R/ames.R'><code>R/ames.R</code></a></small>
+    <div class="hidden name"><code>ames.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Kuhn and Johnson (2013) describe a data set where characteristics of unix
-jobs were used to classify there completion times as either very fast
-(1 min or less, <code>VF</code>), fast (1–50 min, <code>F</code>), moderate (5–30 min, <code>M</code>), or
-long (greater than 30 min, <code>L</code>).</p>
+    <p>A data set from De Cock (2011) has 82 fields were recored for 2,930
+properties in Ames IA. This version is copies from the <code>AmesHousing</code> package
+but does not include a few quality columns that appear to be outcomes
+rather than predictors.</p>
     </div>
 
 
 
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p>Kuhn, M., Johnson, K. (2013) <em>Applied Predictive Modeling</em>, Springer.</p>
+    <p>De Cock, D. (2011). "Ames, Iowa: Alternative to the Boston Housing Data as an End of Semester Regression Project," <em>Journal of Statistics Education</em>,  Volume 19, Number 3.</p>
+<p><a href='https://ww2.amstat.org/publications/jse/v19n3/decock/DataDocumentation.txt'>https://ww2.amstat.org/publications/jse/v19n3/decock/DataDocumentation.txt</a></p>
+<p><a href='http://ww2.amstat.org/publications/jse/v19n3/decock.pdf'>http://ww2.amstat.org/publications/jse/v19n3/decock.pdf</a></p>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     
 
-<dt>hpc_data</dt><dd><p>a tibble</p></dd>
+<dt>ames</dt><dd><p>a tibble</p></dd>
 
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>
-<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>hpc_data</span>)</div></pre>
+    <p>See this links for the sources below for more information as well as
+<code><a href='https://rdrr.io/pkg/AmesHousing/man/make_ames.html'>?AmesHousing::make_ames</a></code>.</p>
+<p>For these data, the training materials typically use:<div class="r"></p><pre><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>tidymodels</span>)
+
+<span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span>(<span class='fl'>4595</span>)
+<span class='no'>data_split</span> <span class='kw'>&amp;</span><span class='no'>lt</span>;- <span class='fu'>initial_split</span>(<span class='no'>ames</span>, <span class='kw'>strata</span> <span class='kw'>=</span> <span class='st'>"Sale_Price"</span>)
+<span class='no'>ames_train</span> <span class='kw'>&amp;</span><span class='no'>lt</span>;- <span class='fu'>training</span>(<span class='no'>data_split</span>)
+<span class='no'>ames_test</span>  <span class='kw'>&amp;</span><span class='no'>lt</span>;- <span class='fu'>testing</span>(<span class='no'>data_split</span>)
+
+<span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span>(<span class='fl'>2453</span>)
+<span class='no'>ames_folds</span><span class='kw'>&amp;</span><span class='no'>lt</span>;- <span class='fu'>vfold_cv</span>(<span class='no'>ames_train</span>)</pre><p></div></p>
+
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
