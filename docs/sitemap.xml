@@ -16,6 +16,9 @@
     <loc>https://modeldata.tidymodels.org/reference/ad_data.html</loc>
   </url>
   <url>
+    <loc>https://modeldata.tidymodels.org/reference/ames.html</loc>
+  </url>
+  <url>
     <loc>https://modeldata.tidymodels.org/reference/attrition.html</loc>
   </url>
   <url>
@@ -77,6 +80,9 @@
   </url>
   <url>
     <loc>https://modeldata.tidymodels.org/reference/pd_speech.html</loc>
+  </url>
+  <url>
+    <loc>https://modeldata.tidymodels.org/reference/penguins.html</loc>
   </url>
   <url>
     <loc>https://modeldata.tidymodels.org/reference/scat.html</loc>
