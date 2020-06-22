@@ -1,31 +1,34 @@
-ad_data: ad_data
-attrition: attrition
-biomass: biomass
-car_prices: car_prices
-cells: cells
-check_times: check_times
+ad_data
+ames
+attrition
+biomass
+bivariate: bivariate_test bivariate_train bivariate_val
+car_prices
+cells
+check_times
 Chicago: Chicago stations
-concrete: concrete
-covers: covers
-credit_data: credit_data
-drinks: drinks
-hpc_cv: hpc_cv
-hpc_data: hpc_data
-lending_club: lending_club
-meats: meats
-mlc_churn: mlc_churn
-oils: oils
-okc_text: okc_text
-okc: okc
-parabolic: parabolic
-pathology: pathology
-pd_speech: pd_speech
-Sacramento: Sacramento
-scat: scat
+concrete
+covers
+credit_data
+drinks
+hpc_cv
+hpc_data
+lending_club
+meats
+mlc_churn
+oils
+okc_text
+okc
+parabolic
+pathology
+pd_speech
+penguins
+Sacramento
+scat
 small_fine_foods: testing_data training_data
-Smithsonian: Smithsonian
-solubility_test: solubility_test
-stackoverflow: stackoverflow
-two_class_dat: two_class_dat
-two_class_example: two_class_example
-wa_churn: wa_churn
+Smithsonian
+solubility_test
+stackoverflow
+two_class_dat
+two_class_example
+wa_churn
