@@ -1,0 +1,35 @@
+These functions emulate the `caret` package function `twoClassSim()` (but will  not produce the exact same values). 
+
+The simulation creates a linear predictor for each sample. The observed class is determined by adding some random noise (`N(0, 2)`) to the linear predictor, converting it to a probability of being in class `A` using a logit link, then generates a random uniform value. If the probability is less than the random uniform number, the sample is assigned class `A` (otherwise class `B`). 
+
+The linear predictor has several components. 
+
+The first is a two-way interaction between two multivariate normal columns (`two_factor_1` and `two_factor_2`) that have a correlation of roughly 0.65 and have a contribution of
+
+```
+   intercept + 4 * two_factor_1 + 4 * two_factor_2 + 2 * two_factor_1 * two_factor_2 
+```
+
+where `intercept` is an argument to the function. 
+
+The next contribution to the linear predictor is a nonlinear function of one `U(-1, 1)` random variable `exp_1`: 
+
+```
+   2 * exp(-6 * (exp_1 - 0.3)^2)
+```
+
+Two other standard uniform variables contribute nonlinearly: 
+
+```
+   2 * sin(pi * sin_1 * sin_2)
+```
+
+Finally, a set of linear effects are created with coefficients of different signs that start at -2.5 and decay to a value of 0.25 (alternating signs). These coefficients are attached to independent standard normal random variables. 
+
+For example, with four linear terms and an intercept of 1.0, the linear predictor would be:
+
+```{r lp-ex}
+two_class_sim_expr(intercept = 1, linear = 4)
+```
+
+
