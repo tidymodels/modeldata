@@ -1,5 +1,7 @@
 # modeldata (development version)
 
+* The `crickets` data from Chapter 3 of [`tmwr.org`](https://www.tmwr.org/base-r.html#an-example) were added. 
+
 # modeldata 0.0.2
 
 * The bivariate dataset was missing, this has been corrected (@mdogucu, #5).
