@@ -1,4 +1,6 @@
-# modeldata (development version)
+# modeldata 0.1.0
+
+* Add the grant acceptance data from Kuhn and Johnson (2013) (_Applied Predictive Modeling_).
 
 * The `crickets` data from Chapter 3 of [`tmwr.org`](https://www.tmwr.org/base-r.html#an-example) were added. 
 

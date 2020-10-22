@@ -7,12 +7,9 @@
 
 [![CRAN
 status](https://www.r-pkg.org/badges/version/modeldata)](https://CRAN.R-project.org/package=modeldata)
-[![R build
-status](https://github.com/tidymodels/modeldata/workflows/R-CMD-check/badge.svg)](https://github.com/tidymodels/modeldata/actions)
+[![R-CMD-check](https://github.com/tidymodels/modeldata/workflows/R-CMD-check/badge.svg)](https://github.com/tidymodels/modeldata/actions)
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-[![Codecov test
-coverage](https://codecov.io/gh/tidymodels/modeldata/branch/master/graph/badge.svg)](https://codecov.io/gh/tidymodels/modeldata?branch=master)
 <!-- badges: end -->
 
 `modeldata` contains data sets used in documentation and testing for

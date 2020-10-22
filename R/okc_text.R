@@ -4,7 +4,10 @@
 #'  website. The data are from Kim and Escobedo-Land (2015).
 #'  Permission to use this data set was explicitly granted by
 #'  OkCupid. The data set contains 10 text fields filled out by
-#'  users.
+#'  users. There is an field called `Class` that is a factor with
+#'  levels "stem" and "other" where a value of "stem" means that
+#'  the user had a job in Science, Technology, Engineering, or
+#'  Math.
 
 #'
 #' @name okc_text

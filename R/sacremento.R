@@ -12,7 +12,7 @@
 #' @docType data
 #' @return \item{Sacramento}{a tibble}
 #' @source SpatialKey website:
-#' \url{https://support.spatialkey.com/spatialkey-sample-csv-data}
+#' \url{https://support.spatialkey.com/spatialkey-sample-csv-data/}
 #' @keywords datasets
 #' @examples
 #'
