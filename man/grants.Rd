@@ -15,9 +15,11 @@ Kuhn and Johnson (2013). \emph{Applied Predictive Modeling}. Springer.
 vector of data points used for training}
 }
 \description{
-The data are discussed in Kuhn and Johnson (2013):
+A data set related to the success or failure of academic grants.
 }
 \details{
+The data are discussed in Kuhn and Johnson (2013):
+
 "These data are from a 2011 Kaggle competition sponsored by the University
 of Melbourne where there was interest in predicting whether or not a grant
 application would be accepted. Since public funding of grants had decreased

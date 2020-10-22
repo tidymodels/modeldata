@@ -1,5 +1,7 @@
 #' Ames Housing Data
 #'
+#' A data set related to the success or failure of academic grants.
+#'
 #' The data are discussed in Kuhn and Johnson (2013):
 #'
 #' "These data are from a 2011 Kaggle competition sponsored by the University
