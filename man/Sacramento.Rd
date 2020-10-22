@@ -6,7 +6,7 @@
 \title{Sacramento CA home prices}
 \source{
 SpatialKey website:
-\url{https://support.spatialkey.com/spatialkey-sample-csv-data}
+\url{https://support.spatialkey.com/spatialkey-sample-csv-data/}
 }
 \value{
 \item{Sacramento}{a tibble}
