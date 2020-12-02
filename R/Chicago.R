@@ -13,11 +13,12 @@
 #' The station at 35th and Archer is contained in the column `Archer_35th` to
 #' make it a valid R column name.
 #'
+#' `Chicago_2020` contains station data only from 2020-06-01 to 2020-06-14.
 #'
 #' @name Chicago
-#' @aliases Chicago stations
+#' @aliases Chicago Chicago_2020 stations
 #' @docType data
-#' @return \item{Chicago}{a tibble} \item{stations}{a vector of station names}
+#' @return \item{Chicago,Chicago_2020}{tibbles of data} \item{stations}{a vector of station names}
 #'
 #' @source Kuhn and Johnson (2020), _Feature Engineering and Selection_,
 #' Chapman and Hall/CRC . \url{https://bookdown.org/max/FES/} and

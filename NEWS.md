@@ -1,5 +1,8 @@
 # modeldata (development version)
 
+* An additional data set was added for the Chicago data between 2020-06-01 and
+  2020-06-14. Only station data are included. 
+
 # modeldata 0.1.0
 
 * Add the grant acceptance data from Kuhn and Johnson (2013) (_Applied Predictive Modeling_).

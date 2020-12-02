@@ -3,6 +3,7 @@
 \docType{data}
 \name{Chicago}
 \alias{Chicago}
+\alias{Chicago_2020}
 \alias{stations}
 \title{Chicago ridership data}
 \source{
@@ -11,7 +12,7 @@ Chapman and Hall/CRC . \url{https://bookdown.org/max/FES/} and
 \url{https://github.com/topepo/FES}
 }
 \value{
-\item{Chicago}{a tibble} \item{stations}{a vector of station names}
+\item{Chicago,Chicago_2020}{tibbles of data} \item{stations}{a vector of station names}
 }
 \description{
 Chicago ridership data
@@ -29,6 +30,8 @@ sports team schedules.
 
 The station at 35th and Archer is contained in the column \code{Archer_35th} to
 make it a valid R column name.
+
+\code{Chicago_2020} contains station data only from 2020-06-01 to 2020-06-14.
 }
 \examples{
 data(Chicago)
