@@ -6,7 +6,7 @@
 \alias{grants_other}
 \alias{grants_test}
 \alias{grants_2008}
-\title{Ames Housing Data}
+\title{Grant acceptance data}
 \source{
 Kuhn and Johnson (2013). \emph{Applied Predictive Modeling}. Springer.
 }

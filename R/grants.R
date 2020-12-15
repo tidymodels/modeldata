@@ -1,4 +1,4 @@
-#' Ames Housing Data
+#' Grant acceptance data
 #'
 #' A data set related to the success or failure of academic grants.
 #'
