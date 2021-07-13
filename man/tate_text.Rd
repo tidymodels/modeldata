@@ -16,8 +16,9 @@
 \description{
 Metadata such as artist, title, and year created for recent artworks owned
 by the Tate Gallery. Only artworks created after 1980 are included, and the
-metadata source was last updated in 2014. Tate does not endorse the
-extracted data set here in this R package.
+metadata source was last updated in 2014. The Tate Gallery provides these
+data but requests users to be respectful of their
+\href{https://github.com/tategallery/collection#usage-guidelines-for-open-data}{guidelines for use}.
 }
 \examples{
 data(tate_text)
