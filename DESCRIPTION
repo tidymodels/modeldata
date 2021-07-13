@@ -1,17 +1,24 @@
 Package: modeldata
 Title: Data Sets Used Useful for Modeling Packages
 Version: 0.1.0.9000
-Authors@R: c(
-    person(given = "Max", family = "Kuhn", email = "max@rstudio.com", role = c("aut", "cre")),
-    person("RStudio", role = "cph"))
-Description: Data sets used for demonstrating or testing model-related packages are contained in this package.
-Depends: R (>= 2.10)
+Authors@R: 
+    c(person(given = "Max",
+             family = "Kuhn",
+             role = c("aut", "cre"),
+             email = "max@rstudio.com"),
+      person(given = "RStudio",
+             role = "cph"))
+Description: Data sets used for demonstrating or testing model-related
+    packages are contained in this package.
 License: MIT + file LICENSE
+URL: https://modeldata.tidymodels.org,
+    https://github.com/tidymodels/modeldata
+BugReports: https://github.com/tidymodels/modeldata/issues
+Depends: 
+    R (>= 2.10)
+Suggests: 
+    covr
 Encoding: UTF-8
 LazyData: false
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1.9000
-URL: https://modeldata.tidymodels.org, https://github.com/tidymodels/modeldata
-BugReports: https://github.com/tidymodels/tidymodels/issues
-Suggests: 
-    covr
