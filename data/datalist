@@ -12,7 +12,7 @@ covers
 credit_data
 crickets
 drinks
-grants: grants_other grants_test grants_2008
+grants: grants_2008 grants_other grants_test
 hpc_cv
 hpc_data
 lending_club
@@ -31,6 +31,7 @@ small_fine_foods: testing_data training_data
 Smithsonian
 solubility_test
 stackoverflow
+tate_text
 two_class_dat
 two_class_example
 wa_churn
