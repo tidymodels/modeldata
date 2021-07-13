@@ -15,9 +15,10 @@
 #'
 #'
 #' @name Chicago
-#' @aliases Chicago stations
+#' @aliases Chicago stations Chicago_2020
 #' @docType data
 #' @return \item{Chicago}{a tibble} \item{stations}{a vector of station names}
+#' \item{Chicago_2020}{a tibble with two weeks of 2020 data}
 #'
 #' @source Kuhn and Johnson (2020), _Feature Engineering and Selection_,
 #' Chapman and Hall/CRC . \url{https://bookdown.org/max/FES/} and

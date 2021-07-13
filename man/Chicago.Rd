@@ -4,6 +4,7 @@
 \name{Chicago}
 \alias{Chicago}
 \alias{stations}
+\alias{Chicago_2020}
 \title{Chicago ridership data}
 \source{
 Kuhn and Johnson (2020), \emph{Feature Engineering and Selection},
@@ -12,6 +13,7 @@ Chapman and Hall/CRC . \url{https://bookdown.org/max/FES/} and
 }
 \value{
 \item{Chicago}{a tibble} \item{stations}{a vector of station names}
+\item{Chicago_2020}{a tibble with two weeks of 2020 data}
 }
 \description{
 Chicago ridership data

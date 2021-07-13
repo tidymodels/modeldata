@@ -6,7 +6,7 @@ bivariate: bivariate_test bivariate_train bivariate_val
 car_prices
 cells
 check_times
-Chicago: Chicago stations
+Chicago: Chicago stations Chicago_2020
 concrete
 covers
 credit_data
