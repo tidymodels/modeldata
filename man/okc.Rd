@@ -18,6 +18,11 @@ These are a sample of columns of users of OkCupid dating website. The data
 are from Kim and Escobedo-Land (2015). Permission to use this data set was
 explicitly granted by OkCupid.
 }
+\details{
+\emph{Warning}: In version 0.3.0 of \code{modeldata}, this data set (and the \code{okc_text}
+data) will be removed from the package. The data will still be available
+from the original source.
+}
 \examples{
 data(okc)
 str(okc)

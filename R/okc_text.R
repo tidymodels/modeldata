@@ -8,7 +8,11 @@
 #'  levels "stem" and "other" where a value of "stem" means that
 #'  the user had a job in Science, Technology, Engineering, or
 #'  Math.
-
+#'
+#'  *Warning*: In version 0.3.0 of `modeldata`, this data set (and the `okc`
+#'  data) will be removed from the package. The data will still be available
+#'  from the original source.
+#'
 #'
 #' @name okc_text
 #' @aliases okc_text

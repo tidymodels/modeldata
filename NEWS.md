@@ -1,5 +1,7 @@
 # modeldata (development version)
 
+* A warning was put in the help files for `okc` and `okc_text` to note that they will be removed from the package in version 0.3.0. 
+
 # modeldata 0.1.0
 
 * Add the grant acceptance data from Kuhn and Johnson (2013) (_Applied Predictive Modeling_).

@@ -23,6 +23,11 @@ levels "stem" and "other" where a value of "stem" means that
 the user had a job in Science, Technology, Engineering, or
 Math.
 }
+\details{
+\emph{Warning}: In version 0.3.0 of \code{modeldata}, this data set (and the \code{okc}
+data) will be removed from the package. The data will still be available
+from the original source.
+}
 \examples{
 data(okc_text)
 str(okc_text)

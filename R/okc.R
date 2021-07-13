@@ -4,6 +4,10 @@
 #' are from Kim and Escobedo-Land (2015). Permission to use this data set was
 #' explicitly granted by OkCupid.
 #'
+#'  *Warning*: In version 0.3.0 of `modeldata`, this data set (and the `okc_text`
+#'  data) will be removed from the package. The data will still be available
+#'  from the original source.
+#'
 #' @name okc
 #' @aliases okc
 #' @docType data
