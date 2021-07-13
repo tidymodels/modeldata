@@ -108,7 +108,7 @@ explicitly granted by OkCupid." />
   <a href="../news/index.html">Changelog</a>
 </li>
         <li>
-  <a href="https://github.com/tidymodels/tidymodels/">
+  <a href="https://github.com/tidymodels/modeldata/">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -127,7 +127,7 @@ explicitly granted by OkCupid." />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>OkCupid data</h1>
-    <small class="dont-index">Source: <a href='https://github.com/tidymodels/tidymodels/blob/master/R/okc.R'><code>R/okc.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/tidymodels/modeldata/blob/master/R/okc.R'><code>R/okc.R</code></a></small>
     <div class="hidden name"><code>okc.Rd</code></div>
     </div>
 
@@ -153,15 +153,16 @@ Learning of Statistics</em>.</p>
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>okc</span><span class='op'>)</span>
-<span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='va'>okc</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; tibble [59,855 × 6] (S3: tbl_df/tbl/data.frame)
-#&gt;  $ age     : int [1:59855] 22 35 38 23 29 29 32 31 24 37 ...
-#&gt;  $ diet    : chr [1:59855] "strictly anything" "mostly other" "anything" "vegetarian" ...
-#&gt;  $ height  : int [1:59855] 75 70 68 71 66 67 65 65 67 65 ...
-#&gt;  $ location: chr [1:59855] "south san francisco" "oakland" "san francisco" "berkeley" ...
-#&gt;  $ date    : Date[1:59855], format: "2012-06-28" "2012-06-29" ...
-#&gt;  $ Class   : Factor w/ 2 levels "stem","other": 2 2 2 2 2 1 2 2 2 2 ...</div></pre>
+    <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>okc</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='va'>okc</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> tibble [59,855 × 6] (S3: tbl_df/tbl/data.frame)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ age     : int [1:59855] 22 35 38 23 29 29 32 31 24 37 ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ diet    : chr [1:59855] "strictly anything" "mostly other" "anything" "vegetarian" ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ height  : int [1:59855] 75 70 68 71 66 67 65 65 67 65 ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ location: chr [1:59855] "south san francisco" "oakland" "san francisco" "berkeley" ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ date    : Date[1:59855], format: "2012-06-28" "2012-06-29" ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ Class   : Factor w/ 2 levels "stem","other": 2 2 2 2 2 1 2 2 2 2 ...</span>
+</code></pre></div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

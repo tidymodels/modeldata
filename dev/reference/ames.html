@@ -109,7 +109,7 @@ rather than predictors." />
   <a href="../news/index.html">Changelog</a>
 </li>
         <li>
-  <a href="https://github.com/tidymodels/tidymodels/">
+  <a href="https://github.com/tidymodels/modeldata/">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -128,7 +128,7 @@ rather than predictors." />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Ames Housing Data</h1>
-    <small class="dont-index">Source: <a href='https://github.com/tidymodels/tidymodels/blob/master/R/ames.R'><code>R/ames.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/tidymodels/modeldata/blob/master/R/ames.R'><code>R/ames.R</code></a></small>
     <div class="hidden name"><code>ames.Rd</code></div>
     </div>
 
@@ -156,7 +156,7 @@ rather than predictors.</p>
 
     <p>See this links for the sources below for more information as well as
 <code>?AmesHousing::make_ames</code>.</p>
-<p>For these data, the training materials typically use:<div class="r"></p><pre><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'>tidymodels</span><span class='op'>)</span>
+<p>For these data, the training materials typically use:<div class="r"></p><pre class='sourceCode r'><code><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'>tidymodels</span><span class='op'>)</span>
 
 <span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span><span class='op'>(</span><span class='fl'>4595</span><span class='op'>)</span>
 <span class='va'>data_split</span> <span class='op'>&lt;-</span> <span class='fu'>initial_split</span><span class='op'>(</span><span class='va'>ames</span>, strata <span class='op'>=</span> <span class='st'>"Sale_Price"</span><span class='op'>)</span>
@@ -165,7 +165,7 @@ rather than predictors.</p>
 
 <span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span><span class='op'>(</span><span class='fl'>2453</span><span class='op'>)</span>
 <span class='va'>ames_folds</span><span class='op'>&lt;-</span> <span class='fu'>vfold_cv</span><span class='op'>(</span><span class='va'>ames_train</span><span class='op'>)</span>
-</pre><p></div></p>
+</code></pre><p></div></p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
