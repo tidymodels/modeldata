@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://modeldata.tidymodels.org/CODE_OF_CONDUCT.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/authors.html</loc>
-  </url>
-  <url>
     <loc>https://modeldata.tidymodels.org/index.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/news/index.html</loc>
   </url>
   <url>
     <loc>https://modeldata.tidymodels.org/reference/Chicago.html</loc>
@@ -76,9 +61,6 @@
     <loc>https://modeldata.tidymodels.org/reference/hpc_data.html</loc>
   </url>
   <url>
-    <loc>https://modeldata.tidymodels.org/reference/index.html</loc>
-  </url>
-  <url>
     <loc>https://modeldata.tidymodels.org/reference/lending_club.html</loc>
   </url>
   <url>
@@ -119,6 +101,9 @@
   </url>
   <url>
     <loc>https://modeldata.tidymodels.org/reference/stackoverflow.html</loc>
+  </url>
+  <url>
+    <loc>https://modeldata.tidymodels.org/reference/tate_text.html</loc>
   </url>
   <url>
     <loc>https://modeldata.tidymodels.org/reference/two_class_dat.html</loc>

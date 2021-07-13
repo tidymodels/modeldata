@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>High-performance computing system data — hpc_data • modeldata</title>
+<title>Tate Gallery modern artwork metadata — tate_text • modeldata</title>
 
 
 <!-- jquery -->
@@ -42,11 +42,12 @@
 
 
 
-<meta property="og:title" content="High-performance computing system data — hpc_data" />
-<meta property="og:description" content="Kuhn and Johnson (2013) describe a data set where characteristics of unix
-jobs were used to classify there completion times as either very fast
-(1 min or less, VF), fast (1–50 min, F), moderate (5–30 min, M), or
-long (greater than 30 min, L)." />
+<meta property="og:title" content="Tate Gallery modern artwork metadata — tate_text" />
+<meta property="og:description" content="Metadata such as artist, title, and year created for recent artworks owned
+by the Tate Gallery. Only artworks created after 1980 are included, and the
+metadata source was last updated in 2014. The Tate Gallery provides these
+data but requests users to be respectful of their
+guidelines for use." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -127,33 +128,45 @@ long (greater than 30 min, L)." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>High-performance computing system data</h1>
-    <small class="dont-index">Source: <a href='https://github.com/tidymodels/modeldata/blob/master/R/hpc_data.R'><code>R/hpc_data.R</code></a></small>
-    <div class="hidden name"><code>hpc_data.Rd</code></div>
+    <h1>Tate Gallery modern artwork metadata</h1>
+    <small class="dont-index">Source: <a href='https://github.com/tidymodels/modeldata/blob/master/R/tate_text.R'><code>R/tate_text.R</code></a></small>
+    <div class="hidden name"><code>tate_text.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Kuhn and Johnson (2013) describe a data set where characteristics of unix
-jobs were used to classify there completion times as either very fast
-(1 min or less, <code>VF</code>), fast (1–50 min, <code>F</code>), moderate (5–30 min, <code>M</code>), or
-long (greater than 30 min, <code>L</code>).</p>
+    <p>Metadata such as artist, title, and year created for recent artworks owned
+by the Tate Gallery. Only artworks created after 1980 are included, and the
+metadata source was last updated in 2014. The Tate Gallery provides these
+data but requests users to be respectful of their
+<a href='https://github.com/tategallery/collection#usage-guidelines-for-open-data'>guidelines for use</a>.</p>
     </div>
 
 
 
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p>Kuhn, M., Johnson, K. (2013) <em>Applied Predictive Modeling</em>, Springer.</p>
+    
+<ul>
+<li><p><a href='https://github.com/tategallery/collection'>https://github.com/tategallery/collection</a></p></li>
+<li><p><a href='https://www.tate.org.uk/'>https://www.tate.org.uk/</a></p></li>
+</ul>
+
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     
 
-<dt>hpc_data</dt><dd><p>a tibble</p></dd>
+<dt>tate_text</dt><dd><p>a tibble</p></dd>
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><span class='r-in'></span>
-<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>hpc_data</span><span class='op'>)</span></span>
+    <pre class="examples"><span class='r-in'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>tate_text</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='va'>tate_text</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> tibble [6,433 × 5] (S3: tbl_df/tbl/data.frame)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ id    : num [1:6433] 98174 98175 98177 98178 98181 ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ artist: Factor w/ 902 levels "Abrahams, Ivor",..: 421 421 421 421 421 421 421 421 421 421 ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ title : chr [1:6433] "Lillies Against Yellow House" "Young Trees" "Daisies #2" "Ocean View" ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ medium: Factor w/ 1411 levels "10 photographs, gelatin silver print on paper mounted onto wooden panels",..: 795 795 785 794 795 795 795 785 795 785 ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ year  : num [1:6433] 1983 1989 1992 1992 1993 ...</span>
 </pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
