@@ -37,20 +37,21 @@
 <link href="../tidyverse-2.css" rel="stylesheet">
 
 <!--optional theme-->
-<link href="../.css" rel="stylesheet">
+<link href="../tidymodels.css" rel="stylesheet">
 
 
 
 
 <meta property="og:title" content="OkCupid text data — okc_text" />
-<meta property="og:description" content="These are a sample of columns and users of OkCupid dating
+<meta property="og:description" content="
+These are a sample of columns and users from the OkCupid dating
 website. The data are from Kim and Escobedo-Land (2015).
 Permission to use this data set was explicitly granted by
-OkCupid. The data set contains 10 text fields filled out by
-users. There is an field called Class that is a factor with
-levels &quot;stem&quot; and &quot;other&quot; where a value of &quot;stem&quot; means that
-the user had a job in Science, Technology, Engineering, or
-Math." />
+OkCupid, but since that time, concerns have been raised about
+the ethics of using this or similar data sets, for example to
+identify individuals (see the original journal article as well
+as letter below). This data set will be removed entirely from
+this package in a future release." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -94,21 +95,27 @@ Math." />
         <a class="navbar-brand" href="../index.html">modeldata</a>
         <div class="info hidden-xs hidden-sm">
           <span class="partof">part of <a href="https://github.com/tidymodels">tidymodels</a></span>
-          <span class="version version-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+          <span class="version version-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
         </div>
       </div>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
         <li>
+  <a href="../index.html">
+    <span class="fas fa-home fa-lg"></span>
+     
+  </a>
+</li>
+<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
   <a href="../news/index.html">Changelog</a>
 </li>
         <li>
-  <a href="https://github.com/tidymodels/tidymodels/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+  <a href="https://github.com/tidymodels/modeldata/">
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -126,19 +133,20 @@ Math." />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>OkCupid text data</h1>
-    <small class="dont-index">Source: <a href='https://github.com/tidymodels/tidymodels/blob/master/R/okc_text.R'><code>R/okc_text.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/tidymodels/modeldata/blob/master/R/okc_text.R'><code>R/okc_text.R</code></a></small>
     <div class="hidden name"><code>okc_text.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>These are a sample of columns and users of OkCupid dating
+    <p><a href='https://lifecycle.r-lib.org/articles/stages.html#deprecated'><img src='figures/lifecycle-deprecated.svg' alt='[Deprecated]' /></a></p>
+<p>These are a sample of columns and users from the OkCupid dating
 website. The data are from Kim and Escobedo-Land (2015).
 Permission to use this data set was explicitly granted by
-OkCupid. The data set contains 10 text fields filled out by
-users. There is an field called <code>Class</code> that is a factor with
-levels "stem" and "other" where a value of "stem" means that
-the user had a job in Science, Technology, Engineering, or
-Math.</p>
+OkCupid, but since that time, concerns have been raised about
+the ethics of using this or similar data sets, for example to
+identify individuals (see the original journal article as well
+as letter below). This data set will be removed entirely from
+this package in a future release.</p>
     </div>
 
 
@@ -148,7 +156,14 @@ Math.</p>
     <p>Kim, A. Y., and A. Escobedo-Land. 2015. "OkCupid Data for
 Introductory Statistics and Data Science Courses." <em>Journal of
 Statistics Education: An International Journal on the Teaching and
-Learning of Statistics</em>.</p>
+Learning of Statistics</em>.
+doi: <a href='https://doi.org/10.1080/26939169.2021.1924516'>10.1080/26939169.2021.1924516</a></p>
+<p>Tiffany Xiao &amp; Yifan Ma. 2021. "A Letter to the
+<em>Journal of Statistics and Data Science Education</em> — A Call for Review of
+'OkCupid Data for Introductory Statistics and Data Science Courses' by
+Albert Y. Kim and Adriana Escobedo-Land." <em>Journal of Statistics Education:
+An International Journal on the Teaching and Learning of Statistics</em>.
+doi: <a href='https://doi.org/10.1080/26939169.2021.1930812'>10.1080/26939169.2021.1930812</a></p>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     
@@ -157,19 +172,20 @@ Learning of Statistics</em>.</p>
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>okc_text</span><span class='op'>)</span>
-<span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='va'>okc_text</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; tibble [750 × 10] (S3: tbl_df/tbl/data.frame)
-#&gt;  $ essay0: chr [1:750] "\"twice upon a time there was a boy who died twice and lived happily\never after but that's another chapter liv"| __truncated__ "i'm chill and steady.&lt;br /&gt;\ni'm a teacher &amp;amp; musician.&lt;br /&gt;\ni like playing outside, dislike school nights"| __truncated__ "ok, i really don't know what (if anything) i'm looking for. impress\nme. i am a singer, songwriter, poet, amate"| __truncated__ "i am a dreamer who is constantly trying to come to terms with\nreality. i have lived in quite a few places in m"| __truncated__ ...
-#&gt;  $ essay1: chr [1:750] "i just graduated from college and have entered the \"what the fuck\nnow?!\" stage of my life.&lt;br /&gt;\n&lt;br /&gt;\ni'"| __truncated__ "eating, sleeping, and pooping." "raising my son, sometimes doing music, switching careers, having\nfun!" "i just moved back to san francisco from hong kong. i'm working on\nimmersing myself in the city. i am enjoying "| __truncated__ ...
-#&gt;  $ essay2: chr [1:750] "writing. being a friend. drawing. sarcasm. remembering lyrics.\ndancing. sleeping." "picking up/imitating people's mannerisms/voice.&lt;br /&gt;\nbeing rational and respectful.&lt;br /&gt;\ncooking." "procrastinating. crap..i shouldn't say that, should i? i'll change\nit later. ha ha! i'm good at writing music "| __truncated__ "i've been told i'm good at listening, writing, analyzing dilemmas,\nstory-telling, and photography." ...
-#&gt;  $ essay3: chr [1:750] "that i am playing really loud music or that i have a tad bit more\nass than the average man" "i look like i'm 15, or, \"so, what are you?\"" "my smile, my eyes, my dimples, my little hands. and of course, my\noverall awesomeness!" "my fashion accessories and my desire to have a good time." ...
-#&gt;  $ essay4: chr [1:750] "music:&lt;br /&gt;\nerykah badu. . .nina simone. . .camp lo. . .nirvana. . .the coup. .\n.nas. . .biggie. . .lil kim."| __truncated__ "non-fiction.&lt;br /&gt;\nchick flicks and trippy shit.&lt;br /&gt;\nsurvivor.&lt;br /&gt;\ni try hard to understand what's good "| __truncated__ "sushi, indie and horror films, stephen king, neosoul, hip hop,\nr&amp;amp;b, blues, some jazz, some reggae, some classical." "novels by dostoevsky, films: the good, the bad, the ugly, lawrence\nof arabia, pan's labyrinth, in the mood for"| __truncated__ ...
-#&gt;  $ essay5: chr [1:750] "friends. . .books. . .paper to write on. . .pencils. . .music. .\n.poetry" "deserted island:&lt;br /&gt;\n&lt;br /&gt;\na big knife.&lt;br /&gt;\na big pot.&lt;br /&gt;\na big drum." "my cell phone&lt;br /&gt;\nmy tv (don't watch it, just like hearing the voices. lol.)&lt;br /&gt;\nmy son&lt;br /&gt;\nmy lap top"| __truncated__ "family, friends, pets, money, the internet, food... oh, it's\nsupposed to be \"things\" only? i guess i didn't "| __truncated__ ...
-#&gt;  $ essay6: chr [1:750] "romance. . .ending capitalism and the state. . .blowing trees. .\n.sex. . . writing. . . painting. . .sex. . .e"| __truncated__ "everything. the way things are going. the intricacies of things and\nthe relative meaningless of everything.&lt;br"| __truncated__ "moving the hell out of oakland!&lt;br /&gt;\ngetting that first full time paycheck once i am working in my\nfield.&lt;br"| __truncated__ "how to make my life a paradise on earth" ...
-#&gt;  $ essay7: chr [1:750] "usually a house party in the east bay.&lt;br /&gt;\nreading leftist literature lit.&lt;br /&gt;\nmaking art.&lt;br /&gt;\ntalking"| __truncated__ "making music with others or making love to myself." "at home hanging with my son til his bed time. then maybe a little\ntv or internet til around one am." "having dinner in a savory restaurant and keeping in touch with\nfriends" ...
-#&gt;  $ essay8: chr [1:750] "i have a thing for hammers and sickles. (brownie points if you can\nfigure that out)&lt;br /&gt;\n&lt;br /&gt;\nand. . . i "| __truncated__ "this website has not done me any good." "on many occasions, i have done that cute thing people do in the\nmovies where you practice talking to someone in the mirror." "is that i don't admit private things in public" ...
-#&gt;  $ essay9: chr [1:750] "you're interested. wanna chill. wanna smoke. wanna talk politics\nand pop culture. . .wanna bash glee&lt;br /&gt;\n&lt;b"| __truncated__ "you're a daydreamer... and/or a nightowl.&lt;br /&gt;\n&lt;br /&gt;\nbut who am i to tell you what you should do? you know "| __truncated__ "you think i sound really cool and you feel like we share alot of\nthe same qualities." "you'd like to know me better and hope we will click." ...</div></pre>
+    <pre class="examples"><span class='r-in'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>okc_text</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='va'>okc_text</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> tibble [750 × 10] (S3: tbl_df/tbl/data.frame)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ essay0: chr [1:750] "\"twice upon a time there was a boy who died twice and lived happily\never after but that's another chapter liv"| __truncated__ "i'm chill and steady.&lt;br /&gt;\ni'm a teacher &amp;amp; musician.&lt;br /&gt;\ni like playing outside, dislike school nights"| __truncated__ "ok, i really don't know what (if anything) i'm looking for. impress\nme. i am a singer, songwriter, poet, amate"| __truncated__ "i am a dreamer who is constantly trying to come to terms with\nreality. i have lived in quite a few places in m"| __truncated__ ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ essay1: chr [1:750] "i just graduated from college and have entered the \"what the fuck\nnow?!\" stage of my life.&lt;br /&gt;\n&lt;br /&gt;\ni'"| __truncated__ "eating, sleeping, and pooping." "raising my son, sometimes doing music, switching careers, having\nfun!" "i just moved back to san francisco from hong kong. i'm working on\nimmersing myself in the city. i am enjoying "| __truncated__ ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ essay2: chr [1:750] "writing. being a friend. drawing. sarcasm. remembering lyrics.\ndancing. sleeping." "picking up/imitating people's mannerisms/voice.&lt;br /&gt;\nbeing rational and respectful.&lt;br /&gt;\ncooking." "procrastinating. crap..i shouldn't say that, should i? i'll change\nit later. ha ha! i'm good at writing music "| __truncated__ "i've been told i'm good at listening, writing, analyzing dilemmas,\nstory-telling, and photography." ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ essay3: chr [1:750] "that i am playing really loud music or that i have a tad bit more\nass than the average man" "i look like i'm 15, or, \"so, what are you?\"" "my smile, my eyes, my dimples, my little hands. and of course, my\noverall awesomeness!" "my fashion accessories and my desire to have a good time." ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ essay4: chr [1:750] "music:&lt;br /&gt;\nerykah badu. . .nina simone. . .camp lo. . .nirvana. . .the coup. .\n.nas. . .biggie. . .lil kim."| __truncated__ "non-fiction.&lt;br /&gt;\nchick flicks and trippy shit.&lt;br /&gt;\nsurvivor.&lt;br /&gt;\ni try hard to understand what's good "| __truncated__ "sushi, indie and horror films, stephen king, neosoul, hip hop,\nr&amp;amp;b, blues, some jazz, some reggae, some classical." "novels by dostoevsky, films: the good, the bad, the ugly, lawrence\nof arabia, pan's labyrinth, in the mood for"| __truncated__ ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ essay5: chr [1:750] "friends. . .books. . .paper to write on. . .pencils. . .music. .\n.poetry" "deserted island:&lt;br /&gt;\n&lt;br /&gt;\na big knife.&lt;br /&gt;\na big pot.&lt;br /&gt;\na big drum." "my cell phone&lt;br /&gt;\nmy tv (don't watch it, just like hearing the voices. lol.)&lt;br /&gt;\nmy son&lt;br /&gt;\nmy lap top"| __truncated__ "family, friends, pets, money, the internet, food... oh, it's\nsupposed to be \"things\" only? i guess i didn't "| __truncated__ ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ essay6: chr [1:750] "romance. . .ending capitalism and the state. . .blowing trees. .\n.sex. . . writing. . . painting. . .sex. . .e"| __truncated__ "everything. the way things are going. the intricacies of things and\nthe relative meaningless of everything.&lt;br"| __truncated__ "moving the hell out of oakland!&lt;br /&gt;\ngetting that first full time paycheck once i am working in my\nfield.&lt;br"| __truncated__ "how to make my life a paradise on earth" ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ essay7: chr [1:750] "usually a house party in the east bay.&lt;br /&gt;\nreading leftist literature lit.&lt;br /&gt;\nmaking art.&lt;br /&gt;\ntalking"| __truncated__ "making music with others or making love to myself." "at home hanging with my son til his bed time. then maybe a little\ntv or internet til around one am." "having dinner in a savory restaurant and keeping in touch with\nfriends" ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ essay8: chr [1:750] "i have a thing for hammers and sickles. (brownie points if you can\nfigure that out)&lt;br /&gt;\n&lt;br /&gt;\nand. . . i "| __truncated__ "this website has not done me any good." "on many occasions, i have done that cute thing people do in the\nmovies where you practice talking to someone in the mirror." "is that i don't admit private things in public" ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ essay9: chr [1:750] "you're interested. wanna chill. wanna smoke. wanna talk politics\nand pop culture. . .wanna bash glee&lt;br /&gt;\n&lt;b"| __truncated__ "you're a daydreamer... and/or a nightowl.&lt;br /&gt;\n&lt;br /&gt;\nbut who am i to tell you what you should do? you know "| __truncated__ "you think i sound really cool and you feel like we share alot of\nthe same qualities." "you'd like to know me better and hope we will click." ...</span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -181,7 +197,7 @@ Learning of Statistics</em>.</p>
 
       <footer>
       <div class="tidyverse">
-  <p><code>modeldata</code> is a part of the <strong>tidymodels</strong> ecosystem, a collection of modeling packages designed with common APIs and a shared philosophy.</p>
+  <p>modeldata is a part of the <strong>tidymodels</strong> ecosystem, a collection of modeling packages designed with common APIs and a shared philosophy.</p>
 </div>
 
 <div class="author">

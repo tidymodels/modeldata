@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Two class predictions — two_class_example • modeldata</title>
+<title>Tate Gallery modern artwork metadata — tate_text • modeldata</title>
 
 
 <!-- jquery -->
@@ -42,8 +42,12 @@
 
 
 
-<meta property="og:title" content="Two class predictions — two_class_example" />
-<meta property="og:description" content="Two class predictions" />
+<meta property="og:title" content="Tate Gallery modern artwork metadata — tate_text" />
+<meta property="og:description" content="Metadata such as artist, title, and year created for recent artworks owned
+by the Tate Gallery. Only artworks created after 1980 are included, and the
+metadata source was last updated in 2014. The Tate Gallery provides these
+data but requests users to be respectful of their
+guidelines for use." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -124,38 +128,45 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Two class predictions</h1>
-    <small class="dont-index">Source: <a href='https://github.com/tidymodels/modeldata/blob/master/R/two_class_example.R'><code>R/two_class_example.R</code></a></small>
-    <div class="hidden name"><code>two_class_example.Rd</code></div>
+    <h1>Tate Gallery modern artwork metadata</h1>
+    <small class="dont-index">Source: <a href='https://github.com/tidymodels/modeldata/blob/master/R/tate_text.R'><code>R/tate_text.R</code></a></small>
+    <div class="hidden name"><code>tate_text.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Two class predictions</p>
+    <p>Metadata such as artist, title, and year created for recent artworks owned
+by the Tate Gallery. Only artworks created after 1980 are included, and the
+metadata source was last updated in 2014. The Tate Gallery provides these
+data but requests users to be respectful of their
+<a href='https://github.com/tategallery/collection#usage-guidelines-for-open-data'>guidelines for use</a>.</p>
     </div>
 
 
+
+    <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
+
+    
+<ul>
+<li><p><a href='https://github.com/tategallery/collection'>https://github.com/tategallery/collection</a></p></li>
+<li><p><a href='https://www.tate.org.uk/'>https://www.tate.org.uk/</a></p></li>
+</ul>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     
 
-<dt>two_class_example</dt><dd><p>a data frame</p></dd>
+<dt>tate_text</dt><dd><p>a tibble</p></dd>
 
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>These data are a test set form a model built for two
-classes ("Class1" and "Class2"). There are columns for the true
-and predicted classes and column for the probabilities for each
-class.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><span class='r-in'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>two_class_example</span><span class='op'>)</span></span>
-<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='va'>two_class_example</span><span class='op'>)</span></span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> 'data.frame':	500 obs. of  4 variables:</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ truth    : Factor w/ 2 levels "Class1","Class2": 2 1 2 1 2 1 1 1 2 2 ...</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ Class1   : num  0.00359 0.67862 0.11089 0.73516 0.01624 ...</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ Class2   : num  0.996 0.321 0.889 0.265 0.984 ...</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ predicted: Factor w/ 2 levels "Class1","Class2": 2 1 2 1 2 1 1 1 2 2 ...</span>
+    <pre class="examples"><span class='r-in'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>tate_text</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='va'>tate_text</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> tibble [6,433 × 5] (S3: tbl_df/tbl/data.frame)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ id    : num [1:6433] 98174 98175 98177 98178 98181 ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ artist: Factor w/ 902 levels "Abrahams, Ivor",..: 421 421 421 421 421 421 421 421 421 421 ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ title : chr [1:6433] "Lillies Against Yellow House" "Young Trees" "Daisies #2" "Ocean View" ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ medium: Factor w/ 1411 levels "10 photographs, gelatin silver print on paper mounted onto wooden panels",..: 795 795 785 794 795 795 795 785 795 785 ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ year  : num [1:6433] 1983 1989 1992 1992 1993 ...</span>
 </pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

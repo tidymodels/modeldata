@@ -37,7 +37,7 @@
 <link href="../tidyverse-2.css" rel="stylesheet">
 
 <!--optional theme-->
-<link href="../.css" rel="stylesheet">
+<link href="../tidymodels.css" rel="stylesheet">
 
 
 
@@ -87,21 +87,27 @@
         <a class="navbar-brand" href="../index.html">modeldata</a>
         <div class="info hidden-xs hidden-sm">
           <span class="partof">part of <a href="https://github.com/tidymodels">tidymodels</a></span>
-          <span class="version version-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+          <span class="version version-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
         </div>
       </div>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
         <li>
+  <a href="../index.html">
+    <span class="fas fa-home fa-lg"></span>
+     
+  </a>
+</li>
+<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
   <a href="../news/index.html">Changelog</a>
 </li>
         <li>
-  <a href="https://github.com/tidymodels/tidymodels/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+  <a href="https://github.com/tidymodels/modeldata/">
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -119,7 +125,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Watson churn data</h1>
-    <small class="dont-index">Source: <a href='https://github.com/tidymodels/tidymodels/blob/master/R/wa_churn.R'><code>R/wa_churn.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/tidymodels/modeldata/blob/master/R/wa_churn.R'><code>R/wa_churn.R</code></a></small>
     <div class="hidden name"><code>wa_churn.Rd</code></div>
     </div>
 
@@ -149,29 +155,30 @@ column using the <code>churn</code> outcome as the censoring information. A
 data dictionary can be found on the source website.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>wa_churn</span><span class='op'>)</span>
-<span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='va'>wa_churn</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; tibble [7,043 × 20] (S3: tbl_df/tbl/data.frame)
-#&gt;  $ churn            : Factor w/ 2 levels "Yes","No": 2 2 1 2 1 1 2 2 1 2 ...
-#&gt;  $ female           : num [1:7043] 1 0 0 0 1 1 0 1 1 0 ...
-#&gt;  $ senior_citizen   : int [1:7043] 0 0 0 0 0 0 0 0 0 0 ...
-#&gt;  $ partner          : num [1:7043] 1 0 0 0 0 0 0 0 1 0 ...
-#&gt;  $ dependents       : num [1:7043] 0 0 0 0 0 0 1 0 0 1 ...
-#&gt;  $ tenure           : int [1:7043] 1 34 2 45 2 8 22 10 28 62 ...
-#&gt;  $ phone_service    : num [1:7043] 0 1 1 0 1 1 1 0 1 1 ...
-#&gt;  $ multiple_lines   : Factor w/ 3 levels "No","No phone service",..: 2 1 1 2 1 3 3 2 3 1 ...
-#&gt;  $ internet_service : Factor w/ 3 levels "DSL","Fiber optic",..: 1 1 1 1 2 2 2 1 2 1 ...
-#&gt;  $ online_security  : Factor w/ 3 levels "No","No internet service",..: 1 3 3 3 1 1 1 3 1 3 ...
-#&gt;  $ online_backup    : Factor w/ 3 levels "No","No internet service",..: 3 1 3 1 1 1 3 1 1 3 ...
-#&gt;  $ device_protection: Factor w/ 3 levels "No","No internet service",..: 1 3 1 3 1 3 1 1 3 1 ...
-#&gt;  $ tech_support     : Factor w/ 3 levels "No","No internet service",..: 1 1 1 3 1 1 1 1 3 1 ...
-#&gt;  $ streaming_tv     : Factor w/ 3 levels "No","No internet service",..: 1 1 1 1 1 3 3 1 3 1 ...
-#&gt;  $ streaming_movies : Factor w/ 3 levels "No","No internet service",..: 1 1 1 1 1 3 1 1 3 1 ...
-#&gt;  $ contract         : Factor w/ 3 levels "Month-to-month",..: 1 2 1 2 1 1 1 1 1 2 ...
-#&gt;  $ paperless_billing: num [1:7043] 1 0 1 0 1 1 1 0 1 0 ...
-#&gt;  $ payment_method   : Factor w/ 4 levels "Bank transfer (automatic)",..: 3 4 4 1 3 3 2 4 3 1 ...
-#&gt;  $ monthly_charges  : num [1:7043] 29.9 57 53.9 42.3 70.7 ...
-#&gt;  $ total_charges    : num [1:7043] 29.9 1889.5 108.2 1840.8 151.7 ...</div></pre>
+    <pre class="examples"><span class='r-in'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>wa_churn</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='va'>wa_churn</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> tibble [7,043 × 20] (S3: tbl_df/tbl/data.frame)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ churn            : Factor w/ 2 levels "Yes","No": 2 2 1 2 1 1 2 2 1 2 ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ female           : num [1:7043] 1 0 0 0 1 1 0 1 1 0 ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ senior_citizen   : int [1:7043] 0 0 0 0 0 0 0 0 0 0 ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ partner          : num [1:7043] 1 0 0 0 0 0 0 0 1 0 ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ dependents       : num [1:7043] 0 0 0 0 0 0 1 0 0 1 ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ tenure           : int [1:7043] 1 34 2 45 2 8 22 10 28 62 ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ phone_service    : num [1:7043] 0 1 1 0 1 1 1 0 1 1 ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ multiple_lines   : Factor w/ 3 levels "No","No phone service",..: 2 1 1 2 1 3 3 2 3 1 ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ internet_service : Factor w/ 3 levels "DSL","Fiber optic",..: 1 1 1 1 2 2 2 1 2 1 ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ online_security  : Factor w/ 3 levels "No","No internet service",..: 1 3 3 3 1 1 1 3 1 3 ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ online_backup    : Factor w/ 3 levels "No","No internet service",..: 3 1 3 1 1 1 3 1 1 3 ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ device_protection: Factor w/ 3 levels "No","No internet service",..: 1 3 1 3 1 3 1 1 3 1 ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ tech_support     : Factor w/ 3 levels "No","No internet service",..: 1 1 1 3 1 1 1 1 3 1 ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ streaming_tv     : Factor w/ 3 levels "No","No internet service",..: 1 1 1 1 1 3 3 1 3 1 ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ streaming_movies : Factor w/ 3 levels "No","No internet service",..: 1 1 1 1 1 3 1 1 3 1 ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ contract         : Factor w/ 3 levels "Month-to-month",..: 1 2 1 2 1 1 1 1 1 2 ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ paperless_billing: num [1:7043] 1 0 1 0 1 1 1 0 1 0 ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ payment_method   : Factor w/ 4 levels "Bank transfer (automatic)",..: 3 4 4 1 3 3 2 4 3 1 ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ monthly_charges  : num [1:7043] 29.9 57 53.9 42.3 70.7 ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ total_charges    : num [1:7043] 29.9 1889.5 108.2 1840.8 151.7 ...</span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -183,7 +190,7 @@ data dictionary can be found on the source website.</p>
 
       <footer>
       <div class="tidyverse">
-  <p><code>modeldata</code> is a part of the <strong>tidymodels</strong> ecosystem, a collection of modeling packages designed with common APIs and a shared philosophy.</p>
+  <p>modeldata is a part of the <strong>tidymodels</strong> ecosystem, a collection of modeling packages designed with common APIs and a shared philosophy.</p>
 </div>
 
 <div class="author">

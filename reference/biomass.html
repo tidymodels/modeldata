@@ -37,7 +37,7 @@
 <link href="../tidyverse-2.css" rel="stylesheet">
 
 <!--optional theme-->
-<link href="../.css" rel="stylesheet">
+<link href="../tidymodels.css" rel="stylesheet">
 
 
 
@@ -90,21 +90,27 @@ These data are from their Table S.2 of the Supplementary Materials" />
         <a class="navbar-brand" href="../index.html">modeldata</a>
         <div class="info hidden-xs hidden-sm">
           <span class="partof">part of <a href="https://github.com/tidymodels">tidymodels</a></span>
-          <span class="version version-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+          <span class="version version-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
         </div>
       </div>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
         <li>
+  <a href="../index.html">
+    <span class="fas fa-home fa-lg"></span>
+     
+  </a>
+</li>
+<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
   <a href="../news/index.html">Changelog</a>
 </li>
         <li>
-  <a href="https://github.com/tidymodels/tidymodels/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+  <a href="https://github.com/tidymodels/modeldata/">
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -122,7 +128,7 @@ These data are from their Table S.2 of the Supplementary Materials" />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Biomass data</h1>
-    <small class="dont-index">Source: <a href='https://github.com/tidymodels/tidymodels/blob/master/R/biomass.R'><code>R/biomass.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/tidymodels/modeldata/blob/master/R/biomass.R'><code>R/biomass.R</code></a></small>
     <div class="hidden name"><code>biomass.Rd</code></div>
     </div>
 
@@ -148,17 +154,18 @@ Intelligence Formalisms. <em>BioEnergy Research</em>, 1-12.</p>
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>biomass</span><span class='op'>)</span>
-<span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='va'>biomass</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; 'data.frame':	536 obs. of  8 variables:
-#&gt;  $ sample  : chr  "Akhrot Shell" "Alabama Oak Wood Waste" "Alder" "Alfalfa" ...
-#&gt;  $ dataset : chr  "Training" "Training" "Training" "Training" ...
-#&gt;  $ carbon  : num  49.8 49.5 47.8 45.1 46.8 ...
-#&gt;  $ hydrogen: num  5.64 5.7 5.8 4.97 5.4 5.75 5.99 5.7 5.5 5.9 ...
-#&gt;  $ oxygen  : num  42.9 41.3 46.2 35.6 40.7 ...
-#&gt;  $ nitrogen: num  0.41 0.2 0.11 3.3 1 2.04 2.68 1.7 0.8 1.2 ...
-#&gt;  $ sulfur  : num  0 0 0.02 0.16 0.02 0.1 0.2 0.2 0 0.1 ...
-#&gt;  $ HHV     : num  20 19.2 18.3 18.2 18.4 ...</div></pre>
+    <pre class="examples"><span class='r-in'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>biomass</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='va'>biomass</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 'data.frame':	536 obs. of  8 variables:</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ sample  : chr  "Akhrot Shell" "Alabama Oak Wood Waste" "Alder" "Alfalfa" ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ dataset : chr  "Training" "Training" "Training" "Training" ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ carbon  : num  49.8 49.5 47.8 45.1 46.8 ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ hydrogen: num  5.64 5.7 5.8 4.97 5.4 5.75 5.99 5.7 5.5 5.9 ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ oxygen  : num  42.9 41.3 46.2 35.6 40.7 ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ nitrogen: num  0.41 0.2 0.11 3.3 1 2.04 2.68 1.7 0.8 1.2 ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ sulfur  : num  0 0 0.02 0.16 0.02 0.1 0.2 0.2 0 0.1 ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ HHV     : num  20 19.2 18.3 18.2 18.4 ...</span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -170,7 +177,7 @@ Intelligence Formalisms. <em>BioEnergy Research</em>, 1-12.</p>
 
       <footer>
       <div class="tidyverse">
-  <p><code>modeldata</code> is a part of the <strong>tidymodels</strong> ecosystem, a collection of modeling packages designed with common APIs and a shared philosophy.</p>
+  <p>modeldata is a part of the <strong>tidymodels</strong> ecosystem, a collection of modeling packages designed with common APIs and a shared philosophy.</p>
 </div>
 
 <div class="author">

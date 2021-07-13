@@ -37,15 +37,20 @@
 <link href="../tidyverse-2.css" rel="stylesheet">
 
 <!--optional theme-->
-<link href="../.css" rel="stylesheet">
+<link href="../tidymodels.css" rel="stylesheet">
 
 
 
 
 <meta property="og:title" content="OkCupid data — okc" />
-<meta property="og:description" content="These are a sample of columns of users of OkCupid dating website. The data
-are from Kim and Escobedo-Land (2015). Permission to use this data set was
-explicitly granted by OkCupid." />
+<meta property="og:description" content="
+These are a sample of columns and users from the OkCupid dating website.
+The data are from Kim and Escobedo-Land (2015). Permission to use this
+data set was explicitly granted by OkCupid, but since that time, concerns have
+been raised about the ethics of using this or similar data sets, for example
+to identify individuals (see the original journal article as well as
+letter below). This data set will be removed entirely from this package
+in a future release." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -89,21 +94,27 @@ explicitly granted by OkCupid." />
         <a class="navbar-brand" href="../index.html">modeldata</a>
         <div class="info hidden-xs hidden-sm">
           <span class="partof">part of <a href="https://github.com/tidymodels">tidymodels</a></span>
-          <span class="version version-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+          <span class="version version-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
         </div>
       </div>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
         <li>
+  <a href="../index.html">
+    <span class="fas fa-home fa-lg"></span>
+     
+  </a>
+</li>
+<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
   <a href="../news/index.html">Changelog</a>
 </li>
         <li>
-  <a href="https://github.com/tidymodels/tidymodels/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+  <a href="https://github.com/tidymodels/modeldata/">
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -121,14 +132,19 @@ explicitly granted by OkCupid." />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>OkCupid data</h1>
-    <small class="dont-index">Source: <a href='https://github.com/tidymodels/tidymodels/blob/master/R/okc.R'><code>R/okc.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/tidymodels/modeldata/blob/master/R/okc.R'><code>R/okc.R</code></a></small>
     <div class="hidden name"><code>okc.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>These are a sample of columns of users of OkCupid dating website. The data
-are from Kim and Escobedo-Land (2015). Permission to use this data set was
-explicitly granted by OkCupid.</p>
+    <p><a href='https://lifecycle.r-lib.org/articles/stages.html#deprecated'><img src='figures/lifecycle-deprecated.svg' alt='[Deprecated]' /></a></p>
+<p>These are a sample of columns and users from the OkCupid dating website.
+The data are from Kim and Escobedo-Land (2015). Permission to use this
+data set was explicitly granted by OkCupid, but since that time, concerns have
+been raised about the ethics of using this or similar data sets, for example
+to identify individuals (see the original journal article as well as
+letter below). This data set will be removed entirely from this package
+in a future release.</p>
     </div>
 
 
@@ -138,7 +154,14 @@ explicitly granted by OkCupid.</p>
     <p>Kim, A. Y., and A. Escobedo-Land. 2015. "OkCupid Data for
 Introductory Statistics and Data Science Courses." <em>Journal of
 Statistics Education: An International Journal on the Teaching and
-Learning of Statistics</em>.</p>
+Learning of Statistics</em>.
+doi: <a href='https://doi.org/10.1080/26939169.2021.1924516'>10.1080/26939169.2021.1924516</a></p>
+<p>Tiffany Xiao &amp; Yifan Ma. 2021. "A Letter to the
+<em>Journal of Statistics and Data Science Education</em> — A Call for Review of
+'OkCupid Data for Introductory Statistics and Data Science Courses' by
+Albert Y. Kim and Adriana Escobedo-Land." <em>Journal of Statistics Education:
+An International Journal on the Teaching and Learning of Statistics</em>.
+doi: <a href='https://doi.org/10.1080/26939169.2021.1930812'>10.1080/26939169.2021.1930812</a></p>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     
@@ -147,15 +170,16 @@ Learning of Statistics</em>.</p>
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>okc</span><span class='op'>)</span>
-<span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='va'>okc</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; tibble [59,855 × 6] (S3: tbl_df/tbl/data.frame)
-#&gt;  $ age     : int [1:59855] 22 35 38 23 29 29 32 31 24 37 ...
-#&gt;  $ diet    : chr [1:59855] "strictly anything" "mostly other" "anything" "vegetarian" ...
-#&gt;  $ height  : int [1:59855] 75 70 68 71 66 67 65 65 67 65 ...
-#&gt;  $ location: chr [1:59855] "south san francisco" "oakland" "san francisco" "berkeley" ...
-#&gt;  $ date    : Date[1:59855], format: "2012-06-28" "2012-06-29" ...
-#&gt;  $ Class   : Factor w/ 2 levels "stem","other": 2 2 2 2 2 1 2 2 2 2 ...</div></pre>
+    <pre class="examples"><span class='r-in'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>okc</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='va'>okc</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> tibble [59,855 × 6] (S3: tbl_df/tbl/data.frame)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ age     : int [1:59855] 22 35 38 23 29 29 32 31 24 37 ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ diet    : chr [1:59855] "strictly anything" "mostly other" "anything" "vegetarian" ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ height  : int [1:59855] 75 70 68 71 66 67 65 65 67 65 ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ location: chr [1:59855] "south san francisco" "oakland" "san francisco" "berkeley" ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ date    : Date[1:59855], format: "2012-06-28" "2012-06-29" ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ Class   : Factor w/ 2 levels "stem","other": 2 2 2 2 2 1 2 2 2 2 ...</span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -167,7 +191,7 @@ Learning of Statistics</em>.</p>
 
       <footer>
       <div class="tidyverse">
-  <p><code>modeldata</code> is a part of the <strong>tidymodels</strong> ecosystem, a collection of modeling packages designed with common APIs and a shared philosophy.</p>
+  <p>modeldata is a part of the <strong>tidymodels</strong> ecosystem, a collection of modeling packages designed with common APIs and a shared philosophy.</p>
 </div>
 
 <div class="author">

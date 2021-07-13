@@ -37,7 +37,7 @@
 <link href="../tidyverse-2.css" rel="stylesheet">
 
 <!--optional theme-->
-<link href="../.css" rel="stylesheet">
+<link href="../tidymodels.css" rel="stylesheet">
 
 
 
@@ -87,21 +87,27 @@
         <a class="navbar-brand" href="../index.html">modeldata</a>
         <div class="info hidden-xs hidden-sm">
           <span class="partof">part of <a href="https://github.com/tidymodels">tidymodels</a></span>
-          <span class="version version-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+          <span class="version version-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
         </div>
       </div>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
         <li>
+  <a href="../index.html">
+    <span class="fas fa-home fa-lg"></span>
+     
+  </a>
+</li>
+<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
   <a href="../news/index.html">Changelog</a>
 </li>
         <li>
-  <a href="https://github.com/tidymodels/tidymodels/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+  <a href="https://github.com/tidymodels/modeldata/">
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -119,7 +125,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Fine foods example data</h1>
-    <small class="dont-index">Source: <a href='https://github.com/tidymodels/tidymodels/blob/master/R/fine_foods.R'><code>R/fine_foods.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/tidymodels/modeldata/blob/master/R/fine_foods.R'><code>R/fine_foods.R</code></a></small>
     <div class="hidden name"><code>small_fine_foods.Rd</code></div>
     </div>
 
@@ -155,12 +161,13 @@ a factor column for a class variable. The outcome is whether the reviewer
 gave the product a 5-star rating or not.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>small_fine_foods</span><span class='op'>)</span>
-<span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='va'>training_data</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; tibble [4,000 × 3] (S3: tbl_df/tbl/data.frame)
-#&gt;  $ product: chr [1:4000] "B000J0LSBG" "B000EYLDYE" "B0026LIO9A" "B00473P8SK" ...
-#&gt;  $ review : chr [1:4000] "this stuff is  not stuffing  its  not good at all  save your money" "I absolutely LOVE this dried fruit.  LOVE IT.  Whenever I have a craving for something sweet, I can usually rip"| __truncated__ "GREAT DEAL, CONVENIENT TOO.  Much cheaper than WalMart and I don't need to lug it home, it appears on my doorst"| __truncated__ "Great flavor, we go through a ton of this sauce! I discovered it in a local grocery store and then was happy to"| __truncated__ ...
-#&gt;  $ score  : Factor w/ 2 levels "great","other": 2 1 1 1 1 1 2 1 1 1 ...</div></pre>
+    <pre class="examples"><span class='r-in'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>small_fine_foods</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='va'>training_data</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> tibble [4,000 × 3] (S3: tbl_df/tbl/data.frame)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ product: chr [1:4000] "B000J0LSBG" "B000EYLDYE" "B0026LIO9A" "B00473P8SK" ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ review : chr [1:4000] "this stuff is  not stuffing  its  not good at all  save your money" "I absolutely LOVE this dried fruit.  LOVE IT.  Whenever I have a craving for something sweet, I can usually rip"| __truncated__ "GREAT DEAL, CONVENIENT TOO.  Much cheaper than WalMart and I don't need to lug it home, it appears on my doorst"| __truncated__ "Great flavor, we go through a ton of this sauce! I discovered it in a local grocery store and then was happy to"| __truncated__ ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ score  : Factor w/ 2 levels "great","other": 2 1 1 1 1 1 2 1 1 1 ...</span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -172,7 +179,7 @@ gave the product a 5-star rating or not.</p>
 
       <footer>
       <div class="tidyverse">
-  <p><code>modeldata</code> is a part of the <strong>tidymodels</strong> ecosystem, a collection of modeling packages designed with common APIs and a shared philosophy.</p>
+  <p>modeldata is a part of the <strong>tidymodels</strong> ecosystem, a collection of modeling packages designed with common APIs and a shared philosophy.</p>
 </div>
 
 <div class="author">
