@@ -1,9 +1,9 @@
 #' Tate Gallery modern artwork metadata
 #'
 #' Metadata such as artist, title, and year created for recent artworks owned
-#'  by the Tate Gallery. Only artworks created after 1980 are included, and the
-#'  metadata source was last updated in 2014. The Tate Gallery provides these
-#'  data but requests users to be respectful of their
+#'  by the Tate Gallery. Only artworks created during or after 1990 are
+#'  included, and the metadata source was last updated in 2014. The Tate Gallery
+#'  provides these data but requests users to be respectful of their
 #'  [guidelines for use](https://github.com/tategallery/collection#usage-guidelines-for-open-data).
 #'
 #' @name tate_text
