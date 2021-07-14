@@ -11,11 +11,10 @@
 #' letter below). This data set will be removed entirely from this package
 #' in a future release.
 #'
-
 #' @name okc
-#' @aliases okc
+#' @aliases okc okc_text
 #' @docType data
-#' @return \item{okc}{a data frame}
+#' @return \item{okc,okc_text}{data frames}
 #'
 #' @source Kim, A. Y., and A. Escobedo-Land. 2015. "OkCupid Data for
 #'   Introductory Statistics and Data Science Courses." *Journal of
@@ -34,4 +33,7 @@
 #' @examples
 #' data(okc)
 #' str(okc)
+#'
+#' data(okc_text)
+#' str(okc_text)
 NULL
