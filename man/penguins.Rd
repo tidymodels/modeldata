@@ -8,7 +8,7 @@
 Gorman KB, Williams TD, Fraser WR (2014) Ecological Sexual Dimorphism
 and Environmental Variability within a Community of Antarctic Penguins
 (\emph{Genus Pygoscelis}). PLoS ONE 9(3): e90081.
-\url{https://doi.org/10.1371/journal.pone.0090081}
+\doi{10.1371/journal.pone.0090081}
 
 \url{https://github.com/allisonhorst/palmerpenguins}
 }
