@@ -9,14 +9,14 @@ Kim, A. Y., and A. Escobedo-Land. 2015. "OkCupid Data for
 Introductory Statistics and Data Science Courses." \emph{Journal of
 Statistics Education: An International Journal on the Teaching and
 Learning of Statistics}.
-\doi{10.1080/26939169.2021.1924516}
+\url{https://doi.org/10.1080/26939169.2021.1924516}
 
 Tiffany Xiao & Yifan Ma. 2021. "A Letter to the
 \emph{Journal of Statistics and Data Science Education} — A Call for Review of
 'OkCupid Data for Introductory Statistics and Data Science Courses' by
 Albert Y. Kim and Adriana Escobedo-Land." \emph{Journal of Statistics Education:
 An International Journal on the Teaching and Learning of Statistics}.
-\doi{10.1080/26939169.2021.1930812}
+\url{https://doi.org/10.1080/26939169.2021.1930812}
 }
 \value{
 \item{okc_text}{a tibble}

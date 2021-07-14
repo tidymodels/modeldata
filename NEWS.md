@@ -1,11 +1,8 @@
 # modeldata (development version)
 
-* Two weeks of 2020 station data were included in the `Chicago_2020` data. 
-
 * Add Tate Gallery modern artwork metadata.
 
 * Deprecate OkCupid data, including text data, because of concerns around such data such as the ability to identify individuals.
-
 
 # modeldata 0.1.0
 

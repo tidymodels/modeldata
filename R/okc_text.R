@@ -22,14 +22,14 @@
 #'   Introductory Statistics and Data Science Courses." *Journal of
 #'   Statistics Education: An International Journal on the Teaching and
 #'   Learning of Statistics*.
-#'   \doi{10.1080/26939169.2021.1924516}
+#'   \url{https://doi.org/10.1080/26939169.2021.1924516}
 #'
 #' @source Tiffany Xiao & Yifan Ma. 2021. "A Letter to the
 #'  *Journal of Statistics and Data Science Education* — A Call for Review of
 #'  'OkCupid Data for Introductory Statistics and Data Science Courses' by
 #'  Albert Y. Kim and Adriana Escobedo-Land." *Journal of Statistics Education:
 #'  An International Journal on the Teaching and Learning of Statistics*.
-#'  \doi{10.1080/26939169.2021.1930812}
+#'  \url{https://doi.org/10.1080/26939169.2021.1930812}
 #'
 #' @keywords datasets
 #' @examples

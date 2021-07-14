@@ -19,7 +19,7 @@
 #' @aliases mlc_churn
 #' @docType data
 #' @return \item{mlc_churn}{a tibble}
-#' @source Originally at `http://www.sgi.com/tech/mlc`
+#' @source \url{http://www.sgi.com/tech/mlc/}
 #' @keywords datasets
 NULL
 
