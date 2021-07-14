@@ -1,4 +1,4 @@
-# modeldata (development version)
+# modeldata 0.1.1
 
 * Add Tate Gallery modern artwork metadata.
 
