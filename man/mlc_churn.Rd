@@ -5,7 +5,7 @@
 \alias{mlc_churn}
 \title{Customer churn data}
 \source{
-\url{http://www.sgi.com/tech/mlc/}
+Originally at \verb{http://www.sgi.com/tech/mlc/}
 }
 \value{
 \item{mlc_churn}{a tibble}

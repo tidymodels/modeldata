@@ -20,7 +20,7 @@
 #' absorbance is -log10 of the transmittance measured by the spectrometer. The
 #' three contents, measured in percent, are determined by analytic chemistry."
 #'
-#' Included here are the traning, monitoring and test sets.
+#' Included here are the training, monitoring and test sets.
 #'
 #'
 #' @name meats
