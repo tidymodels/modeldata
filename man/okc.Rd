@@ -3,6 +3,7 @@
 \docType{data}
 \name{okc}
 \alias{okc}
+\alias{okc_text}
 \title{OkCupid data}
 \source{
 Kim, A. Y., and A. Escobedo-Land. 2015. "OkCupid Data for
@@ -19,7 +20,7 @@ An International Journal on the Teaching and Learning of Statistics}.
 \doi{10.1080/26939169.2021.1930812}
 }
 \value{
-\item{okc}{a data frame}
+\item{okc,okc_text}{data frames}
 }
 \description{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}
@@ -35,5 +36,8 @@ in a future release.
 \examples{
 data(okc)
 str(okc)
+
+data(okc_text)
+str(okc_text)
 }
 \keyword{datasets}
