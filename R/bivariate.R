@@ -13,4 +13,7 @@
 #' @keywords datasets
 #' @examples
 #' data(bivariate)
+#' str(bivariate_train)
+#' str(bivariate_val)
+#' str(bivariate_test)
 NULL

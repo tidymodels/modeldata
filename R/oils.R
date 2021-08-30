@@ -15,4 +15,7 @@
 #' acids, \emph{Chemometrics and Intelligent Laboratory Systems}, Vol.
 #' 75:31-45.
 #' @keywords datasets
+#' @examples
+#' data(oils)
+#' str(oils)
 NULL

@@ -16,5 +16,6 @@
 #' @examples
 #'
 #' data(hpc_data)
+#' str(hpc_data)
 NULL
 

@@ -15,6 +15,6 @@
 #' \url{https://support.spatialkey.com/spatialkey-sample-csv-data/}
 #' @keywords datasets
 #' @examples
-#'
 #' data(Sacramento)
+#' str(Sacramento)
 NULL

@@ -18,4 +18,5 @@
 #' @keywords datasets
 #' @examples
 #' data(stackoverflow)
+#' str(stackoverflow)
 NULL
