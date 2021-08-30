@@ -20,7 +20,7 @@ Sacramento area reported over a five-day period, as reported by the
 Sacramento Bee." Google was used to fill in missing/incorrect data.
 }
 \examples{
-
 data(Sacramento)
+str(Sacramento)
 }
 \keyword{datasets}

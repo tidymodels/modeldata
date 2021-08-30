@@ -24,5 +24,6 @@ developers. These data could be used to try to predict who works remotely
 }
 \examples{
 data(stackoverflow)
+str(stackoverflow)
 }
 \keyword{datasets}

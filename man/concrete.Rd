@@ -19,7 +19,7 @@ test the compressive strength of concrete mixtures. The data are used by
 Kuhn and Johnson (2013).
 }
 \examples{
-
 data(concrete)
+str(concrete)
 }
 \keyword{datasets}

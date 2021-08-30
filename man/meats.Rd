@@ -34,5 +34,6 @@ Included here are the training, monitoring and test sets.
 \examples{
 
 data(meats)
+str(meats)
 }
 \keyword{datasets}

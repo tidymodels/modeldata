@@ -27,4 +27,8 @@ The outcome is contained in a column called \code{churn} (also yes/no).
 A note in one of the source files states that the data are "artificial based
 on claims similar to real world".
 }
+\examples{
+data(mlc_churn)
+str(mlc_churn)
+}
 \keyword{datasets}

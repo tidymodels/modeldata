@@ -19,4 +19,8 @@ chromatography.  The data is used to predict the type of oil.  Note that
 only the known oils are in the data set. Also, the authors state that there
 are 95 samples of known oils. However, we count 96 in Table 1 (pgs.  33-35).
 }
+\examples{
+data(oils)
+str(oils)
+}
 \keyword{datasets}

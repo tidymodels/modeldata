@@ -33,4 +33,8 @@ value of 1 was added to these fields: \code{avg_inten_ch_2},
 \code{fiber_align_2_ch_3}, \code{fiber_align_2_ch_4}, \code{spot_fiber_count_ch_4} and
 \code{total_inten_ch_2}.
 }
+\examples{
+data(cells)
+str(cells)
+}
 \keyword{datasets}
