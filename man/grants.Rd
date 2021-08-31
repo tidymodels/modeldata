@@ -11,7 +11,7 @@
 Kuhn and Johnson (2013). \emph{Applied Predictive Modeling}. Springer.
 }
 \value{
-\item{grants_other,grants_other,grants_2008}{two tibbles and an integer
+\item{grants_other,grants_test,grants_2008}{two tibbles and an integer
 vector of data points used for training}
 }
 \description{
@@ -50,5 +50,7 @@ be used to separate the modeling with the holdout/validation sets.
 \examples{
 data(grants)
 str(grants_other)
+str(grants_test)
+str(grants_2008)
 }
 \keyword{datasets}

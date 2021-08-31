@@ -35,5 +35,6 @@ gave the product a 5-star rating or not.
 \examples{
 data(small_fine_foods)
 str(training_data)
+str(testing_data)
 }
 \keyword{datasets}

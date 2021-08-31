@@ -35,11 +35,13 @@
 #' @name grants
 #' @aliases grants_other grants_test grants_2008
 #' @docType data
-#' @return \item{grants_other,grants_other,grants_2008}{two tibbles and an integer
+#' @return \item{grants_other,grants_test,grants_2008}{two tibbles and an integer
 #' vector of data points used for training}
 #' @source Kuhn and Johnson (2013). _Applied Predictive Modeling_. Springer.
 #' @keywords datasets
 #' @examples
 #' data(grants)
 #' str(grants_other)
+#' str(grants_test)
+#' str(grants_2008)
 NULL
