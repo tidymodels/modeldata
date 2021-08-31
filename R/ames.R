@@ -20,4 +20,7 @@
 #'
 #' \url{http://jse.amstat.org/v19n3/decock.pdf}
 #' @keywords datasets
+#' @examples
+#' data(ames)
+#' str(ames)
 NULL

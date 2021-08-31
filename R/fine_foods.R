@@ -29,6 +29,7 @@
 #' @examples
 #' data(small_fine_foods)
 #' str(training_data)
+#' str(testing_data)
 NULL
 
 

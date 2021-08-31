@@ -14,4 +14,7 @@
 #' distinguishing among bobcat, coyote and gray fox scats. \emph{Wildlife
 #' Biology}, 21(5), 254-262
 #' @keywords datasets
+#' @examples
+#' data(scat)
+#' str(scat)
 NULL

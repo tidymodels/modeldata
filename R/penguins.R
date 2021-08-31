@@ -15,4 +15,7 @@
 #'
 #' \url{https://github.com/allisonhorst/palmerpenguins}
 #' @keywords datasets
+#' @examples
+#' data(penguins)
+#' str(penguins)
 NULL

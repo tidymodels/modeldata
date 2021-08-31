@@ -47,4 +47,10 @@ and holdout/validation data (2008, n = 1,557). \code{grants_test} has 518 grant
 samples from 2008. The object \code{grants_2008} is an integer vector that can
 be used to separate the modeling with the holdout/validation sets.
 }
+\examples{
+data(grants)
+str(grants_other)
+str(grants_test)
+str(grants_2008)
+}
 \keyword{datasets}

@@ -21,5 +21,8 @@ one for training (n = 1009), validation (n = 300), and testing (n = 710).
 }
 \examples{
 data(bivariate)
+str(bivariate_train)
+str(bivariate_val)
+str(bivariate_test)
 }
 \keyword{datasets}

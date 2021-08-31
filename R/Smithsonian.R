@@ -12,6 +12,6 @@
 #' @keywords datasets
 #' @examples
 #' data(Smithsonian)
-#' Smithsonian
+#' str(Smithsonian)
 NULL
 

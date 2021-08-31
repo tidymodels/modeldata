@@ -15,5 +15,8 @@
 #'
 #' McDonald, J. 2009. _Handbook of Biological Statistics_. Sparky House Publishing.
 #' @keywords datasets
+#' @examples
+#' data(crickets)
+#' str(crickets)
 NULL
 

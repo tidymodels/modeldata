@@ -18,4 +18,8 @@ consist of DNA verified species designations as well as fields related to
 the time and place of the collection and the scat itself. The data are on
 the three main species.
 }
+\examples{
+data(scat)
+str(scat)
+}
 \keyword{datasets}

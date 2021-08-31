@@ -39,4 +39,9 @@
 #' vector of data points used for training}
 #' @source Kuhn and Johnson (2013). _Applied Predictive Modeling_. Springer.
 #' @keywords datasets
+#' @examples
+#' data(grants)
+#' str(grants_other)
+#' str(grants_test)
+#' str(grants_2008)
 NULL

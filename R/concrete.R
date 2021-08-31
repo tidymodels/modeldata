@@ -16,7 +16,7 @@
 #'
 #' Kuhn, M., Johnson, K. (2013) *Applied Predictive Modeling*, Springer.
 #' @examples
-#'
 #' data(concrete)
+#' str(concrete)
 NULL
 

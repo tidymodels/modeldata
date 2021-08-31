@@ -21,6 +21,9 @@
 #' @return \item{mlc_churn}{a tibble}
 #' @source Originally at `http://www.sgi.com/tech/mlc/`
 #' @keywords datasets
+#' @examples
+#' data(mlc_churn)
+#' str(mlc_churn)
 NULL
 
 

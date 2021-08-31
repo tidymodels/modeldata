@@ -31,5 +31,6 @@
 #' @examples
 #'
 #' data(meats)
+#' str(meats)
 NULL
 

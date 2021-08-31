@@ -19,5 +19,6 @@ long (greater than 30 min, \code{L}).
 \examples{
 
 data(hpc_data)
+str(hpc_data)
 }
 \keyword{datasets}

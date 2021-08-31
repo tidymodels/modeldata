@@ -15,6 +15,6 @@ Geocodes for the Smithsonian museums (circa 2018).
 }
 \examples{
 data(Smithsonian)
-Smithsonian
+str(Smithsonian)
 }
 \keyword{datasets}

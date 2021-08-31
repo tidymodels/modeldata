@@ -20,4 +20,8 @@ chirps per minute. Data were collected for two species: \emph{O. exclamationis}
 and \emph{O. niveus}. The data are contained in a data frame called \code{crickets} with
 a total of 31 data points.
 }
+\examples{
+data(crickets)
+str(crickets)
+}
 \keyword{datasets}

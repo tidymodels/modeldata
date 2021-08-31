@@ -20,4 +20,8 @@ A data set from Gorman, Williams, and Fraser (2014) containing measurements
 from different types of penguins. This version of the data was retrieved from
 Allison Horst's \code{palmerpenguins} package on 2020-06-22.
 }
+\examples{
+data(penguins)
+str(penguins)
+}
 \keyword{datasets}
