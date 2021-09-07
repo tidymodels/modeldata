@@ -1,5 +1,7 @@
 # modeldata (development version)
 
+* Remove OkCupid data, including text data, because of privacy concerns.
+
 # modeldata 0.1.1
 
 * Add Tate Gallery modern artwork metadata.
