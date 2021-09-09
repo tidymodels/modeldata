@@ -15,7 +15,7 @@ De Cock, D. (2011). "Ames, Iowa: Alternative to the Boston Housing Data as an En
 \item{ames}{a tibble}
 }
 \description{
-A data set from De Cock (2011) has 82 fields were recored for 2,930
+A data set from De Cock (2011) has 82 fields were recorded for 2,930
 properties in Ames IA. This version is copies from the \code{AmesHousing} package
 but does not include a few quality columns that appear to be outcomes
 rather than predictors.
