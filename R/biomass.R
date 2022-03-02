@@ -19,4 +19,3 @@
 #' data(biomass)
 #' str(biomass)
 NULL
-

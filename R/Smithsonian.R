@@ -14,4 +14,3 @@
 #' data(Smithsonian)
 #' str(Smithsonian)
 NULL
-

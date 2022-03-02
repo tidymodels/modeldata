@@ -19,4 +19,3 @@
 #' data(crickets)
 #' str(crickets)
 NULL
-

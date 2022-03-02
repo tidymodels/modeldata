@@ -12,8 +12,4 @@
 #' @examples
 #' data(parabolic)
 #' str(parabolic)
-#'
 NULL
-
-
-

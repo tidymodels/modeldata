@@ -20,4 +20,3 @@
 #' data(pathology)
 #' str(pathology)
 NULL
-
