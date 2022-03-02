@@ -15,6 +15,8 @@ Depends:
     R (>= 3.4)
 Suggests: 
     covr
+Config/Needs/website: 
+    tidyverse/tidytemplate
 Encoding: UTF-8
 LazyData: false
 Roxygen: list(markdown = TRUE)
