@@ -3,7 +3,7 @@ Title: Data Sets Useful for Modeling Examples
 Version: 0.1.1.9000
 Authors@R: c(
     person("Max", "Kuhn", , "max@rstudio.com", role = c("aut", "cre")),
-    person("RStudio", role = "cph")
+    person("RStudio", role = c("cph", "fnd"))
   )
 Description: Data sets used for demonstrating or testing model-related
     packages are contained in this package.
