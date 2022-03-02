@@ -17,4 +17,3 @@
 #' data(credit_data)
 #' str(credit_data)
 NULL
-

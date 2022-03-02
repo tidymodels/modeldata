@@ -19,4 +19,3 @@
 #' data(concrete)
 #' str(concrete)
 NULL
-

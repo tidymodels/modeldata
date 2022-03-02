@@ -17,6 +17,5 @@ two classes in the factor outcome.
 \examples{
 data(parabolic)
 str(parabolic)
-
 }
 \keyword{datasets}

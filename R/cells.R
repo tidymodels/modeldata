@@ -30,4 +30,3 @@
 #' data(cells)
 #' str(cells)
 NULL
-

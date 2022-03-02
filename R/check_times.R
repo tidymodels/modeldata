@@ -55,4 +55,3 @@
 #' data(check_times)
 #' str(check_times)
 NULL
-

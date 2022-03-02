@@ -7,7 +7,7 @@
 
 [![CRAN
 status](https://www.r-pkg.org/badges/version/modeldata)](https://CRAN.R-project.org/package=modeldata)
-[![R-CMD-check](https://github.com/tidymodels/modeldata/workflows/R-CMD-check/badge.svg)](https://github.com/tidymodels/modeldata/actions)
+[![R-CMD-check](https://github.com/tidymodels/modeldata/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/tidymodels/modeldata/actions/workflows/R-CMD-check.yaml)
 [![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html)
 <!-- badges: end -->
 
@@ -33,7 +33,7 @@ devtools::install_github("tidymodels/modeldata")
 ## Contributing
 
 This project is released with a [Contributor Code of
-Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html).
+Conduct](https://contributor-covenant.org/version/2/1/CODE_OF_CONDUCT.html).
 By contributing to this project, you agree to abide by its terms.
 
 -   For questions and discussions about tidymodels packages, modeling,

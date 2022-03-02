@@ -22,5 +22,3 @@
 #' data(hpc_cv)
 #' str(hpc_cv)
 NULL
-
-

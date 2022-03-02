@@ -33,4 +33,3 @@
 #' data(meats)
 #' str(meats)
 NULL
-

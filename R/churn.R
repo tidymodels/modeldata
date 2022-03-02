@@ -25,6 +25,3 @@
 #' data(mlc_churn)
 #' str(mlc_churn)
 NULL
-
-
-
