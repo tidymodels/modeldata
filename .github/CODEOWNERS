@@ -1,0 +1,3 @@
+# CODEOWNERS for modeldata
+# https://www.tidyverse.org/development/understudies
+.github/CODEOWNERS @topepo @juliasilge

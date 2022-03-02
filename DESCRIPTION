@@ -12,7 +12,7 @@ URL: https://modeldata.tidymodels.org,
     https://github.com/tidymodels/modeldata
 BugReports: https://github.com/tidymodels/modeldata/issues
 Depends: 
-    R (>= 2.10)
+    R (>= 3.4)
 Suggests: 
     covr
 Encoding: UTF-8
