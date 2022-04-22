@@ -1,5 +1,7 @@
 # modeldata (development version)
 
+* Added a set of regression and classification simulation functions (#273).
+
 * Remove OkCupid data, including text data, because of privacy concerns.
 
 # modeldata 0.1.1
