@@ -22,7 +22,7 @@ Imports:
 Suggests: 
     covr,
     testthat (>= 3.0.0)
-Config/Needs/website: tidyverse/tidytemplate
+Config/Needs/website: tidyverse/tidytemplate, tidymodels/tidymodels
 Config/testthat/edition: 3
 Encoding: UTF-8
 LazyData: true
