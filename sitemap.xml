@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://modeldata.tidymodels.org/404.html</loc>
+  </url>
+  <url>
+    <loc>https://modeldata.tidymodels.org/CODE_OF_CONDUCT.html</loc>
+  </url>
+  <url>
+    <loc>https://modeldata.tidymodels.org/LICENSE-text.html</loc>
+  </url>
+  <url>
+    <loc>https://modeldata.tidymodels.org/LICENSE.html</loc>
+  </url>
+  <url>
+    <loc>https://modeldata.tidymodels.org/authors.html</loc>
+  </url>
+  <url>
     <loc>https://modeldata.tidymodels.org/index.html</loc>
+  </url>
+  <url>
+    <loc>https://modeldata.tidymodels.org/news/index.html</loc>
   </url>
   <url>
     <loc>https://modeldata.tidymodels.org/reference/Chicago.html</loc>
@@ -61,6 +79,9 @@
     <loc>https://modeldata.tidymodels.org/reference/hpc_data.html</loc>
   </url>
   <url>
+    <loc>https://modeldata.tidymodels.org/reference/index.html</loc>
+  </url>
+  <url>
     <loc>https://modeldata.tidymodels.org/reference/lending_club.html</loc>
   </url>
   <url>
@@ -70,10 +91,10 @@
     <loc>https://modeldata.tidymodels.org/reference/mlc_churn.html</loc>
   </url>
   <url>
-    <loc>https://modeldata.tidymodels.org/reference/oils.html</loc>
+    <loc>https://modeldata.tidymodels.org/reference/modeldata-package.html</loc>
   </url>
   <url>
-    <loc>https://modeldata.tidymodels.org/reference/okc.html</loc>
+    <loc>https://modeldata.tidymodels.org/reference/oils.html</loc>
   </url>
   <url>
     <loc>https://modeldata.tidymodels.org/reference/parabolic.html</loc>
@@ -88,7 +109,13 @@
     <loc>https://modeldata.tidymodels.org/reference/penguins.html</loc>
   </url>
   <url>
+    <loc>https://modeldata.tidymodels.org/reference/reexports.html</loc>
+  </url>
+  <url>
     <loc>https://modeldata.tidymodels.org/reference/scat.html</loc>
+  </url>
+  <url>
+    <loc>https://modeldata.tidymodels.org/reference/sim_classification.html</loc>
   </url>
   <url>
     <loc>https://modeldata.tidymodels.org/reference/small_fine_foods.html</loc>
