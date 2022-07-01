@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">modeldata</a>
 
-    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.1.1.9000</small>
+    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">1.0.0.9000</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,6 +58,7 @@
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <dl><dt>training_data,testing_data</dt>
 <dd><p>tibbles</p></dd>
+
 </dl></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
@@ -78,13 +79,13 @@ gave the product a 5-star rating or not.</p>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">small_fine_foods</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">training_data</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">small_fine_foods</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">training_data</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> tibble [4,000 × 3] (S3: tbl_df/tbl/data.frame)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ product: chr [1:4000] "B000J0LSBG" "B000EYLDYE" "B0026LIO9A" "B00473P8SK" ...</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ review : chr [1:4000] "this stuff is  not stuffing  its  not good at all  save your money" "I absolutely LOVE this dried fruit.  LOVE IT.  Whenever I have a craving for something sweet, I can usually rip"| __truncated__ "GREAT DEAL, CONVENIENT TOO.  Much cheaper than WalMart and I don't need to lug it home, it appears on my doorst"| __truncated__ "Great flavor, we go through a ton of this sauce! I discovered it in a local grocery store and then was happy to"| __truncated__ ...</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ score  : Factor w/ 2 levels "great","other": 2 1 1 1 1 1 2 1 1 1 ...</span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">testing_data</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">testing_data</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> tibble [1,000 × 3] (S3: tbl_df/tbl/data.frame)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ product: chr [1:1000] "B005GXFP60" "B000G7V394" "B004WJAULO" "B003D4MBOS" ...</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ review : chr [1:1000] "These are the best tasting gummy fruits I have ever eaten. Can't stop eating them and the flavors are great." "I have been a consumer of Snyders hard sourdough pretzels for over 12 years.  For a while I could find them loc"| __truncated__ "This tastes so bad, I'm considering throwing it away.  But I'll probably punish myself for buying 3 boxes of 18"| __truncated__ "This product is way too pricey to have so little chocolate taste. The predominate flavor is grape which isn't o"| __truncated__ ...</span>
@@ -102,7 +103,7 @@ gave the product a 5-star rating or not.</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
 </div>
 
   </div></footer></body></html>

@@ -12,7 +12,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">modeldata</a>
 
-    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.1.1.9000</small>
+    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">1.0.0.9000</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,66 +54,87 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">sim_classification</span><span class="op">(</span>
-  num_samples <span class="op">=</span> <span class="fl">100</span>,
-  method <span class="op">=</span> <span class="st">"caret"</span>,
-  intercept <span class="op">=</span> <span class="op">-</span><span class="fl">5</span>,
-  num_linear <span class="op">=</span> <span class="fl">10</span>
-<span class="op">)</span>
-
-<span class="fu">sim_regression</span><span class="op">(</span>
-  num_samples <span class="op">=</span> <span class="fl">100</span>,
-  method <span class="op">=</span> <span class="st">"sapp_2014_1"</span>,
-  std_dev <span class="op">=</span> <span class="cn">NULL</span>,
-  factors <span class="op">=</span> <span class="cn">FALSE</span>
-<span class="op">)</span>
-
-<span class="fu">sim_noise</span><span class="op">(</span>
-  <span class="va">num_samples</span>,
-  <span class="va">num_vars</span>,
-  cov_type <span class="op">=</span> <span class="st">"exchangeable"</span>,
-  outcome <span class="op">=</span> <span class="st">"none"</span>,
-  num_classes <span class="op">=</span> <span class="fl">2</span>,
-  cov_param <span class="op">=</span> <span class="fl">0</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">sim_classification</span><span class="op">(</span></span>
+<span>  num_samples <span class="op">=</span> <span class="fl">100</span>,</span>
+<span>  method <span class="op">=</span> <span class="st">"caret"</span>,</span>
+<span>  intercept <span class="op">=</span> <span class="op">-</span><span class="fl">5</span>,</span>
+<span>  num_linear <span class="op">=</span> <span class="fl">10</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">sim_regression</span><span class="op">(</span></span>
+<span>  num_samples <span class="op">=</span> <span class="fl">100</span>,</span>
+<span>  method <span class="op">=</span> <span class="st">"sapp_2014_1"</span>,</span>
+<span>  std_dev <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  factors <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">sim_noise</span><span class="op">(</span></span>
+<span>  <span class="va">num_samples</span>,</span>
+<span>  <span class="va">num_vars</span>,</span>
+<span>  cov_type <span class="op">=</span> <span class="st">"exchangeable"</span>,</span>
+<span>  outcome <span class="op">=</span> <span class="st">"none"</span>,</span>
+<span>  num_classes <span class="op">=</span> <span class="fl">2</span>,</span>
+<span>  cov_param <span class="op">=</span> <span class="fl">0</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
     <dl><dt>num_samples</dt>
 <dd><p>Number of data points to simulate.</p></dd>
+
+
 <dt>method</dt>
 <dd><p>A character string for the simulation method. For
 classification, the single current option is "caret". For classification,
 values can be "sapp_2014_1", "sapp_2014_2", "van_der_laan_2007_1", or
 "van_der_laan_2007_2". See Details below.</p></dd>
+
+
 <dt>intercept</dt>
 <dd><p>The intercept for the linear predictor.</p></dd>
+
+
 <dt>num_linear</dt>
 <dd><p>Number of diminishing linear effects.</p></dd>
+
+
 <dt>std_dev</dt>
 <dd><p>Gaussian distribution standard deviation for residuals.
 Default values are shown below in Details.</p></dd>
+
+
 <dt>factors</dt>
 <dd><p>A single logical for whether the binary indicators should be
 encoded as factors or not.</p></dd>
+
+
 <dt>num_vars</dt>
 <dd><p>Number of noise predictors to create.</p></dd>
+
+
 <dt>cov_type</dt>
 <dd><p>The multivariate normal correlation structure of the
 predictors. Possible values are "exchangeable" and "toeplitz".</p></dd>
+
+
 <dt>outcome</dt>
 <dd><p>A single character string for what type of independent outcome
 should be simulated (if any). The default value of "none" produces no extra
 columns. Using "classification" will generate a <code>class</code> column with
 <code>num_classes</code> values, equally distributed. A value of "regression" results
 in an <code>outcome</code> column that contains independent standard normal values.</p></dd>
+
+
 <dt>num_classes</dt>
 <dd><p>When <code>outcome = "classification"</code>, the number of classes
 to simulate.</p></dd>
+
+
 <dt>cov_param</dt>
 <dd><p>A single numeric value for the exchangeable correlation
 value or the base of the Toeplitz structure. See Details below.</p></dd>
+
 </dl></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
@@ -128,7 +149,7 @@ predictors are simulated in different sets. First, two multivariate normal
 predictors (denoted here as <code>two_factor_1</code> and <code>two_factor_2</code>) are created
 with a correlation of about 0.65. They change the log-odds using main
 effects and an interaction:</p>
-<div class="sourceCode"><pre><code><span class="va">intercept</span> <span class="op">-</span> <span class="fl">4</span> <span class="op">*</span> <span class="va">two_factor_1</span> <span class="op">+</span> <span class="fl">4</span> <span class="op">*</span> <span class="va">two_factor_2</span> <span class="op">+</span> <span class="fl">2</span> <span class="op">*</span> <span class="va">two_factor_1</span> <span class="op">*</span> <span class="va">two_factor_2</span></code></pre></div>
+<div class="sourceCode"><pre><code><span> <span class="va">intercept</span> <span class="op">-</span> <span class="fl">4</span> <span class="op">*</span> <span class="va">two_factor_1</span> <span class="op">+</span> <span class="fl">4</span> <span class="op">*</span> <span class="va">two_factor_2</span> <span class="op">+</span> <span class="fl">2</span> <span class="op">*</span> <span class="va">two_factor_1</span> <span class="op">*</span> <span class="va">two_factor_2</span> </span></code></pre></div>
 
 <p>The intercept is a parameter for the simulation and can be used to control
 the amount of class imbalance.</p>
@@ -136,16 +157,16 @@ the amount of class imbalance.</p>
 and have a sequence of values between 2.5 and 0.025. For example, if there
 were four predictors in this set, their contribution to the log-odds would
 be</p>
-<div class="sourceCode"><pre><code><span class="op">-</span><span class="fl">2.5</span> <span class="op">*</span> <span class="va">linear_1</span> <span class="op">+</span> <span class="fl">1.75</span> <span class="op">*</span> <span class="va">linear_2</span> <span class="op">-</span><span class="fl">1.00</span> <span class="op">*</span> <span class="va">linear_3</span> <span class="op">+</span> <span class="fl">0.25</span> <span class="op">*</span> <span class="va">linear_4</span></code></pre></div>
+<div class="sourceCode"><pre><code><span> <span class="op">-</span><span class="fl">2.5</span> <span class="op">*</span> <span class="va">linear_1</span> <span class="op">+</span> <span class="fl">1.75</span> <span class="op">*</span> <span class="va">linear_2</span> <span class="op">-</span><span class="fl">1.00</span> <span class="op">*</span> <span class="va">linear_3</span> <span class="op">+</span> <span class="fl">0.25</span> <span class="op">*</span> <span class="va">linear_4</span></span></code></pre></div>
 
 <p>(Note that these column names may change based on the value of <code>num_linear</code>).</p>
 <p>The third set is a nonlinear function of a single predictor ranging between
 <code>[0, 1]</code> called <code>non_linear_1</code> here:</p>
-<div class="sourceCode"><pre><code><span class="op">(</span><span class="va">non_linear_1</span><span class="op">^</span><span class="fl">3</span><span class="op">)</span> <span class="op">+</span> <span class="fl">2</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html" class="external-link">exp</a></span><span class="op">(</span><span class="op">-</span><span class="fl">6</span> <span class="op">*</span> <span class="op">(</span><span class="va">non_linear_1</span> <span class="op">-</span> <span class="fl">0.3</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode"><pre><code><span> <span class="op">(</span><span class="va">non_linear_1</span><span class="op">^</span><span class="fl">3</span><span class="op">)</span> <span class="op">+</span> <span class="fl">2</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html" class="external-link">exp</a></span><span class="op">(</span><span class="op">-</span><span class="fl">6</span> <span class="op">*</span> <span class="op">(</span><span class="va">non_linear_1</span> <span class="op">-</span> <span class="fl">0.3</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span> </span></code></pre></div>
 
 <p>The fourth set of informative predictors are copied from one of Friedman's
 systems and use two more predictors (<code>non_linear_2</code> and <code>non_linear_3</code>):</p>
-<div class="sourceCode"><pre><code><span class="fl">2</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/base/Trig.html" class="external-link">sin</a></span><span class="op">(</span><span class="va">non_linear_2</span> <span class="op">*</span> <span class="va">non_linear_3</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode"><pre><code><span> <span class="fl">2</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/base/Trig.html" class="external-link">sin</a></span><span class="op">(</span><span class="va">non_linear_2</span> <span class="op">*</span> <span class="va">non_linear_3</span><span class="op">)</span> </span></code></pre></div>
 
 <p>All of these effects are added up to model the log-odds.</p>
 </div>
@@ -157,13 +178,14 @@ systems and use two more predictors (<code>non_linear_2</code> and <code>non_lin
 <p>This regression simulation is from Sapp et al. (2014). There are 20
 independent Gaussian random predictors with mean zero and a variance of 9.
 The prediction equation is:</p>
-<div class="sourceCode"><pre><code><span class="va">predictor_01</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/Trig.html" class="external-link">sin</a></span><span class="op">(</span><span class="va">predictor_02</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html" class="external-link">log</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html" class="external-link">abs</a></span><span class="op">(</span><span class="va">predictor_03</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
- <span class="va">predictor_04</span><span class="op">^</span><span class="fl">2</span> <span class="op">+</span> <span class="va">predictor_05</span> <span class="op">*</span> <span class="va">predictor_06</span> <span class="op">+</span>
- <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html" class="external-link">ifelse</a></span><span class="op">(</span><span class="va">predictor_07</span> <span class="op">*</span> <span class="va">predictor_08</span> <span class="op">*</span> <span class="va">predictor_09</span> <span class="op">&lt;</span> <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span> <span class="op">+</span>
- <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html" class="external-link">ifelse</a></span><span class="op">(</span><span class="va">predictor_10</span> <span class="op">&gt;</span> <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span> <span class="op">+</span> <span class="va">predictor_11</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html" class="external-link">ifelse</a></span><span class="op">(</span><span class="va">predictor_11</span> <span class="op">&gt;</span> <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span> <span class="op">+</span>
- <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html" class="external-link">sqrt</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html" class="external-link">abs</a></span><span class="op">(</span><span class="va">predictor_12</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/Trig.html" class="external-link">cos</a></span><span class="op">(</span><span class="va">predictor_13</span><span class="op">)</span> <span class="op">+</span> <span class="fl">2</span> <span class="op">*</span> <span class="va">predictor_14</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html" class="external-link">abs</a></span><span class="op">(</span><span class="va">predictor_15</span><span class="op">)</span> <span class="op">+</span>
- <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html" class="external-link">ifelse</a></span><span class="op">(</span><span class="va">predictor_16</span> <span class="op">&lt;</span> <span class="op">-</span><span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span> <span class="op">+</span> <span class="va">predictor_17</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html" class="external-link">ifelse</a></span><span class="op">(</span><span class="va">predictor_17</span> <span class="op">&lt;</span> <span class="op">-</span><span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span> <span class="op">-</span>
- <span class="fl">2</span> <span class="op">*</span> <span class="va">predictor_18</span> <span class="op">-</span> <span class="va">predictor_19</span> <span class="op">*</span> <span class="va">predictor_20</span></code></pre></div>
+<div class="sourceCode"><pre><code><span></span>
+<span><span class="va">predictor_01</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/Trig.html" class="external-link">sin</a></span><span class="op">(</span><span class="va">predictor_02</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html" class="external-link">log</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html" class="external-link">abs</a></span><span class="op">(</span><span class="va">predictor_03</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span> <span class="va">predictor_04</span><span class="op">^</span><span class="fl">2</span> <span class="op">+</span> <span class="va">predictor_05</span> <span class="op">*</span> <span class="va">predictor_06</span> <span class="op">+</span></span>
+<span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html" class="external-link">ifelse</a></span><span class="op">(</span><span class="va">predictor_07</span> <span class="op">*</span> <span class="va">predictor_08</span> <span class="op">*</span> <span class="va">predictor_09</span> <span class="op">&lt;</span> <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span> <span class="op">+</span></span>
+<span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html" class="external-link">ifelse</a></span><span class="op">(</span><span class="va">predictor_10</span> <span class="op">&gt;</span> <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span> <span class="op">+</span> <span class="va">predictor_11</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html" class="external-link">ifelse</a></span><span class="op">(</span><span class="va">predictor_11</span> <span class="op">&gt;</span> <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span> <span class="op">+</span></span>
+<span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html" class="external-link">sqrt</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html" class="external-link">abs</a></span><span class="op">(</span><span class="va">predictor_12</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/Trig.html" class="external-link">cos</a></span><span class="op">(</span><span class="va">predictor_13</span><span class="op">)</span> <span class="op">+</span> <span class="fl">2</span> <span class="op">*</span> <span class="va">predictor_14</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html" class="external-link">abs</a></span><span class="op">(</span><span class="va">predictor_15</span><span class="op">)</span> <span class="op">+</span></span>
+<span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html" class="external-link">ifelse</a></span><span class="op">(</span><span class="va">predictor_16</span> <span class="op">&lt;</span> <span class="op">-</span><span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span> <span class="op">+</span> <span class="va">predictor_17</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html" class="external-link">ifelse</a></span><span class="op">(</span><span class="va">predictor_17</span> <span class="op">&lt;</span> <span class="op">-</span><span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span> <span class="op">-</span></span>
+<span> <span class="fl">2</span> <span class="op">*</span> <span class="va">predictor_18</span> <span class="op">-</span> <span class="va">predictor_19</span> <span class="op">*</span> <span class="va">predictor_20</span></span></code></pre></div>
 
 <p>The error is Gaussian with mean zero and variance 9.</p>
 </div>
@@ -186,11 +208,12 @@ prediction equation has an intercept of one and identical linear effects of
 <p>This is a regression simulation from van der Laan et al. (2007) with ten
 random Bernoulli variables that have a 40% probability of being a value of
 one. The true regression equation is:</p>
-<div class="sourceCode"><pre><code><span class="fl">2</span> <span class="op">*</span> <span class="va">predictor_01</span> <span class="op">*</span> <span class="va">predictor_10</span> <span class="op">+</span> <span class="fl">4</span> <span class="op">*</span> <span class="va">predictor_02</span> <span class="op">*</span> <span class="va">predictor_07</span> <span class="op">+</span>
-  <span class="fl">3</span> <span class="op">*</span> <span class="va">predictor_04</span> <span class="op">*</span> <span class="va">predictor_05</span> <span class="op">-</span> <span class="fl">5</span> <span class="op">*</span> <span class="va">predictor_06</span> <span class="op">*</span> <span class="va">predictor_10</span> <span class="op">+</span>
-  <span class="fl">3</span> <span class="op">*</span> <span class="va">predictor_08</span> <span class="op">*</span> <span class="va">predictor_09</span> <span class="op">+</span> <span class="va">predictor_01</span> <span class="op">*</span> <span class="va">predictor_02</span> <span class="op">*</span> <span class="va">predictor_04</span> <span class="op">-</span>
-  <span class="fl">2</span> <span class="op">*</span> <span class="va">predictor_07</span> <span class="op">*</span> <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">predictor_06</span><span class="op">)</span> <span class="op">*</span> <span class="va">predictor_02</span> <span class="op">*</span> <span class="va">predictor_09</span> <span class="op">-</span>
-  <span class="fl">4</span> <span class="op">*</span> <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">predictor_10</span><span class="op">)</span> <span class="op">*</span> <span class="va">predictor_01</span> <span class="op">*</span> <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">predictor_04</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode"><pre><code><span></span>
+<span><span class="fl">2</span> <span class="op">*</span> <span class="va">predictor_01</span> <span class="op">*</span> <span class="va">predictor_10</span> <span class="op">+</span> <span class="fl">4</span> <span class="op">*</span> <span class="va">predictor_02</span> <span class="op">*</span> <span class="va">predictor_07</span> <span class="op">+</span></span>
+<span>  <span class="fl">3</span> <span class="op">*</span> <span class="va">predictor_04</span> <span class="op">*</span> <span class="va">predictor_05</span> <span class="op">-</span> <span class="fl">5</span> <span class="op">*</span> <span class="va">predictor_06</span> <span class="op">*</span> <span class="va">predictor_10</span> <span class="op">+</span></span>
+<span>  <span class="fl">3</span> <span class="op">*</span> <span class="va">predictor_08</span> <span class="op">*</span> <span class="va">predictor_09</span> <span class="op">+</span> <span class="va">predictor_01</span> <span class="op">*</span> <span class="va">predictor_02</span> <span class="op">*</span> <span class="va">predictor_04</span> <span class="op">-</span></span>
+<span>  <span class="fl">2</span> <span class="op">*</span> <span class="va">predictor_07</span> <span class="op">*</span> <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">predictor_06</span><span class="op">)</span> <span class="op">*</span> <span class="va">predictor_02</span> <span class="op">*</span> <span class="va">predictor_09</span> <span class="op">-</span></span>
+<span>  <span class="fl">4</span> <span class="op">*</span> <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">predictor_10</span><span class="op">)</span> <span class="op">*</span> <span class="va">predictor_01</span> <span class="op">*</span> <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">predictor_04</span><span class="op">)</span></span></code></pre></div>
 
 <p>The error term is standard normal.</p>
 </div>
@@ -201,9 +224,10 @@ one. The true regression equation is:</p>
 
 <p>This is another regression simulation from van der Laan et al. (2007)  with
 twenty Gaussians with mean zero and variance 16. The prediction equation is:</p>
-<div class="sourceCode"><pre><code><span class="va">predictor_01</span> <span class="op">*</span> <span class="va">predictor_02</span> <span class="op">+</span> <span class="va">predictor_10</span><span class="op">^</span><span class="fl">2</span> <span class="op">-</span> <span class="va">predictor_03</span> <span class="op">*</span> <span class="va">predictor_17</span> <span class="op">-</span>
- <span class="va">predictor_15</span> <span class="op">*</span> <span class="va">predictor_04</span> <span class="op">+</span> <span class="va">predictor_09</span> <span class="op">*</span> <span class="va">predictor_05</span> <span class="op">+</span> <span class="va">predictor_19</span> <span class="op">-</span>
- <span class="va">predictor_20</span><span class="op">^</span><span class="fl">2</span> <span class="op">+</span> <span class="va">predictor_09</span> <span class="op">*</span> <span class="va">predictor_08</span></code></pre></div>
+<div class="sourceCode"><pre><code><span></span>
+<span><span class="va">predictor_01</span> <span class="op">*</span> <span class="va">predictor_02</span> <span class="op">+</span> <span class="va">predictor_10</span><span class="op">^</span><span class="fl">2</span> <span class="op">-</span> <span class="va">predictor_03</span> <span class="op">*</span> <span class="va">predictor_17</span> <span class="op">-</span></span>
+<span> <span class="va">predictor_15</span> <span class="op">*</span> <span class="va">predictor_04</span> <span class="op">+</span> <span class="va">predictor_09</span> <span class="op">*</span> <span class="va">predictor_05</span> <span class="op">+</span> <span class="va">predictor_19</span> <span class="op">-</span></span>
+<span> <span class="va">predictor_20</span><span class="op">^</span><span class="fl">2</span> <span class="op">+</span> <span class="va">predictor_09</span> <span class="op">*</span> <span class="va">predictor_08</span></span></code></pre></div>
 
 <p>The error term is also Gaussian with mean zero and variance 16.</p>
 </div>
@@ -233,8 +257,8 @@ Applied Statistics</em>, 41:6, 1247-1259, DOI: 10.1080/02664763.2013.864263</p>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu">sim_regression</span><span class="op">(</span><span class="fl">100</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">sim_regression</span><span class="op">(</span><span class="fl">100</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 100 × 21</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    outcome predictor_01 predictor_02 predictor_03 predictor_04</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
@@ -254,7 +278,7 @@ Applied Statistics</em>, 41:6, 1247-1259, DOI: 10.1080/02664763.2013.864263</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   predictor_12 &lt;dbl&gt;, predictor_13 &lt;dbl&gt;, predictor_14 &lt;dbl&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   predictor_15 &lt;dbl&gt;, predictor_16 &lt;dbl&gt;, predictor_17 &lt;dbl&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   predictor_18 &lt;dbl&gt;, predictor_19 &lt;dbl&gt;, predictor_20 &lt;dbl&gt;</span></span>
-<span class="r-in"><span class="fu">sim_classification</span><span class="op">(</span><span class="fl">100</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">sim_classification</span><span class="op">(</span><span class="fl">100</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 100 × 16</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    class  two_factor_1 two_factor_2 non_linear_1 non_linear_2 non_linear_3</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
@@ -285,7 +309,7 @@ Applied Statistics</em>, 41:6, 1247-1259, DOI: 10.1080/02664763.2013.864263</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
 </div>
 
   </div></footer></body></html>
