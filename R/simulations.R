@@ -5,7 +5,7 @@
 #'
 #' @param num_samples Number of data points to simulate.
 #' @param method A character string for the simulation method. For
-#' classification, the single current option is "caret". For classification,
+#' classification, the single current option is "caret". For regression,
 #' values can be "sapp_2014_1", "sapp_2014_2", "van_der_laan_2007_1", or
 #' "van_der_laan_2007_2". See Details below.
 #' @param intercept The intercept for the linear predictor.
