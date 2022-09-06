@@ -1,6 +1,6 @@
 Package: modeldata
 Title: Data Sets Useful for Modeling Examples
-Version: 1.0.0.9000
+Version: 1.0.1
 Authors@R: c(
     person("Max", "Kuhn", , "max@rstudio.com", role = c("aut", "cre")),
     person("RStudio", role = c("cph", "fnd"))
@@ -28,4 +28,4 @@ Encoding: UTF-8
 LazyData: true
 LazyDataCompression: xz
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.2.9000
+RoxygenNote: 7.2.1.9000

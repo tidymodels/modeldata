@@ -24,7 +24,9 @@ rather than predictors.
 See this links for the sources below for more information as well as
 \code{?AmesHousing::make_ames}.
 
-For these data, the training materials typically use:\if{html}{\out{<div class="sourceCode r">}}\preformatted{library(tidymodels)
+For these data, the training materials typically use:
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{library(tidymodels)
 
 set.seed(4595)
 data_split <- initial_split(ames, strata = "Sale_Price")
