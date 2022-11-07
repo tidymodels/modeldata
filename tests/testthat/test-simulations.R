@@ -3,6 +3,7 @@ test_that("classification simulation", {
   dat_1 <- sim_classification(500, num_linear = 0)
   dat_2 <- sim_classification(10, num_linear = 11)
   dat_3 <- sim_classification(1000, num_linear = 1, intercept = 50)
+  dat_4 <- sim_classification(500, num_linear = 0, keep_truth = TRUE)
 
   expect_equal(
     names(dat_1),
@@ -25,6 +26,13 @@ test_that("classification simulation", {
       "non_linear_3", "linear_1"
     )
   )
+  expect_equal(
+    names(dat_4),
+    c(
+      "class", "two_factor_1", "two_factor_2", "non_linear_1", "non_linear_2",
+      "non_linear_3", ".truth"
+    )
+  )
   expect_equal(nrow(dat_1), 500)
   expect_equal(nrow(dat_2), 10)
   expect_equal(nrow(dat_3), 1000)
@@ -41,7 +49,9 @@ test_that("classification simulation", {
 test_that("sapp_2014_1 simulation", {
   set.seed(1)
   dat_1 <- sim_regression(10, method = "sapp_2014_1")
+  dat_2 <- sim_regression(10, method = "sapp_2014_1", keep_truth = TRUE)
   expect_equal(names(dat_1), c("outcome", modeldata:::names0(20, "predictor_")))
+  expect_equal(names(dat_2), c("outcome", modeldata:::names0(20, "predictor_"), ".truth"))
   expect_equal(nrow(dat_1), 10)
   expect_true(all(vapply(dat_1, is.numeric, logical(1))))
   expect_error(
@@ -53,7 +63,9 @@ test_that("sapp_2014_1 simulation", {
 test_that("sapp_2014_2 simulation", {
   set.seed(1)
   dat_1 <- sim_regression(10, method = "sapp_2014_2")
+  dat_2 <- sim_regression(10, method = "sapp_2014_2", keep_truth = TRUE)
   expect_equal(names(dat_1), c("outcome", modeldata:::names0(200, "predictor_")))
+  expect_equal(names(dat_2), c("outcome", modeldata:::names0(200, "predictor_"), ".truth"))
   expect_equal(nrow(dat_1), 10)
   expect_true(all(vapply(dat_1, is.numeric, logical(1))))
 })
@@ -62,7 +74,9 @@ test_that("van_der_laan_2007_1 simulation", {
   set.seed(1)
   dat_1 <- sim_regression(10, method = "van_der_laan_2007_1")
   dat_2 <- sim_regression(10, method = "van_der_laan_2007_1", factors = TRUE)
+  dat_3 <- sim_regression(10, method = "van_der_laan_2007_1", keep_truth = TRUE)
   expect_equal(names(dat_1), c("outcome", modeldata:::names0(10, "predictor_")))
+  expect_equal(names(dat_3), c("outcome", modeldata:::names0(10, "predictor_"), ".truth"))
   expect_equal(nrow(dat_1), 10)
   expect_true(all(vapply(dat_1, is.numeric, logical(1))))
   expect_true(all(vapply(dat_1[, -1], is.integer, logical(1))))
@@ -73,7 +87,9 @@ test_that("van_der_laan_2007_1 simulation", {
 test_that("van_der_laan_2007_2 simulation", {
   set.seed(1)
   dat_1 <- sim_regression(10, method = "van_der_laan_2007_2")
+  dat_2 <- sim_regression(10, method = "van_der_laan_2007_2", keep_truth = TRUE)
   expect_equal(names(dat_1), c("outcome", modeldata:::names0(20, "predictor_")))
+  expect_equal(names(dat_2), c("outcome", modeldata:::names0(20, "predictor_"), ".truth"))
   expect_equal(nrow(dat_1), 10)
   expect_true(all(vapply(dat_1, is.numeric, logical(1))))
 })

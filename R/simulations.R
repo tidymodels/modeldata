@@ -26,6 +26,8 @@
 #' in an `outcome` column that contains independent standard normal values.
 #' @param num_classes When `outcome = "classification"`, the number of classes
 #' to simulate.
+#' @param keep_truth A logical: should the true outcome value be retained for
+#' the data? If so, the column name is `.truth`.
 #'
 #' @details
 #' These functions provide several supervised simulation methods (and one
@@ -146,7 +148,8 @@
 #' sim_classification(100)
 #' @export
 sim_classification <- function(num_samples = 100, method = "caret",
-                               intercept = -5, num_linear = 10) {
+                               intercept = -5, num_linear = 10,
+                               keep_truth = FALSE) {
   method <- rlang::arg_match0(method, "caret", arg_nm = "method")
 
   if (method == "caret") {
@@ -182,7 +185,7 @@ sim_classification <- function(num_samples = 100, method = "caret",
       lin_expr <-
         purrr::map2(lin_coefs, lin_symbols, ~ rlang::expr(!!.x * !!.y)) %>%
         purrr::reduce(function(l, r) rlang::expr(!!l + !!r))
-      linear_pred <- rlang::expr(!!linear_pred + !!lin_expr)
+      .truth <- rlang::expr(!!linear_pred + !!lin_expr)
       dat <- cbind(dat, dat_linear)
     }
   }
@@ -191,13 +194,17 @@ sim_classification <- function(num_samples = 100, method = "caret",
     tibble::as_tibble(dat) %>%
     dplyr::mutate(
       linear_pred = rlang::eval_tidy(linear_pred, data = .),
-      true_prob = stats::binomial()$linkinv(linear_pred),
+      .truth = stats::binomial()$linkinv(linear_pred),
       rand = stats::runif(num_samples),
-      class = ifelse(rand <= true_prob, "class_1", "class_2"),
+      class = ifelse(rand <= .truth, "class_1", "class_2"),
       class = factor(class, levels = c("class_1", "class_2"))
     ) %>%
-    dplyr::select(-linear_pred, -true_prob, -rand) %>%
+    dplyr::select(-linear_pred, -rand) %>%
     dplyr::relocate(class)
+
+  if (!keep_truth) {
+    dat <- dplyr::select(dat, -.truth)
+  }
 
   dat
 }
@@ -205,16 +212,23 @@ sim_classification <- function(num_samples = 100, method = "caret",
 #' @export
 #' @rdname sim_classification
 sim_regression <-
-  function(num_samples = 100, method = "sapp_2014_1", std_dev = NULL, factors = FALSE) {
+  function(num_samples = 100, method = "sapp_2014_1", std_dev = NULL, factors = FALSE, keep_truth = FALSE) {
     reg_methods <- c("sapp_2014_1", "sapp_2014_2", "van_der_laan_2007_1", "van_der_laan_2007_2")
     method <- rlang::arg_match0(method, reg_methods, arg_nm = "method")
 
-    switch(method,
-           sapp_2014_1 = sapp_2014_1(num_samples, std_dev),
-           sapp_2014_2 = sapp_2014_2(num_samples, std_dev),
-           van_der_laan_2007_1 = van_der_laan_2007_1(num_samples, std_dev, factors = factors),
-           van_der_laan_2007_2 = van_der_laan_2007_2(num_samples, std_dev)
-    )
+    dat <-
+      switch(method,
+             sapp_2014_1 = sapp_2014_1(num_samples, std_dev),
+             sapp_2014_2 = sapp_2014_2(num_samples, std_dev),
+             van_der_laan_2007_1 = van_der_laan_2007_1(num_samples, std_dev, factors = factors),
+             van_der_laan_2007_2 = van_der_laan_2007_2(num_samples, std_dev)
+      )
+
+    if (!keep_truth) {
+      dat <- dplyr::select(dat, -.truth)
+    }
+
+    dat
   }
 
 
@@ -239,10 +253,9 @@ sapp_2014_1 <- function(num_samples = 100, std_dev = NULL) {
   dat <-
     tibble::as_tibble(dat) %>%
     dplyr::mutate(
-      linear_pred = rlang::eval_tidy(slc_14, data = .),
-      outcome = linear_pred + stats::rnorm(num_samples, sd = std_dev)
+      .truth = rlang::eval_tidy(slc_14, data = .),
+      outcome = .truth + stats::rnorm(num_samples, sd = std_dev)
     ) %>%
-    dplyr::select(-linear_pred) %>%
     dplyr::relocate(outcome)
 
   dat
@@ -257,9 +270,11 @@ sapp_2014_2 <- function(num_samples = 100, std_dev = 4) {
 
   slc_14 <- function(x) sum(log(abs(x)))
 
-  y <- apply(dat, 1, slc_14) + stats::rnorm(num_samples, sd = std_dev) - 1
+  .truth <- apply(dat, 1, slc_14)
+  y <- .truth + stats::rnorm(num_samples, sd = std_dev) - 1
   dat <- tibble::as_tibble(dat)
   dat$outcome <- y
+  dat$.truth <- .truth
   dplyr::relocate(dat, outcome)
 }
 
@@ -282,10 +297,9 @@ van_der_laan_2007_1 <- function(num_samples = 100, std_dev = NULL, factors = FAL
   dat <-
     tibble::as_tibble(dat) %>%
     dplyr::mutate(
-      linear_pred = rlang::eval_tidy(lph_07, data = .),
-      outcome = linear_pred + stats::rnorm(num_samples, sd = std_dev)
+      .truth = rlang::eval_tidy(lph_07, data = .),
+      outcome = .truth + stats::rnorm(num_samples, sd = std_dev)
     ) %>%
-    dplyr::select(-linear_pred) %>%
     dplyr::relocate(outcome)
 
   if (factors) {
@@ -317,10 +331,9 @@ van_der_laan_2007_2 <- function(num_samples = 100, std_dev = NULL) {
   dat <-
     tibble::as_tibble(dat) %>%
     dplyr::mutate(
-      linear_pred = rlang::eval_tidy(lph_07, data = .),
-      outcome = linear_pred + stats::rnorm(num_samples, sd = std_dev)
+      .truth = rlang::eval_tidy(lph_07, data = .),
+      outcome = .truth + stats::rnorm(num_samples, sd = std_dev)
     ) %>%
-    dplyr::select(-linear_pred) %>%
     dplyr::relocate(outcome)
 
   dat
