@@ -58,14 +58,16 @@
 <span>  num_samples <span class="op">=</span> <span class="fl">100</span>,</span>
 <span>  method <span class="op">=</span> <span class="st">"caret"</span>,</span>
 <span>  intercept <span class="op">=</span> <span class="op">-</span><span class="fl">5</span>,</span>
-<span>  num_linear <span class="op">=</span> <span class="fl">10</span></span>
+<span>  num_linear <span class="op">=</span> <span class="fl">10</span>,</span>
+<span>  keep_truth <span class="op">=</span> <span class="cn">FALSE</span></span>
 <span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu">sim_regression</span><span class="op">(</span></span>
 <span>  num_samples <span class="op">=</span> <span class="fl">100</span>,</span>
 <span>  method <span class="op">=</span> <span class="st">"sapp_2014_1"</span>,</span>
 <span>  std_dev <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  factors <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span>  factors <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  keep_truth <span class="op">=</span> <span class="cn">FALSE</span></span>
 <span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu">sim_noise</span><span class="op">(</span></span>
@@ -97,6 +99,11 @@ values can be "sapp_2014_1", "sapp_2014_2", "van_der_laan_2007_1", or
 
 <dt>num_linear</dt>
 <dd><p>Number of diminishing linear effects.</p></dd>
+
+
+<dt>keep_truth</dt>
+<dd><p>A logical: should the true outcome value be retained for
+the data? If so, the column name is <code>.truth</code>.</p></dd>
 
 
 <dt>std_dev</dt>
@@ -292,7 +299,7 @@ Applied Statistics</em>, 41:6, 1247-1259, DOI: 10.1080/02664763.2013.864263</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> class_1  2.74    2.51    -<span style="color: #BB0000;">0.751</span>  0.459   0.931   -<span style="color: #BB0000;">0.539</span>  -<span style="color: #BB0000;">0.284</span>  1.38  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> class_2  0.076<span style="text-decoration: underline;">3</span> -<span style="color: #BB0000;">0.679</span>    0.307  0.220   0.771   -<span style="color: #BB0000;">1.30</span>    0.467  0.887 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> class_2  0.059<span style="text-decoration: underline;">1</span> -<span style="color: #BB0000;">2.35</span>     0.402  0.566   0.712    0.190  -<span style="color: #BB0000;">1.11</span>   0.017<span style="text-decoration: underline;">5</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> class_1 -<span style="color: #BB0000;">1.39</span>   -<span style="color: #BB0000;">2.10</span>    -<span style="color: #BB0000;">0.887</span>  0.015<span style="text-decoration: underline;">4</span>  0.078<span style="text-decoration: underline;">4</span>  -<span style="color: #BB0000;">3.54</span>   -<span style="color: #BB0000;">0.108</span> -<span style="color: #BB0000;">1.63</span>  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> class_2 -<span style="color: #BB0000;">1.39</span>   -<span style="color: #BB0000;">2.10</span>    -<span style="color: #BB0000;">0.887</span>  0.015<span style="text-decoration: underline;">4</span>  0.078<span style="text-decoration: underline;">4</span>  -<span style="color: #BB0000;">3.54</span>   -<span style="color: #BB0000;">0.108</span> -<span style="color: #BB0000;">1.63</span>  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 90 more rows, 7 more variables: linear_04 &lt;dbl&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   linear_05 &lt;dbl&gt;, linear_06 &lt;dbl&gt;, linear_07 &lt;dbl&gt;, linear_08 &lt;dbl&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   linear_09 &lt;dbl&gt;, linear_10 &lt;dbl&gt;, and abbreviated variable names</span></span>
