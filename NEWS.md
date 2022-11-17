@@ -1,5 +1,7 @@
 # modeldata (development version)
 
+* Added a `keep_truth` argument to the supervised simulation functions. This retains the column that defines the error free simulated value of the outcome. This numeric column is called `.truth`. 
+
 # modeldata 1.0.1
 
 * Small update to fix HTML  for CRAN. 

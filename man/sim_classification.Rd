@@ -10,14 +10,16 @@ sim_classification(
   num_samples = 100,
   method = "caret",
   intercept = -5,
-  num_linear = 10
+  num_linear = 10,
+  keep_truth = FALSE
 )
 
 sim_regression(
   num_samples = 100,
   method = "sapp_2014_1",
   std_dev = NULL,
-  factors = FALSE
+  factors = FALSE,
+  keep_truth = FALSE
 )
 
 sim_noise(
@@ -40,6 +42,9 @@ values can be "sapp_2014_1", "sapp_2014_2", "van_der_laan_2007_1", or
 \item{intercept}{The intercept for the linear predictor.}
 
 \item{num_linear}{Number of diminishing linear effects.}
+
+\item{keep_truth}{A logical: should the true outcome value be retained for
+the data? If so, the column name is \code{.truth}.}
 
 \item{std_dev}{Gaussian distribution standard deviation for residuals.
 Default values are shown below in Details.}
