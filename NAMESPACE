@@ -2,6 +2,7 @@
 
 export("%>%")
 export(sim_classification)
+export(sim_logistic)
 export(sim_noise)
 export(sim_regression)
 importFrom(dplyr,"%>%")

@@ -4,6 +4,7 @@
 \alias{sim_classification}
 \alias{sim_regression}
 \alias{sim_noise}
+\alias{sim_logistic}
 \title{Simulate datasets}
 \usage{
 sim_classification(
@@ -30,6 +31,8 @@ sim_noise(
   num_classes = 2,
   cov_param = 0
 )
+
+sim_logistic(num_samples, eqn, correlation = 0, keep_truth = FALSE)
 }
 \arguments{
 \item{num_samples}{Number of data points to simulate.}
@@ -68,6 +71,12 @@ to simulate.}
 
 \item{cov_param}{A single numeric value for the exchangeable correlation
 value or the base of the Toeplitz structure. See Details below.}
+
+\item{eqn}{An R expression or  (one sided) formula that involves variables
+\code{A} and \code{B} that is used to compute the linear predictor.}
+
+\item{correlation}{A single numeric value for the correlation between variables
+\code{A} and \code{B}.}
 }
 \description{
 These functions can be used to generate simulated data for supervised
@@ -91,7 +100,7 @@ The intercept is a parameter for the simulation and can be used to control
 the amount of class imbalance.
 
 The second set of effects are linear with coefficients that alternate signs
-and have a sequence of values between 2.5 and 0.025. For example, if there
+and have a sequence of values between 2.5 and 0.25. For example, if there
 were four predictors in this set, their contribution to the log-odds would
 be
 
@@ -181,11 +190,35 @@ multivariate normal with non-diagonal covariance matrices. For
 of \code{cov_param}. With \code{cov_type = "toeplitz"}, the covariances have an
 exponential pattern (see example below).
 }
+
+\subsection{Logistic simulation}{
+
+\code{sim_logistic()} provides a flexible interface to simulating a logistic
+regression model with two multivariate normal variables \code{A} and \code{B} (with
+zero mean, unit variances and correlation determined by the \code{correlation}
+argument).
+}
 }
 \examples{
 set.seed(1)
 sim_regression(100)
 sim_classification(100)
+
+if (rlang::is_installed("ggplot2")) {
+# Flexible logistic simulation
+  library(ggplot2)
+
+  sim_logistic(1000, ~ .1 + 2 * A - 3 * B + 1 * A *B, corr = .7) \%>\%
+    ggplot(aes(A, B, col = class)) +
+    geom_point(alpha = 1/2) +
+    coord_equal()
+
+  f_step <- ~ 10 * xor(A > 0, B < 0)
+  sim_logistic(1000, f_step, keep_truth = TRUE) \%>\%
+    ggplot(aes(A, B, col = class)) +
+    geom_point(alpha = 1/2) +
+    coord_equal()
+}
 }
 \references{
 van der Laan, Mark J., Polley, Eric C and Hubbard, Alan E.. "Super Learner"
