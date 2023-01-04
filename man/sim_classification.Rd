@@ -204,8 +204,9 @@ set.seed(1)
 sim_regression(100)
 sim_classification(100)
 
+# Flexible logistic regression simulation
 if (rlang::is_installed("ggplot2")) {
-# Flexible logistic simulation
+  library(dplyr)
   library(ggplot2)
 
   sim_logistic(1000, ~ .1 + 2 * A - 3 * B + 1 * A *B, corr = .7) \%>\%
@@ -213,8 +214,11 @@ if (rlang::is_installed("ggplot2")) {
     geom_point(alpha = 1/2) +
     coord_equal()
 
-  f_step <- ~ 10 * xor(A > 0, B < 0)
-  sim_logistic(1000, f_step, keep_truth = TRUE) \%>\%
+  f_xor <- ~ 10 * xor(A > 0, B < 0)
+  # or
+  f_xor <- rlang::expr(10 * xor(A > 0, B < 0))
+
+  sim_logistic(1000, f_xor, keep_truth = TRUE) \%>\%
     ggplot(aes(A, B, col = class)) +
     geom_point(alpha = 1/2) +
     coord_equal()
