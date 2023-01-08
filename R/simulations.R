@@ -28,6 +28,10 @@
 #' to simulate.
 #' @param keep_truth A logical: should the true outcome value be retained for
 #' the data? If so, the column name is `.truth`.
+#' @param eqn An R expression or  (one sided) formula that involves variables
+#' `A` and `B` that is used to compute the linear predictor.
+#' @param correlation A single numeric value for the correlation between variables
+#'  `A` and `B`.
 #'
 #' @details
 #' These functions provide several supervised simulation methods (and one
@@ -48,7 +52,7 @@
 #' the amount of class imbalance.
 #'
 #' The second set of effects are linear with coefficients that alternate signs
-#' and have a sequence of values between 2.5 and 0.025. For example, if there
+#' and have a sequence of values between 2.5 and 0.25. For example, if there
 #' were four predictors in this set, their contribution to the log-odds would
 #' be
 #'
@@ -133,6 +137,13 @@
 #' of `cov_param`. With `cov_type = "toeplitz"`, the covariances have an
 #' exponential pattern (see example below).
 #'
+#' ## Logistic simulation
+#'
+#' `sim_logistic()` provides a flexible interface to simulating a logistic
+#' regression model with two multivariate normal variables `A` and `B` (with
+#' zero mean, unit variances and correlation determined by the `correlation`
+#' argument).
+#'
 #' @references
 #' van der Laan, Mark J., Polley, Eric C and Hubbard, Alan E.. "Super Learner"
 #' _Statistical Applications in Genetics and Molecular Biology_, vol. 6, no. 1,
@@ -146,6 +157,26 @@
 #' set.seed(1)
 #' sim_regression(100)
 #' sim_classification(100)
+#'
+#' # Flexible logistic regression simulation
+#' if (rlang::is_installed("ggplot2")) {
+#'   library(dplyr)
+#'   library(ggplot2)
+#'
+#'   sim_logistic(1000, ~ .1 + 2 * A - 3 * B + 1 * A *B, corr = .7) %>%
+#'     ggplot(aes(A, B, col = class)) +
+#'     geom_point(alpha = 1/2) +
+#'     coord_equal()
+#'
+#'   f_xor <- ~ 10 * xor(A > 0, B < 0)
+#'   # or
+#'   f_xor <- rlang::expr(10 * xor(A > 0, B < 0))
+#'
+#'   sim_logistic(1000, f_xor, keep_truth = TRUE) %>%
+#'     ggplot(aes(A, B, col = class)) +
+#'     geom_point(alpha = 1/2) +
+#'     coord_equal()
+#' }
 #' @export
 sim_classification <- function(num_samples = 100, method = "caret",
                                intercept = -5, num_linear = 10,
@@ -380,6 +411,32 @@ sim_noise <- function(num_samples, num_vars, cov_type = "exchangeable",
   }
   dat
 }
+
+#' @export
+#' @rdname sim_classification
+sim_logistic <- function(num_samples, eqn, correlation = 0, keep_truth = FALSE) {
+  sigma <- matrix(c(1, correlation, correlation, 1), 2, 2)
+  eqn <- rlang::get_expr(eqn)
+  dat <-
+    data.frame(MASS::mvrnorm(n = num_samples, c(0, 0), sigma)) %>%
+    stats::setNames(LETTERS[1:2]) %>%
+    dplyr::mutate(
+      .linear_pred = rlang::eval_tidy(eqn, data = .),
+      .linear_pred = as.numeric(.linear_pred),
+      .truth = stats::binomial()$linkinv(.linear_pred),
+      .rand = stats::runif(num_samples),
+      class = ifelse(.rand <= .truth, "one", "two"),
+      class = factor(class, levels = c("one", "two"))
+    ) %>%
+    dplyr::select(-.rand) %>%
+    tibble::as_tibble()
+
+  if (!keep_truth) {
+    dat <- dat %>% dplyr::select(-.truth, -.linear_pred)
+  }
+  dat
+}
+
 
 
 names0 <- function(num, prefix = "x") {

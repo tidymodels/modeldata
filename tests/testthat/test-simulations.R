@@ -126,3 +126,13 @@ test_that("noise simulation", {
   expect_equal(levels(dat_4$class), paste0("class_", 1:2))
   expect_equal(levels(dat_5$class), modeldata:::names0(10, "class_"))
 })
+
+
+test_that("logistic simulation", {
+  set.seed(1)
+  dat_1 <- sim_logistic(10, ~ A)
+  dat_2 <- sim_logistic(10, rlang::expr(~ B), keep_truth = TRUE)
+  expect_equal(names(dat_1), c(LETTERS[1:2], "class"))
+  expect_equal(names(dat_2), c(LETTERS[1:2], ".linear_pred", ".truth", "class"))
+  expect_equal(nrow(dat_1), 10)
+})
