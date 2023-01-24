@@ -72,8 +72,10 @@ to simulate.}
 \item{cov_param}{A single numeric value for the exchangeable correlation
 value or the base of the Toeplitz structure. See Details below.}
 
-\item{eqn}{An R expression or  (one sided) formula that involves variables
-\code{A} and \code{B} that is used to compute the linear predictor.}
+\item{eqn}{An R expression or  (one sided) formula that only involves variables
+\code{A} and \code{B} that is used to compute the linear predictor. External objects
+should not be used as symbols; see the examples below on how to use external
+objects in the equations.}
 
 \item{correlation}{A single numeric value for the correlation between variables
 \code{A} and \code{B}.}
@@ -181,6 +183,22 @@ predictor_01 * predictor_02 + predictor_10^2 - predictor_03 * predictor_17 -
 The error term is also Gaussian with mean zero and variance 16.
 }
 
+\subsection{\code{method = "hooker_2004"}}{
+
+Hooker (2004) and Sorokina \emph{at al} (2008) used the following:
+
+\preformatted{
+ pi ^ (predictor_01 * predictor_02) * sqrt( 2 * predictor_03 ) -
+ asin(predictor_04) + log(predictor_05  + predictor_05) -
+ (predictor_09 / predictor_10) * sqrt (predictor_07 / predictor_08) -
+ predictor_02 * predictor_07
+}
+
+Predictors 1, 2, 3, 6, 7, and 9 are standard uniform while the others are
+uniform on \verb{[0.6, 1.0]}. The errors are normal with mean zero and default
+standard deviation of 0.25.
+}
+
 \subsection{\code{sim_noise()}}{
 
 This function simulates a number of random normal variables with mean zero.
@@ -223,13 +241,31 @@ if (rlang::is_installed("ggplot2")) {
     geom_point(alpha = 1/2) +
     coord_equal()
 }
+
+## How to use external symbols:
+
+a_coef <- 2
+# splice the value in using rlang's !! operator
+lp_eqn <- rlang::expr(!!a_coef * A+B)
+lp_eqn
+sim_logistic(5, lp_eqn)
 }
 \references{
-van der Laan, Mark J., Polley, Eric C and Hubbard, Alan E.. "Super Learner"
-\emph{Statistical Applications in Genetics and Molecular Biology}, vol. 6, no. 1,
-2007. DOI: 10.2202/1544-6115.1309.
+Van der Laan, M. J., Polley, E. C., & Hubbard, A. E. (2007). Super learner.
+\emph{Statistical applications in genetics and molecular biology}, 6(1).
+DOI: 10.2202/1544-6115.1309.
 
-Stephanie Sapp, Mark J. van der Laan & John Canny (2014) Subsemble: an
-ensemble method for combining subset-specific algorithm fits, \emph{Journal of
-Applied Statistics}, 41:6, 1247-1259, DOI: 10.1080/02664763.2013.864263
+Sapp, S., van der Laan, M. J., & Canny, J. (2014). Subsemble: an ensemble
+method for combining subset-specific algorithm fits. \emph{Journal of applied
+statistics}, 41(6), 1247-1259. DOI: 10.1080/02664763.2013.864263
+
+Hooker, G. (2004, August). Discovering additive structure in black box
+functions. In \emph{Proceedings of the tenth ACM SIGKDD international conference
+on Knowledge discovery and data mining} (pp. 575-580).
+DOI: 10.1145/1014052.1014122
+
+Sorokina, D., Caruana, R., Riedewald, M., & Fink, D. (2008, July). Detecting
+statistical interactions with additive groves of trees. In \emph{Proceedings of
+the 25th international conference on Machine learning} (pp. 1000-1007).
+DOI: 10.1145/1390156.1390282
 }

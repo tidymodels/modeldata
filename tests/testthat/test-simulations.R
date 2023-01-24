@@ -94,6 +94,16 @@ test_that("van_der_laan_2007_2 simulation", {
   expect_true(all(vapply(dat_1, is.numeric, logical(1))))
 })
 
+test_that("hooker_2004 simulation", {
+  set.seed(1)
+  dat_1 <- sim_regression(10, method = "hooker_2004")
+  dat_2 <- sim_regression(10, method = "hooker_2004", keep_truth = TRUE)
+  expect_equal(names(dat_1), c("outcome", modeldata:::names0(10, "predictor_")))
+  expect_equal(names(dat_2), c("outcome", modeldata:::names0(10, "predictor_"), ".truth"))
+  expect_equal(nrow(dat_1), 10)
+  expect_true(all(vapply(dat_1, is.numeric, logical(1))))
+})
+
 
 test_that("noise simulation", {
   set.seed(1)

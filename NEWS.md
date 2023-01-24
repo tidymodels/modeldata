@@ -2,7 +2,11 @@
 
 * Added a `keep_truth` argument to the supervised simulation functions. This retains the column that defines the error free simulated value of the outcome. This numeric column is called `.truth`. 
 
-* A new simulation function, `sim_logistic()` was added. 
+* A simulation functions were added: 
+
+  * `sim_logistic()` was added. 
+  
+  * A method for Hooker (2004) was added for `sim_regression()`. 
 
 # modeldata 1.0.1
 

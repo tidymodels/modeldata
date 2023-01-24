@@ -28,8 +28,10 @@
 #' to simulate.
 #' @param keep_truth A logical: should the true outcome value be retained for
 #' the data? If so, the column name is `.truth`.
-#' @param eqn An R expression or  (one sided) formula that involves variables
-#' `A` and `B` that is used to compute the linear predictor.
+#' @param eqn An R expression or  (one sided) formula that only involves variables
+#' `A` and `B` that is used to compute the linear predictor. External objects
+#' should not be used as symbols; see the examples below on how to use external
+#' objects in the equations.
 #' @param correlation A single numeric value for the correlation between variables
 #'  `A` and `B`.
 #'
@@ -128,6 +130,21 @@
 #'
 #' The error term is also Gaussian with mean zero and variance 16.
 #'
+#' ## `method = "hooker_2004"`
+#'
+#' Hooker (2004) and Sorokina _at al_ (2008) used the following:
+#'
+#' \preformatted{
+#'  pi ^ (predictor_01 * predictor_02) * sqrt( 2 * predictor_03 ) -
+#'  asin(predictor_04) + log(predictor_05  + predictor_05) -
+#'  (predictor_09 / predictor_10) * sqrt (predictor_07 / predictor_08) -
+#'  predictor_02 * predictor_07
+#' }
+#'
+#' Predictors 1, 2, 3, 6, 7, and 9 are standard uniform while the others are
+#' uniform on `[0.6, 1.0]`. The errors are normal with mean zero and default
+#' standard deviation of 0.25.
+#'
 #' ## `sim_noise()`
 #'
 #' This function simulates a number of random normal variables with mean zero.
@@ -145,13 +162,23 @@
 #' argument).
 #'
 #' @references
-#' van der Laan, Mark J., Polley, Eric C and Hubbard, Alan E.. "Super Learner"
-#' _Statistical Applications in Genetics and Molecular Biology_, vol. 6, no. 1,
-#' 2007. DOI: 10.2202/1544-6115.1309.
+#' Van der Laan, M. J., Polley, E. C., & Hubbard, A. E. (2007). Super learner.
+#' _Statistical applications in genetics and molecular biology_, 6(1).
+#' DOI: 10.2202/1544-6115.1309.
 #'
-#' Stephanie Sapp, Mark J. van der Laan & John Canny (2014) Subsemble: an
-#' ensemble method for combining subset-specific algorithm fits, _Journal of
-#' Applied Statistics_, 41:6, 1247-1259, DOI: 10.1080/02664763.2013.864263
+#' Sapp, S., van der Laan, M. J., & Canny, J. (2014). Subsemble: an ensemble
+#' method for combining subset-specific algorithm fits. _Journal of applied
+#' statistics_, 41(6), 1247-1259. DOI: 10.1080/02664763.2013.864263
+#'
+#' Hooker, G. (2004, August). Discovering additive structure in black box
+#' functions. In _Proceedings of the tenth ACM SIGKDD international conference
+#' on Knowledge discovery and data mining_ (pp. 575-580).
+#' DOI: 10.1145/1014052.1014122
+#'
+#' Sorokina, D., Caruana, R., Riedewald, M., & Fink, D. (2008, July). Detecting
+#' statistical interactions with additive groves of trees. In _Proceedings of
+#' the 25th international conference on Machine learning_ (pp. 1000-1007).
+#' DOI: 10.1145/1390156.1390282
 #'
 #' @examples
 #' set.seed(1)
@@ -177,6 +204,14 @@
 #'     geom_point(alpha = 1/2) +
 #'     coord_equal()
 #' }
+#'
+#' ## How to use external symbols:
+#'
+#' a_coef <- 2
+#' # splice the value in using rlang's !! operator
+#' lp_eqn <- rlang::expr(!!a_coef * A+B)
+#' lp_eqn
+#' sim_logistic(5, lp_eqn)
 #' @export
 sim_classification <- function(num_samples = 100, method = "caret",
                                intercept = -5, num_linear = 10,
@@ -244,7 +279,8 @@ sim_classification <- function(num_samples = 100, method = "caret",
 #' @rdname sim_classification
 sim_regression <-
   function(num_samples = 100, method = "sapp_2014_1", std_dev = NULL, factors = FALSE, keep_truth = FALSE) {
-    reg_methods <- c("sapp_2014_1", "sapp_2014_2", "van_der_laan_2007_1", "van_der_laan_2007_2")
+    reg_methods <- c("sapp_2014_1", "sapp_2014_2", "van_der_laan_2007_1",
+                     "van_der_laan_2007_2", "hooker_2004")
     method <- rlang::arg_match0(method, reg_methods, arg_nm = "method")
 
     dat <-
@@ -252,7 +288,8 @@ sim_regression <-
              sapp_2014_1 = sapp_2014_1(num_samples, std_dev),
              sapp_2014_2 = sapp_2014_2(num_samples, std_dev),
              van_der_laan_2007_1 = van_der_laan_2007_1(num_samples, std_dev, factors = factors),
-             van_der_laan_2007_2 = van_der_laan_2007_2(num_samples, std_dev)
+             van_der_laan_2007_2 = van_der_laan_2007_2(num_samples, std_dev),
+             hooker_2004 = hooker_2004(num_samples, std_dev)
       )
 
     if (!keep_truth) {
@@ -370,6 +407,39 @@ van_der_laan_2007_2 <- function(num_samples = 100, std_dev = NULL) {
   dat
 }
 
+
+hooker_2004 <- function(num_samples = 100, std_dev = NULL) {
+  if (is.null(std_dev)) {
+    std_dev <- 1 / 4
+  }
+  uni_1 <- matrix(stats::runif(num_samples * 6), ncol = 6)
+  uni_2 <- matrix(stats::runif(num_samples * 4, min = 0.6), ncol = 4)
+  all_names <- names0(10, "predictor_")
+  colnames(uni_1) <- all_names[c(1, 2, 3, 6, 7, 9)]
+  colnames(uni_2) <- all_names[c(4, 5, 8, 10)]
+  dat <- cbind(uni_1, uni_2)
+  dat <- tibble::as_tibble(dat) %>% dplyr::select(dplyr::all_of(all_names))
+
+  hooker_2004 <- rlang::expr(
+    pi ^ (predictor_01 * predictor_02) * sqrt( 2 * predictor_03 ) -
+      asin(predictor_04) + log(predictor_05  + predictor_05) -
+      (predictor_09 / predictor_10) * sqrt (predictor_07 / predictor_08) -
+      predictor_02 * predictor_07
+  )
+
+  dat <-
+    tibble::as_tibble(dat) %>%
+    dplyr::mutate(
+      .truth = rlang::eval_tidy(hooker_2004, data = .),
+      outcome = .truth + stats::rnorm(num_samples, sd = std_dev)
+    ) %>%
+    dplyr::relocate(outcome)
+
+  dat
+}
+
+# ------------------------------------------------------------------------------
+
 #' @export
 #' @rdname sim_classification
 sim_noise <- function(num_samples, num_vars, cov_type = "exchangeable",
@@ -417,6 +487,7 @@ sim_noise <- function(num_samples, num_vars, cov_type = "exchangeable",
 sim_logistic <- function(num_samples, eqn, correlation = 0, keep_truth = FALSE) {
   sigma <- matrix(c(1, correlation, correlation, 1), 2, 2)
   eqn <- rlang::get_expr(eqn)
+  check_equations(eqn)
   dat <-
     data.frame(MASS::mvrnorm(n = num_samples, c(0, 0), sigma)) %>%
     stats::setNames(LETTERS[1:2]) %>%
@@ -437,7 +508,14 @@ sim_logistic <- function(num_samples, eqn, correlation = 0, keep_truth = FALSE) 
   dat
 }
 
-
+check_equations <- function(x, expected = LETTERS[1:2]) {
+  used <- sort(all.vars(x))
+  its_fine <- length(setdiff(used, expected)) == 0
+  if (!its_fine) {
+    rlang::abort("The model equations should only use variables/objects `A` and `B`")
+  }
+  invisible(its_fine)
+}
 
 names0 <- function(num, prefix = "x") {
   if (num < 1) {
