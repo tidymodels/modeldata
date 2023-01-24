@@ -4,7 +4,7 @@
 
 * A simulation functions were added: 
 
-  * `sim_logistic()` was added. 
+  * `sim_logistic()` and `sim_multinomial()` were added. 
   
   * A method for Hooker (2004) was added for `sim_regression()`. 
 

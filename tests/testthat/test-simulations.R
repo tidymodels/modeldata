@@ -146,3 +146,16 @@ test_that("logistic simulation", {
   expect_equal(names(dat_2), c(LETTERS[1:2], ".linear_pred", ".truth", "class"))
   expect_equal(nrow(dat_1), 10)
 })
+
+
+test_that("multinomial simulation", {
+  expect_snapshot_error(sim_multinomial(10, ~ A + C, ~ B, ~ A + B))
+  set.seed(1)
+  dat_1 <- sim_multinomial(10, ~ A, ~ B, ~ A + B)
+  dat_2 <- sim_multinomial(10, ~ A, ~ B, ~ A + B, keep_truth = TRUE)
+  expect_equal(names(dat_1), c(LETTERS[1:2], "class"))
+  expect_equal(names(dat_2), c(LETTERS[1:2], "class", ".truth_one", ".truth_two", ".truth_three"))
+  expect_equal(nrow(dat_1), 10)
+})
+
+

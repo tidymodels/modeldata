@@ -28,18 +28,21 @@
 #' to simulate.
 #' @param keep_truth A logical: should the true outcome value be retained for
 #' the data? If so, the column name is `.truth`.
-#' @param eqn An R expression or  (one sided) formula that only involves variables
-#' `A` and `B` that is used to compute the linear predictor. External objects
-#' should not be used as symbols; see the examples below on how to use external
-#' objects in the equations.
+#' @param eqn,eqn_1,eqn_2,eqn_3 An R expression or  (one sided) formula that
+#' only involves variables `A` and `B` that is used to compute the linear
+#' predictor. External objects should not be used as symbols; see the examples
+#' below on how to use external objects in the equations.
 #' @param correlation A single numeric value for the correlation between variables
 #'  `A` and `B`.
 #'
 #' @details
+#'
+#' ## Specific Regression and Classification methods
+#'
 #' These functions provide several supervised simulation methods (and one
 #' unsupervised). Learn more by `method`:
 #'
-#' ## `method = "caret"`
+#' ### `method = "caret"`
 #'
 #' This is a simulated classification problem with two classes, originally
 #'  implemented in [caret::twoClassSim()] with all numeric predictors. The
@@ -48,7 +51,7 @@
 #'  with a correlation of about 0.65. They change the log-odds using main
 #'  effects and an interaction:
 #'
-#' \preformatted{ intercept - 4 * two_factor_1 + 4 * two_factor_2 + 2 * two_factor_1 * two_factor_2 }
+#' \preformatted{  intercept - 4 * two_factor_1 + 4 * two_factor_2 + 2 * two_factor_1 * two_factor_2 }
 #'
 #' The intercept is a parameter for the simulation and can be used to control
 #' the amount of class imbalance.
@@ -58,41 +61,41 @@
 #' were four predictors in this set, their contribution to the log-odds would
 #' be
 #'
-#' \preformatted{ -2.5 * linear_1 + 1.75 * linear_2 -1.00 * linear_3 + 0.25 * linear_4}
+#' \preformatted{  -2.5 * linear_1 + 1.75 * linear_2 -1.00 * linear_3 + 0.25 * linear_4}
 #'
 #' (Note that these column names may change based on the value of `num_linear`).
 #'
 #' The third set is a nonlinear function of a single predictor ranging between
 #' `[0, 1]` called `non_linear_1` here:
 #'
-#' \preformatted{ (non_linear_1^3) + 2 * exp(-6 * (non_linear_1 - 0.3)^2) }
+#' \preformatted{  (non_linear_1^3) + 2 * exp(-6 * (non_linear_1 - 0.3)^2) }
 #'
 #' The fourth set of informative predictors are copied from one of Friedman's
 #' systems and use two more predictors (`non_linear_2` and `non_linear_3`):
 #'
-#' \preformatted{ 2 * sin(non_linear_2 * non_linear_3) }
+#' \preformatted{  2 * sin(non_linear_2 * non_linear_3) }
 #'
 #' All of these effects are added up to model the log-odds.
 #'
-#' ## `method = "sapp_2014_1"`
+#' ### `method = "sapp_2014_1"`
 #'
 #' This regression simulation is from Sapp et al. (2014). There are 20
 #' independent Gaussian random predictors with mean zero and a variance of 9.
 #' The prediction equation is:
 #'
 #' \preformatted{
-#' predictor_01 + sin(predictor_02) + log(abs(predictor_03)) +
-#'  predictor_04^2 + predictor_05 * predictor_06 +
-#'  ifelse(predictor_07 * predictor_08 * predictor_09 < 0, 1, 0) +
-#'  ifelse(predictor_10 > 0, 1, 0) + predictor_11 * ifelse(predictor_11 > 0, 1, 0) +
-#'  sqrt(abs(predictor_12)) + cos(predictor_13) + 2 * predictor_14 + abs(predictor_15) +
-#'  ifelse(predictor_16 < -1, 1, 0) + predictor_17 * ifelse(predictor_17 < -1, 1, 0) -
-#'  2 * predictor_18 - predictor_19 * predictor_20
+#'   predictor_01 + sin(predictor_02) + log(abs(predictor_03)) +
+#'    predictor_04^2 + predictor_05 * predictor_06 +
+#'    ifelse(predictor_07 * predictor_08 * predictor_09 < 0, 1, 0) +
+#'    ifelse(predictor_10 > 0, 1, 0) + predictor_11 * ifelse(predictor_11 > 0, 1, 0) +
+#'    sqrt(abs(predictor_12)) + cos(predictor_13) + 2 * predictor_14 + abs(predictor_15) +
+#'    ifelse(predictor_16 < -1, 1, 0) + predictor_17 * ifelse(predictor_17 < -1, 1, 0) -
+#'    2 * predictor_18 - predictor_19 * predictor_20
 #' }
 #'
 #' The error is Gaussian with mean zero and variance 9.
 #'
-#' ## `method = "sapp_2014_2"`
+#' ### `method = "sapp_2014_2"`
 #'
 #' This regression simulation is also from Sapp et al. (2014). There are 200
 #' independent Gaussian predictors with mean zero and variance 16. The
@@ -101,44 +104,44 @@
 #'
 #' The error is Gaussian with mean zero and variance 25.
 #'
-#' ## `method = "van_der_laan_2007_1"`
+#' ### `method = "van_der_laan_2007_1"`
 #'
 #' This is a regression simulation from van der Laan et al. (2007) with ten
 #' random Bernoulli variables that have a 40% probability of being a value of
 #' one. The true regression equation is:
 #'
 #' \preformatted{
-#' 2 * predictor_01 * predictor_10 + 4 * predictor_02 * predictor_07 +
-#'   3 * predictor_04 * predictor_05 - 5 * predictor_06 * predictor_10 +
-#'   3 * predictor_08 * predictor_09 + predictor_01 * predictor_02 * predictor_04 -
-#'   2 * predictor_07 * (1 - predictor_06) * predictor_02 * predictor_09 -
-#'   4 * (1 - predictor_10) * predictor_01 * (1 - predictor_04)
+#'   2 * predictor_01 * predictor_10 + 4 * predictor_02 * predictor_07 +
+#'     3 * predictor_04 * predictor_05 - 5 * predictor_06 * predictor_10 +
+#'     3 * predictor_08 * predictor_09 + predictor_01 * predictor_02 * predictor_04 -
+#'     2 * predictor_07 * (1 - predictor_06) * predictor_02 * predictor_09 -
+#'     4 * (1 - predictor_10) * predictor_01 * (1 - predictor_04)
 #' }
 #'
 #' The error term is standard normal.
 #'
-#' ## `method = "van_der_laan_2007_2"`
+#' ### `method = "van_der_laan_2007_2"`
 #'
 #' This is another regression simulation from van der Laan et al. (2007)  with
 #' twenty Gaussians with mean zero and variance 16. The prediction equation is:
 #'
 #' \preformatted{
-#' predictor_01 * predictor_02 + predictor_10^2 - predictor_03 * predictor_17 -
-#'  predictor_15 * predictor_04 + predictor_09 * predictor_05 + predictor_19 -
-#'  predictor_20^2 + predictor_09 * predictor_08
+#'   predictor_01 * predictor_02 + predictor_10^2 - predictor_03 * predictor_17 -
+#'     predictor_15 * predictor_04 + predictor_09 * predictor_05 + predictor_19 -
+#'     predictor_20^2 + predictor_09 * predictor_08
 #' }
 #'
 #' The error term is also Gaussian with mean zero and variance 16.
 #'
-#' ## `method = "hooker_2004"`
+#' ### `method = "hooker_2004"`
 #'
 #' Hooker (2004) and Sorokina _at al_ (2008) used the following:
 #'
 #' \preformatted{
-#'  pi ^ (predictor_01 * predictor_02) * sqrt( 2 * predictor_03 ) -
-#'  asin(predictor_04) + log(predictor_05  + predictor_05) -
-#'  (predictor_09 / predictor_10) * sqrt (predictor_07 / predictor_08) -
-#'  predictor_02 * predictor_07
+#'     pi ^ (predictor_01 * predictor_02) * sqrt( 2 * predictor_03 ) -
+#'     asin(predictor_04) + log(predictor_05  + predictor_05) -
+#'    (predictor_09 / predictor_10) * sqrt (predictor_07 / predictor_08) -
+#'     predictor_02 * predictor_07
 #' }
 #'
 #' Predictors 1, 2, 3, 6, 7, and 9 are standard uniform while the others are
@@ -160,6 +163,27 @@
 #' regression model with two multivariate normal variables `A` and `B` (with
 #' zero mean, unit variances and correlation determined by the `correlation`
 #' argument).
+#'
+#' For example, using `eqn = A + B` would specify that the true probability of
+#' the event was
+#'
+#' \preformatted{
+#'    prob = 1 / (1 + exp(A + B))
+#' }
+#'
+#' The class levels for the outcome column are `"one"` and `"two"`.
+#'
+#' ## Multinomial simulation
+#'
+#' `sim_multinomial()` can generate data with classes `"one"`, `"two"`, and
+#' `"three"` based on the values in arguments `eqn_1`, `eqn_2`, and `eqn_3`,
+#' respectfully. Like [sim_logistic()] these equations use predictors `A` and
+#' `B`.
+#'
+#' The individual equations are evaluated and exponentiated. After this, their
+#' values are, for each row of data, normalized to add up to one. These
+#' probabilities are them passed to [stats::rmultinom()] to generate the outcome
+#' values.
 #'
 #' @references
 #' Van der Laan, M. J., Polley, E. C., & Hubbard, A. E. (2007). Super learner.
@@ -202,7 +226,8 @@
 #'   sim_logistic(1000, f_xor, keep_truth = TRUE) %>%
 #'     ggplot(aes(A, B, col = class)) +
 #'     geom_point(alpha = 1/2) +
-#'     coord_equal()
+#'     coord_equal() +
+#'     theme_bw()
 #' }
 #'
 #' ## How to use external symbols:
@@ -212,6 +237,25 @@
 #' lp_eqn <- rlang::expr(!!a_coef * A+B)
 #' lp_eqn
 #' sim_logistic(5, lp_eqn)
+#'
+#' # Flexible multinomial regression simulation
+#' if (rlang::is_installed("ggplot2")) {
+#'
+#   set.seed(2)
+#   three_classes <-
+#     sim_multinomial(
+#       1000,
+#       ~  -0.5    +  0.6 * abs(A),
+#       ~ ifelse(A > 0 & B > 0, 1.0 + 0.2 * A / B, - 2),
+#       ~ -0.6 * A + 0.50 * B -  A * B)
+#
+#   three_classes %>%
+#     ggplot(aes(A, B, col = class, pch = class)) +
+#     geom_point(alpha = 3/4) +
+#     facet_wrap(~ class) +
+#     coord_equal() +
+#     theme_bw()
+#' }
 #' @export
 sim_classification <- function(num_samples = 100, method = "caret",
                                intercept = -5, num_linear = 10,
@@ -482,6 +526,8 @@ sim_noise <- function(num_samples, num_vars, cov_type = "exchangeable",
   dat
 }
 
+# ------------------------------------------------------------------------------
+
 #' @export
 #' @rdname sim_classification
 sim_logistic <- function(num_samples, eqn, correlation = 0, keep_truth = FALSE) {
@@ -507,6 +553,43 @@ sim_logistic <- function(num_samples, eqn, correlation = 0, keep_truth = FALSE) 
   }
   dat
 }
+
+# ------------------------------------------------------------------------------
+
+#' @export
+#' @rdname sim_classification
+sim_multinomial <- function(num_samples, eqn_1, eqn_2, eqn_3, correlation = 0, keep_truth = FALSE) {
+  sigma <- matrix(c(1, correlation, correlation, 1), 2, 2)
+  eqn_1 <- rlang::get_expr(eqn_1)
+  eqn_2 <- rlang::get_expr(eqn_2)
+  eqn_3 <- rlang::get_expr(eqn_3)
+  purrr::map_lgl(list(eqn_1, eqn_2, eqn_3), check_equations)
+
+  dat <-
+    data.frame(MASS::mvrnorm(n = num_samples, c(0, 0), sigma)) %>%
+    stats::setNames(LETTERS[1:2]) %>%
+    dplyr::mutate(
+      .formula_1 = rlang::eval_tidy(eqn_1, data = .),
+      .formula_2 = rlang::eval_tidy(eqn_2, data = .),
+      .formula_3 = rlang::eval_tidy(eqn_3, data = .),
+      dplyr::across(c(dplyr::starts_with(".formula_")), ~ exp(.x))
+    )
+  probs <- as.matrix(dplyr::select(dat, dplyr::starts_with(".formula_")))
+  probs <- t(apply(probs, 1, function(x) x/sum(x)))
+  which_class <- function(x) which.max(stats::rmultinom(1, 1, x))
+  index <- apply(probs, 1, which_class)
+  lvls <- c("one", "two", "three")
+  dat$class <- factor(lvls[index], levels = lvls)
+  dat <- dat %>% dplyr::select(-dplyr::starts_with(".formula_"))
+  if (keep_truth) {
+    colnames(probs) <- paste0(".truth_", lvls)
+    probs <- tibble::as_tibble(probs)
+    dat <- dplyr::bind_cols(dat, probs)
+  }
+  tibble::as_tibble(dat)
+}
+
+# ------------------------------------------------------------------------------
 
 check_equations <- function(x, expected = LETTERS[1:2]) {
   used <- sort(all.vars(x))
