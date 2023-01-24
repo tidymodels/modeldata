@@ -5,6 +5,7 @@
 \alias{sim_regression}
 \alias{sim_noise}
 \alias{sim_logistic}
+\alias{sim_multinomial}
 \title{Simulate datasets}
 \usage{
 sim_classification(
@@ -33,6 +34,15 @@ sim_noise(
 )
 
 sim_logistic(num_samples, eqn, correlation = 0, keep_truth = FALSE)
+
+sim_multinomial(
+  num_samples,
+  eqn_1,
+  eqn_2,
+  eqn_3,
+  correlation = 0,
+  keep_truth = FALSE
+)
 }
 \arguments{
 \item{num_samples}{Number of data points to simulate.}
@@ -72,8 +82,10 @@ to simulate.}
 \item{cov_param}{A single numeric value for the exchangeable correlation
 value or the base of the Toeplitz structure. See Details below.}
 
-\item{eqn}{An R expression or  (one sided) formula that involves variables
-\code{A} and \code{B} that is used to compute the linear predictor.}
+\item{eqn, eqn_1, eqn_2, eqn_3}{An R expression or  (one sided) formula that
+only involves variables \code{A} and \code{B} that is used to compute the linear
+predictor. External objects should not be used as symbols; see the examples
+below on how to use external objects in the equations.}
 
 \item{correlation}{A single numeric value for the correlation between variables
 \code{A} and \code{B}.}
@@ -83,6 +95,8 @@ These functions can be used to generate simulated data for supervised
 (classification and regression) and unsupervised modeling applications.
 }
 \details{
+\subsection{Specific Regression and Classification methods}{
+
 These functions provide several supervised simulation methods (and one
 unsupervised). Learn more by \code{method}:
 \subsection{\code{method = "caret"}}{
@@ -94,7 +108,7 @@ predictors (denoted here as \code{two_factor_1} and \code{two_factor_2}) are cre
 with a correlation of about 0.65. They change the log-odds using main
 effects and an interaction:
 
-\preformatted{ intercept - 4 * two_factor_1 + 4 * two_factor_2 + 2 * two_factor_1 * two_factor_2 }
+\preformatted{  intercept - 4 * two_factor_1 + 4 * two_factor_2 + 2 * two_factor_1 * two_factor_2 }
 
 The intercept is a parameter for the simulation and can be used to control
 the amount of class imbalance.
@@ -104,19 +118,19 @@ and have a sequence of values between 2.5 and 0.25. For example, if there
 were four predictors in this set, their contribution to the log-odds would
 be
 
-\preformatted{ -2.5 * linear_1 + 1.75 * linear_2 -1.00 * linear_3 + 0.25 * linear_4}
+\preformatted{  -2.5 * linear_1 + 1.75 * linear_2 -1.00 * linear_3 + 0.25 * linear_4}
 
 (Note that these column names may change based on the value of \code{num_linear}).
 
 The third set is a nonlinear function of a single predictor ranging between
 \verb{[0, 1]} called \code{non_linear_1} here:
 
-\preformatted{ (non_linear_1^3) + 2 * exp(-6 * (non_linear_1 - 0.3)^2) }
+\preformatted{  (non_linear_1^3) + 2 * exp(-6 * (non_linear_1 - 0.3)^2) }
 
 The fourth set of informative predictors are copied from one of Friedman's
 systems and use two more predictors (\code{non_linear_2} and \code{non_linear_3}):
 
-\preformatted{ 2 * sin(non_linear_2 * non_linear_3) }
+\preformatted{  2 * sin(non_linear_2 * non_linear_3) }
 
 All of these effects are added up to model the log-odds.
 }
@@ -128,13 +142,13 @@ independent Gaussian random predictors with mean zero and a variance of 9.
 The prediction equation is:
 
 \preformatted{
-predictor_01 + sin(predictor_02) + log(abs(predictor_03)) +
- predictor_04^2 + predictor_05 * predictor_06 +
- ifelse(predictor_07 * predictor_08 * predictor_09 < 0, 1, 0) +
- ifelse(predictor_10 > 0, 1, 0) + predictor_11 * ifelse(predictor_11 > 0, 1, 0) +
- sqrt(abs(predictor_12)) + cos(predictor_13) + 2 * predictor_14 + abs(predictor_15) +
- ifelse(predictor_16 < -1, 1, 0) + predictor_17 * ifelse(predictor_17 < -1, 1, 0) -
- 2 * predictor_18 - predictor_19 * predictor_20
+  predictor_01 + sin(predictor_02) + log(abs(predictor_03)) +
+   predictor_04^2 + predictor_05 * predictor_06 +
+   ifelse(predictor_07 * predictor_08 * predictor_09 < 0, 1, 0) +
+   ifelse(predictor_10 > 0, 1, 0) + predictor_11 * ifelse(predictor_11 > 0, 1, 0) +
+   sqrt(abs(predictor_12)) + cos(predictor_13) + 2 * predictor_14 + abs(predictor_15) +
+   ifelse(predictor_16 < -1, 1, 0) + predictor_17 * ifelse(predictor_17 < -1, 1, 0) -
+   2 * predictor_18 - predictor_19 * predictor_20
 }
 
 The error is Gaussian with mean zero and variance 9.
@@ -157,11 +171,11 @@ random Bernoulli variables that have a 40\% probability of being a value of
 one. The true regression equation is:
 
 \preformatted{
-2 * predictor_01 * predictor_10 + 4 * predictor_02 * predictor_07 +
-  3 * predictor_04 * predictor_05 - 5 * predictor_06 * predictor_10 +
-  3 * predictor_08 * predictor_09 + predictor_01 * predictor_02 * predictor_04 -
-  2 * predictor_07 * (1 - predictor_06) * predictor_02 * predictor_09 -
-  4 * (1 - predictor_10) * predictor_01 * (1 - predictor_04)
+  2 * predictor_01 * predictor_10 + 4 * predictor_02 * predictor_07 +
+    3 * predictor_04 * predictor_05 - 5 * predictor_06 * predictor_10 +
+    3 * predictor_08 * predictor_09 + predictor_01 * predictor_02 * predictor_04 -
+    2 * predictor_07 * (1 - predictor_06) * predictor_02 * predictor_09 -
+    4 * (1 - predictor_10) * predictor_01 * (1 - predictor_04)
 }
 
 The error term is standard normal.
@@ -173,12 +187,30 @@ This is another regression simulation from van der Laan et al. (2007)  with
 twenty Gaussians with mean zero and variance 16. The prediction equation is:
 
 \preformatted{
-predictor_01 * predictor_02 + predictor_10^2 - predictor_03 * predictor_17 -
- predictor_15 * predictor_04 + predictor_09 * predictor_05 + predictor_19 -
- predictor_20^2 + predictor_09 * predictor_08
+  predictor_01 * predictor_02 + predictor_10^2 - predictor_03 * predictor_17 -
+    predictor_15 * predictor_04 + predictor_09 * predictor_05 + predictor_19 -
+    predictor_20^2 + predictor_09 * predictor_08
 }
 
 The error term is also Gaussian with mean zero and variance 16.
+}
+
+\subsection{\code{method = "hooker_2004"}}{
+
+Hooker (2004) and Sorokina \emph{at al} (2008) used the following:
+
+\preformatted{
+    pi ^ (predictor_01 * predictor_02) * sqrt( 2 * predictor_03 ) -
+    asin(predictor_04) + log(predictor_05  + predictor_05) -
+   (predictor_09 / predictor_10) * sqrt (predictor_07 / predictor_08) -
+    predictor_02 * predictor_07
+}
+
+Predictors 1, 2, 3, 6, 7, and 9 are standard uniform while the others are
+uniform on \verb{[0.6, 1.0]}. The errors are normal with mean zero and default
+standard deviation of 0.25.
+}
+
 }
 
 \subsection{\code{sim_noise()}}{
@@ -197,6 +229,28 @@ exponential pattern (see example below).
 regression model with two multivariate normal variables \code{A} and \code{B} (with
 zero mean, unit variances and correlation determined by the \code{correlation}
 argument).
+
+For example, using \code{eqn = A + B} would specify that the true probability of
+the event was
+
+\preformatted{
+   prob = 1 / (1 + exp(A + B))
+}
+
+The class levels for the outcome column are \code{"one"} and \code{"two"}.
+}
+
+\subsection{Multinomial simulation}{
+
+\code{sim_multinomial()} can generate data with classes \code{"one"}, \code{"two"}, and
+\code{"three"} based on the values in arguments \code{eqn_1}, \code{eqn_2}, and \code{eqn_3},
+respectfully. Like \code{\link[=sim_logistic]{sim_logistic()}} these equations use predictors \code{A} and
+\code{B}.
+
+The individual equations are evaluated and exponentiated. After this, their
+values are, for each row of data, normalized to add up to one. These
+probabilities are them passed to \code{\link[stats:Multinom]{stats::rmultinom()}} to generate the outcome
+values.
 }
 }
 \examples{
@@ -221,15 +275,39 @@ if (rlang::is_installed("ggplot2")) {
   sim_logistic(1000, f_xor, keep_truth = TRUE) \%>\%
     ggplot(aes(A, B, col = class)) +
     geom_point(alpha = 1/2) +
-    coord_equal()
+    coord_equal() +
+    theme_bw()
+}
+
+## How to use external symbols:
+
+a_coef <- 2
+# splice the value in using rlang's !! operator
+lp_eqn <- rlang::expr(!!a_coef * A+B)
+lp_eqn
+sim_logistic(5, lp_eqn)
+
+# Flexible multinomial regression simulation
+if (rlang::is_installed("ggplot2")) {
+
 }
 }
 \references{
-van der Laan, Mark J., Polley, Eric C and Hubbard, Alan E.. "Super Learner"
-\emph{Statistical Applications in Genetics and Molecular Biology}, vol. 6, no. 1,
-2007. DOI: 10.2202/1544-6115.1309.
+Van der Laan, M. J., Polley, E. C., & Hubbard, A. E. (2007). Super learner.
+\emph{Statistical applications in genetics and molecular biology}, 6(1).
+DOI: 10.2202/1544-6115.1309.
 
-Stephanie Sapp, Mark J. van der Laan & John Canny (2014) Subsemble: an
-ensemble method for combining subset-specific algorithm fits, \emph{Journal of
-Applied Statistics}, 41:6, 1247-1259, DOI: 10.1080/02664763.2013.864263
+Sapp, S., van der Laan, M. J., & Canny, J. (2014). Subsemble: an ensemble
+method for combining subset-specific algorithm fits. \emph{Journal of applied
+statistics}, 41(6), 1247-1259. DOI: 10.1080/02664763.2013.864263
+
+Hooker, G. (2004, August). Discovering additive structure in black box
+functions. In \emph{Proceedings of the tenth ACM SIGKDD international conference
+on Knowledge discovery and data mining} (pp. 575-580).
+DOI: 10.1145/1014052.1014122
+
+Sorokina, D., Caruana, R., Riedewald, M., & Fink, D. (2008, July). Detecting
+statistical interactions with additive groves of trees. In \emph{Proceedings of
+the 25th international conference on Machine learning} (pp. 1000-1007).
+DOI: 10.1145/1390156.1390282
 }
