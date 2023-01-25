@@ -451,7 +451,7 @@ van_der_laan_2007_2 <- function(num_samples = 100, std_dev = NULL) {
   dat
 }
 
-
+# TODO see table 1 of Detecting Statistical Interactions from Neural Network Weights for more
 hooker_2004 <- function(num_samples = 100, std_dev = NULL) {
   if (is.null(std_dev)) {
     std_dev <- 1 / 4

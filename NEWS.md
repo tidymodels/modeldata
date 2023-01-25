@@ -1,4 +1,4 @@
-# modeldata (development version)
+# modeldata 1.1.0
 
 * Added a `keep_truth` argument to the supervised simulation functions. This retains the column that defines the error free simulated value of the outcome. This numeric column is called `.truth`. 
 
