@@ -27,8 +27,8 @@ install.packages("modeldata")
 And the development version from [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("tidymodels/modeldata")
+# install.packages("pak")
+pak::pak("tidymodels/modeldata")
 ```
 
 ## Contributing
