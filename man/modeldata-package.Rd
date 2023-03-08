@@ -18,11 +18,11 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Max Kuhn \email{max@rstudio.com}
+\strong{Maintainer}: Max Kuhn \email{max@posit.co}
 
 Other contributors:
 \itemize{
-  \item RStudio [copyright holder, funder]
+  \item Posit Software, PBC [copyright holder, funder]
 }
 
 }
