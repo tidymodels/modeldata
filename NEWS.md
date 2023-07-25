@@ -1,5 +1,9 @@
 # modeldata (development version)
 
+* Added a regression data set, `hotel_rates`, for predicting the average daily hotel rate. 
+
+* Added a classification data set (`taxi`) to predict whether people tip cab drivers in Chicago. 
+
 # modeldata 1.1.0
 
 * Added a `keep_truth` argument to the supervised simulation functions. This retains the column that defines the error free simulated value of the outcome. This numeric column is called `.truth`. 
