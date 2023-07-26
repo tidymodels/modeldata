@@ -12,7 +12,8 @@ set.seed(1234)
 
 taxi_med <- taxi_raw |>
   filter(!is.na(tips), payment_type != "Cash") |>
-  slice_sample(n = 10000) |>
+  drop_na() |>
+  slice_sample(n = 20000) |>
   mutate(
     tip = if_else(tips > 0, "yes", "no") |> factor(levels = c("yes", "no")),
     trip_start = mdy_hms(trip_start_timestamp),
@@ -48,5 +49,11 @@ taxi_rec_base <- recipe(tip ~ ., data = taxi_med) |>
 taxi <- prep(taxi_rec_base) |>
   bake(new_data = NULL) |>
   relocate(tip)
+
+taxi <- taxi |>
+  mutate(month = factor(month, levels = c("Jan", "Feb", "Mar", "Apr"))) |>
+  select(-c(id, duration, fare, tolls, extras, total_cost, payment_type)) |>
+  drop_na() |>
+  slice_sample(n = 10000)
 
 usethis::use_data(taxi, overwrite = TRUE)
