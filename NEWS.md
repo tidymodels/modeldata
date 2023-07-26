@@ -2,7 +2,7 @@
 
 * Added a regression data set, `hotel_rates`, for predicting the average daily hotel rate. 
 
-* Added a classification data set (`taxi`) to predict whether people tip cab drivers in Chicago. 
+* Added a classification data set, `taxi`, for predicting whether people tip cab drivers in Chicago. 
 
 # modeldata 1.1.0
 
