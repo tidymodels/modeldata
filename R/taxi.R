@@ -20,7 +20,6 @@
 #' \describe{
 #'   \item{tip}{Whether the rider left a tip. A factor with levels
 #'     "yes" and "no".}
-#'   \item{duration}{The trip duration, in seconds.}
 #'   \item{distance}{The trip distance, in odometer miles.}
 #'   \item{company}{The taxi company, as a factor. Companies that occurred
 #'     few times were binned as "other".}
