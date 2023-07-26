@@ -20,16 +20,8 @@
 #' \describe{
 #'   \item{tip}{Whether the rider left a tip. A factor with levels
 #'     "yes" and "no".}
-#'   \item{id}{A unique identifier for the trip, as a factor.}
 #'   \item{duration}{The trip duration, in seconds.}
 #'   \item{distance}{The trip distance, in odometer miles.}
-#'   \item{fare}{The cost of the trip fare, in USD}
-#'   \item{tolls}{The cost of tolls for the trip, in USD.}
-#'   \item{extras}{The cost of extra charges for the trip, in USD.}
-#'   \item{total_cost}{The total cost of the trip, in USD. This is the
-#'     sum of the previous three columns plus tip.}
-#'   \item{payment_type}{Type of payment for the trip. A factor with levels
-#'     "Credit Card", "Dispute", "Mobile", "No Charge", "Prcard", and "Unknown".}
 #'   \item{company}{The taxi company, as a factor. Companies that occurred
 #'     few times were binned as "other".}
 #'   \item{local}{Whether the trip started in the same community
