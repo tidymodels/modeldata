@@ -70,6 +70,9 @@
     <loc>https://modeldata.tidymodels.org/dev/reference/grants.html</loc>
   </url>
   <url>
+    <loc>https://modeldata.tidymodels.org/dev/reference/hotel_rates.html</loc>
+  </url>
+  <url>
     <loc>https://modeldata.tidymodels.org/dev/reference/hpc_cv.html</loc>
   </url>
   <url>
@@ -125,6 +128,9 @@
   </url>
   <url>
     <loc>https://modeldata.tidymodels.org/dev/reference/tate_text.html</loc>
+  </url>
+  <url>
+    <loc>https://modeldata.tidymodels.org/dev/reference/taxi.html</loc>
   </url>
   <url>
     <loc>https://modeldata.tidymodels.org/dev/reference/two_class_dat.html</loc>
