@@ -4,6 +4,8 @@
 
 * Added a classification data set, `taxi`, for predicting whether people tip cab drivers in Chicago. 
 
+* The simulation equation for Hooker (2004) was slightly incorrect and has been corrected. 
+
 # modeldata 1.1.0
 
 * Added a `keep_truth` argument to the supervised simulation functions. This retains the column that defines the error free simulated value of the outcome. This numeric column is called `.truth`. 
