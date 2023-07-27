@@ -139,7 +139,7 @@
 #'
 #' \preformatted{
 #'     pi ^ (predictor_01 * predictor_02) * sqrt( 2 * predictor_03 ) -
-#'     asin(predictor_04) + log(predictor_05  + predictor_05) -
+#'     asin(predictor_04) + log(predictor_03  + predictor_05) -
 #'    (predictor_09 / predictor_10) * sqrt (predictor_07 / predictor_08) -
 #'     predictor_02 * predictor_07
 #' }
@@ -466,7 +466,7 @@ hooker_2004 <- function(num_samples = 100, std_dev = NULL) {
 
   hooker_2004 <- rlang::expr(
     pi ^ (predictor_01 * predictor_02) * sqrt( 2 * predictor_03 ) -
-      asin(predictor_04) + log(predictor_05  + predictor_05) -
+      asin(predictor_04) + log(predictor_03  + predictor_05) -
       (predictor_09 / predictor_10) * sqrt (predictor_07 / predictor_08) -
       predictor_02 * predictor_07
   )
