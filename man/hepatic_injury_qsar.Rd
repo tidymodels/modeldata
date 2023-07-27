@@ -19,7 +19,7 @@ when a molecule has risk associated with liver function.
 This  data set was used to develop a model for predicting compounds'
 probability of causing hepatic injury (i.e. liver damage). This data set
 consisted of 281 unique compounds; 376 predictors were measured or computed
-for each. The response was categorical (either "None", "Mild" or "Severe" ),
+for each. The response was categorical (either "none", "mild", or "severe"),
 and was highly unbalanced.
 
 This kind of response often occurs in pharmaceutical data because companies
