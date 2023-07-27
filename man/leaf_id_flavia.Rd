@@ -15,7 +15,7 @@ features for leaf image classification." \emph{arXiv preprint} arXiv:2106.08077
 \item{leaf_id_flavia}{a data frame}
 }
 \description{
-Image analysis of leafts to predict species.
+Image analysis of leaves to predict species.
 }
 \details{
 From the original manuscript: "The Flavia dataset contains 1907 leaf images.

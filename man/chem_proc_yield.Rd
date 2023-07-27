@@ -29,7 +29,7 @@ measured.  Of the 57 characteristics, there were 12 measurements of
 the biological starting material, and 45 measurements of the
 manufacturing process.  The process variables included measurements
 such as temperature, drying time, washing time, and concentrations of
-by--products at various steps.  Some of the process measurements can
+by-products at various steps.  Some of the process measurements can
 be controlled, while others are observed.  Predictors are continuous,
 count, categorical; some are correlated, and some contain missing
 values.  Samples are not independent because sets of samples come from

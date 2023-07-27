@@ -34,7 +34,7 @@ toxicity via the disruption of steroidogenic pathways.
 \details{
 H295R cells were used to measure the effect with two sets of assay reuslts.
 The first includes a set of protein measurements on: cytochrome P450 enzymes
-("cyp"s), STAR, and 3βHSD2. The second include hormone measurements for
+("cyp"s), STAR, and 3$\beta$HSD2. The second include hormone measurements for
 DHEA, progesterone, testosterone, and cortisol.
 
 Columns:
