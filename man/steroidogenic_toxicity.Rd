@@ -32,9 +32,9 @@ A set of \emph{in vitro} assays are used to quantify the risk of reproductive
 toxicity via the disruption of steroidogenic pathways.
 }
 \details{
-H295R cells were used to measure the effect with two sets of assay reuslts.
+H295R cells were used to measure the effect with two sets of assay results.
 The first includes a set of protein measurements on: cytochrome P450 enzymes
-("cyp"s), STAR, and 3$\beta$HSD2. The second include hormone measurements for
+("cyp"s), STAR, and 3BHSD2. The second include hormone measurements for
 DHEA, progesterone, testosterone, and cortisol.
 
 Columns:
