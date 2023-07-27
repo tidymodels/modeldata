@@ -18,8 +18,8 @@ names(chem) <- recipes::names0(ncol(chem), "chem_fp_")
 hepatic_injury_qsar <-
   bind_cols(bio, chem) %>%
   mutate(
-    class = as.character(injury),
-    class = factor(class, ordered = TRUE, levels = levels(injury))
+    class = tolower(as.character(injury)),
+    class = factor(class, ordered = TRUE, levels = c("none", "mild", "severe"))
   ) %>%
   as_tibble() %>%
   relocate(class)

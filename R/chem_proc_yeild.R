@@ -4,10 +4,10 @@
 #' A data set that models yield as a function of biological material predictors
 #' and chemical structure predictors.
 #'
-#' @name chem_proc_yeild
-#' @aliases chem_proc_yeild
+#' @name chem_proc_yield
+#' @aliases chem_proc_yield
 #' @docType data
-#' @return \item{chem_proc_yeild}{a tibble}
+#' @return \item{chem_proc_yield}{a tibble}
 #'
 #' @details
 #' This data set contains information about a chemical manufacturing
@@ -40,6 +40,6 @@
 #' Springer, 2013.
 #'
 #' @examples
-#' chem_proc_yeild
+#' chem_proc_yield
 #'
 NULL

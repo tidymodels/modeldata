@@ -12,7 +12,7 @@ options(pillar.advice = FALSE, pillar.min_title_chars = Inf)
 
 data(ChemicalManufacturingProcess)
 
-chem_proc_yeild <-
+chem_proc_yield <-
   ChemicalManufacturingProcess %>%
   clean_names() %>%
   rename_with(
@@ -27,4 +27,4 @@ chem_proc_yeild <-
 
 # ------------------------------------------------------------------------------
 
-usethis::use_data(chem_proc_yeild)
+usethis::use_data(chem_proc_yield)

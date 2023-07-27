@@ -34,7 +34,7 @@ be associated with hepatic injury.
 
 Columns:
 \itemize{
-\item \code{class}:  ordered and factor (levels: 'Mild', 'None', and 'Severe')
+\item \code{class}:  ordered and factor (levels: 'none', 'mild', and 'severe')
 \item \code{bio_assay_001} - \code{bio_assay_184}:  numeric
 \item \code{chem_fp_001} - \code{chem_fp_192}:  numeric
 }
