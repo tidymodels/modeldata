@@ -1,7 +1,7 @@
 #' Leaf identification data (Flavia)
 #'
 #' @description
-#' Image analysis of leafts to predict species.
+#' Image analysis of leaves to predict species.
 #'
 #' @name leaf_id_flavia
 #' @aliases leaf_id_flavia
