@@ -40,6 +40,7 @@
 #' Springer, 2013.
 #'
 #' @examples
-#' chem_proc_yield
+#' data(chem_proc_yield)
+#' str(chem_proc_yield)
 #'
 NULL

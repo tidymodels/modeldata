@@ -51,5 +51,7 @@
 #' _Reproductive Toxicology_, 45, 77-86.
 #'
 #' @examples
-#' steroidogenic_toxicity
+#' data(steroidogenic_toxicity)
+#' str(steroidogenic_toxicity)
+#'
 NULL

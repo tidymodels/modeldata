@@ -50,6 +50,7 @@
 #' Springer, 2013.
 #'
 #' @examples
-#' permeability_qsar
+#' data(permeability_qsar)
+#' str(permeability_qsar)
 #'
 NULL

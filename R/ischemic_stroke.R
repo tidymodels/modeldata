@@ -68,6 +68,7 @@
 #' Approach for Predictive Models_. Chapman and Hall/CRC, 2019.
 #'
 #' @examples
-#' ischemic_stroke
+#' data(ischemic_stroke)
+#' str(ischemic_stroke)
 #'
 NULL

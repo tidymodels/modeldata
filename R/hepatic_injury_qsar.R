@@ -37,6 +37,7 @@
 #' Springer, 2013.
 #'
 #' @examples
-#' hepatic_injury_qsar
+#' data(hepatic_injury_qsar)
+#' str(hepatic_injury_qsar)
 #'
 NULL

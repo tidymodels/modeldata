@@ -55,5 +55,7 @@ Columns:
 }
 }
 \examples{
-steroidogenic_toxicity
+data(steroidogenic_toxicity)
+str(steroidogenic_toxicity)
+
 }

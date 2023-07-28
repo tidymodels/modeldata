@@ -71,6 +71,7 @@ Columns:
 }
 }
 \examples{
-ischemic_stroke
+data(ischemic_stroke)
+str(ischemic_stroke)
 
 }

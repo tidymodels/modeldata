@@ -40,6 +40,7 @@ Columns:
 }
 }
 \examples{
-hepatic_injury_qsar
+data(hepatic_injury_qsar)
+str(hepatic_injury_qsar)
 
 }

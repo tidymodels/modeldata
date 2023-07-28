@@ -93,6 +93,7 @@ Columns:
 }
 }
 \examples{
-leaf_id_flavia
+data(leaf_id_flavia)
+str(leaf_id_flavia)
 
 }
