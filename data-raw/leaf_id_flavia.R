@@ -11,7 +11,7 @@ options(pillar.advice = FALSE, pillar.min_title_chars = Inf)
 # ------------------------------------------------------------------------------
 
 flavia_url <-
-  "https://github.com/SMART-Research/leaffeatures_paper/raw/main/data_all_with_label_flavia_with_species.csv"
+  "https://github.com/SMART-Research/leaffeatures_paper/raw/65ffd8c8b926b8df3f499c9224d6073975db5c3c/data_all_with_label_flavia_with_species.csv"
 
 leaf_id_flavia <-
   read_csv(flavia_url) %>%
