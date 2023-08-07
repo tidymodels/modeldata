@@ -52,6 +52,9 @@
     <loc>https://modeldata.tidymodels.org/dev/reference/check_times.html</loc>
   </url>
   <url>
+    <loc>https://modeldata.tidymodels.org/dev/reference/chem_proc_yield.html</loc>
+  </url>
+  <url>
     <loc>https://modeldata.tidymodels.org/dev/reference/concrete.html</loc>
   </url>
   <url>
@@ -70,6 +73,9 @@
     <loc>https://modeldata.tidymodels.org/dev/reference/grants.html</loc>
   </url>
   <url>
+    <loc>https://modeldata.tidymodels.org/dev/reference/hepatic_injury_qsar.html</loc>
+  </url>
+  <url>
     <loc>https://modeldata.tidymodels.org/dev/reference/hotel_rates.html</loc>
   </url>
   <url>
@@ -80,6 +86,12 @@
   </url>
   <url>
     <loc>https://modeldata.tidymodels.org/dev/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>https://modeldata.tidymodels.org/dev/reference/ischemic_stroke.html</loc>
+  </url>
+  <url>
+    <loc>https://modeldata.tidymodels.org/dev/reference/leaf_id_flavia.html</loc>
   </url>
   <url>
     <loc>https://modeldata.tidymodels.org/dev/reference/lending_club.html</loc>
@@ -109,6 +121,9 @@
     <loc>https://modeldata.tidymodels.org/dev/reference/penguins.html</loc>
   </url>
   <url>
+    <loc>https://modeldata.tidymodels.org/dev/reference/permeability_qsar.html</loc>
+  </url>
+  <url>
     <loc>https://modeldata.tidymodels.org/dev/reference/reexports.html</loc>
   </url>
   <url>
@@ -125,6 +140,9 @@
   </url>
   <url>
     <loc>https://modeldata.tidymodels.org/dev/reference/stackoverflow.html</loc>
+  </url>
+  <url>
+    <loc>https://modeldata.tidymodels.org/dev/reference/steroidogenic_toxicity.html</loc>
   </url>
   <url>
     <loc>https://modeldata.tidymodels.org/dev/reference/tate_text.html</loc>
