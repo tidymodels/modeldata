@@ -1,8 +1,15 @@
-# modeldata (development version)
+# modeldata 1.2.0
 
-* Added a regression data set, `hotel_rates`, for predicting the average daily hotel rate. 
+* New data sets 
 
-* Added a classification data set, `taxi`, for predicting whether people tip cab drivers in Chicago. 
+  - `chem_proc_yield` (regression)
+  - `hepatic_injury_qsar` (ordinal classification)
+  - `hotel_rates`  (regression)
+  - `ischemic_stroke` (classification)
+  - `leaf_id_flavia` (classification)
+  - `permeability_qsar` (regression)
+  - `steroidogenic_toxicity` (classification)
+  - `taxi` (classification)
 
 * The simulation equation for Hooker (2004) was slightly incorrect and has been corrected. 
 
