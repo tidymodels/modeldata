@@ -23,7 +23,7 @@
 #'   \item{distance}{The trip distance, in odometer miles.}
 #'   \item{company}{The taxi company, as a factor. Companies that occurred
 #'     few times were binned as "other".}
-#'   \item{local}{Whether the trip starting and ending location is in the same
+#'   \item{local}{Whether the trip starting and ending locations are in the same
 #'   community. See the source data for community area values.}
 #'   \item{dow}{The day of the week in which the trip began, as a
 #'     factor.}
