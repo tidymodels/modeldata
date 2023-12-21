@@ -25,8 +25,8 @@ the modeling problem of predicting whether a rider will tip or not.
 \item{distance}{The trip distance, in odometer miles.}
 \item{company}{The taxi company, as a factor. Companies that occurred
 few times were binned as "other".}
-\item{local}{Whether the trip started in the same community
-area as it began. See the source data for community area values.}
+\item{local}{Whether the trip's starting and ending locations are in the
+same community. See the source data for community area values.}
 \item{dow}{The day of the week in which the trip began, as a
 factor.}
 \item{month}{The month in which the trip began, as a factor.}
