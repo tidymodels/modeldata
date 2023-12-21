@@ -1,5 +1,7 @@
 # modeldata (development version)
 
+* Added the `deliveries` data set.  
+
 # modeldata 1.2.0
 
 * New data sets 
