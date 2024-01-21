@@ -2,7 +2,7 @@ pandoc: 2.19.2
 pkgdown: 2.0.7
 pkgdown_sha: ~
 articles: {}
-last_built: 2024-01-21T16:26Z
+last_built: 2024-01-21T21:24Z
 urls:
   reference: https://modeldata.tidymodels.org/reference
   article: https://modeldata.tidymodels.org/articles
