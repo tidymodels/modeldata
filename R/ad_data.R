@@ -11,7 +11,7 @@
 #' \item Demographic characteristics such as age and gender
 #' \item Apolipoprotein E genotype
 #' \item Protein measurements of Abeta, Tau, and a phosphorylated version of Tau (called pTau)
-#' \item Proteinmeasurements of 124 exploratory biomarkers, and
+#' \item Protein measurements of 124 exploratory biomarkers, and
 #' \item Clinical dementia scores
 #' }
 #'

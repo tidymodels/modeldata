@@ -16,7 +16,7 @@ with different moisture, fat and protein contents.
 \details{
 If results from these data are used in a publication we want you to mention
 the instrument and company name (Tecator) in the publication.  In addition,
-please send a preprint of your article to
+please send a preprint of your article to:
 
 Karin Thente, Tecator AB, Box 70, S-263 21 Hoganas, Sweden
 

@@ -1,6 +1,6 @@
 #' Two class data
 #'
-#' @details There are artifical data with two predictors (`A` and `B`) and
+#' @details There are artificial data with two predictors (`A` and `B`) and
 #'  a factor outcome variable (`Class`).
 #'
 #' @name two_class_dat

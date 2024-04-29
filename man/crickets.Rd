@@ -16,7 +16,7 @@ McDonald, J. 2009. \emph{Handbook of Biological Statistics}. Sparky House Publis
 \description{
 These data are from from McDonald (2009), by way of Mangiafico (2015), on
 the relationship between the ambient temperature and the rate of cricket
-chirps per minute. Data were collected for two species: \emph{O. exclamationis}
+chirps per minute. Data were collected for two species of the genus \emph{Oecanthus}: \emph{O. exclamationis}
 and \emph{O. niveus}. The data are contained in a data frame called \code{crickets} with
 a total of 31 data points.
 }
