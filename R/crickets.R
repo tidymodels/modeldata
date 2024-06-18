@@ -2,7 +2,7 @@
 #'
 #' These data are from from McDonald (2009), by way of Mangiafico (2015), on
 #' the relationship between the ambient temperature and the rate of cricket
-#' chirps per minute. Data were collected for two species: _O. exclamationis_
+#' chirps per minute. Data were collected for two species of the genus _Oecanthus_: _O. exclamationis_
 #' and _O. niveus_. The data are contained in a data frame called `crickets` with
 #' a total of 31 data points.
 #'

@@ -11,7 +11,7 @@
 Two class data
 }
 \details{
-There are artifical data with two predictors (\code{A} and \code{B}) and
+There are artificial data with two predictors (\code{A} and \code{B}) and
 a factor outcome variable (\code{Class}).
 }
 \examples{
