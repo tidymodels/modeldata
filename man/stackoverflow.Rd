@@ -7,9 +7,9 @@
 \source{
 Julia Silge, \emph{Supervised Machine Learning Case Studies in R}
 
-\url{https://supervised-ml-course.netlify.com/chapter2}
+\verb{https://supervised-ml-course.netlify.com/chapter2}
 
-Raw data: \url{https://insights.stackoverflow.com/survey/}
+Raw data: \url{https://survey.stackoverflow.co}
 }
 \value{
 \item{stackoverflow}{a tibble}

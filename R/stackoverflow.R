@@ -12,7 +12,7 @@
 #' @source
 #' Julia Silge, _Supervised Machine Learning Case Studies in R_
 #'
-#' \url{https://supervised-ml-course.netlify.com/chapter2}
+#' `https://supervised-ml-course.netlify.com/chapter2`
 #'
 #' Raw data: \url{https://insights.stackoverflow.com/survey/}
 #' @keywords datasets
