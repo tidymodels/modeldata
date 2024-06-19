@@ -14,7 +14,7 @@
 #'
 #' `https://supervised-ml-course.netlify.com/chapter2`
 #'
-#' Raw data: \url{https://insights.stackoverflow.com/survey/}
+#' Raw data: `https://insights.stackoverflow.com/survey/`
 #' @keywords datasets
 #' @examples
 #' data(stackoverflow)
