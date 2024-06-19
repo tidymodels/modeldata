@@ -1,4 +1,4 @@
-# modeldata (development version)
+# modeldata 1.4.0
 
 * Added the `cat_adoption` data set.  
 
