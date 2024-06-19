@@ -1,0 +1,35 @@
+#' Cat Adoption
+#'
+#' @description
+#' A subset of the cats at the animal shelter in Long Beach, California, USA.
+#'
+#' @return tibble
+#' @aliases cat_adoption
+#' @name cat_adoption
+#' @docType data
+#' @details
+#'
+#' A data frame with 2257 rows and 19 columns:
+#' \describe{
+#'   \item{time}{The time the cat spent at the shelter.}
+#'   \item{event}{The event of interest is the cat being homed or returned to
+#'   its original location (i.e., owner or community). The non-event is the cat
+#'   being transferred to another shelter or dying. Zero indicates a non-event
+#'   (censored), and one corresponds to the event occurring.}
+#'   \item{sex}{The sex of the cat.}
+#'   \item{neutered}{Whether the cat is neutered.}
+#'   \item{intake_condition}{The intake condition of the cat.}
+#'   \item{intake_type}{The type of intake.}
+#'   \item{latitude}{Latitude of the intersection/cross street of intake or capture.}
+#'   \item{longitude}{Longitude of the intersection/cross street of intake or capture.}
+#'  \item{black,brown,brown_tabby,calico,cream,gray,gray_tabby,orange,orange_tabby,tan,tortie,white}{Indicators for the color/pattern of the cat's fur.}
+#' }
+#' @source
+#'
+#' <https://data.longbeach.gov/explore/dataset/animal-shelter-intakes-and-outcomes/information/>
+#' on 2024-06-17
+#'
+#' @examples
+#' str(cat_adoption)
+#' @keywords datasets
+NULL
