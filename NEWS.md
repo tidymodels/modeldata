@@ -1,5 +1,7 @@
 # modeldata (development version)
 
+* Added a new regression simulation function via `method = "worley_1987"`.
+
 # modeldata 1.4.0
 
 * Added the `cat_adoption` data set.  

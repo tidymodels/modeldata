@@ -6,8 +6,9 @@
 #' @param num_samples Number of data points to simulate.
 #' @param method A character string for the simulation method. For
 #' classification, the single current option is "caret". For regression,
-#' values can be "sapp_2014_1", "sapp_2014_2", "van_der_laan_2007_1", or
-#' "van_der_laan_2007_2". See Details below.
+#' values can be `"sapp_2014_1"`, `"sapp_2014_2"`, `"van_der_laan_2007_1"`,
+#' `"van_der_laan_2007_2"`, `"hooker_2004"`, or `"worley_1987"`. See Details
+#' below.
 #' @param intercept The intercept for the linear predictor.
 #' @param num_linear Number of diminishing linear effects.
 #' @param std_dev Gaussian distribution standard deviation for residuals.
@@ -148,6 +149,31 @@
 #' uniform on `[0.6, 1.0]`. The errors are normal with mean zero and default
 #' standard deviation of 0.25.
 #'
+#' ### `method = "worley_1987"`
+#'
+#' The simulation system from Worley (1987) is based on a mechanistic model for
+#' the flow rate of liquids from two aquifers positioned vertically (i.e.,
+#' the "upper" and "lower" aquifers). There are two sets of predictors:
+#'
+#'  - the borehole radius (`radius_borehole` from 0.05 to 0.15) and length
+#'    (`length_borehole` from 1,120 to 1,680) .
+#' - The radius of effect that the system has on collecting water
+#'    (`radius_influence` from 100 to 50,000)
+#'
+#' and physical properties:
+#'
+#' -  `transmissibility_upper_aq`
+#' -  `potentiometric_upper_aq`
+#' -  `transmissibility_lower_aq`
+#' -  `potentiometric_lower_aq`
+#' -  `conductivity_borehole`
+#'
+#' A multiplicative error structure is used; the mechanistic equation is
+#' multiplied by an expoentiated Gaussian random error.
+#'
+#' The references give feasible ranges for each of these variables. See also
+#' Morris _et al_ (1993).
+#'
 #' ## `sim_noise()`
 #'
 #' This function simulates a number of random normal variables with mean zero.
@@ -186,23 +212,31 @@
 #' values.
 #'
 #' @references
-#' Van der Laan, M. J., Polley, E. C., & Hubbard, A. E. (2007). Super learner.
-#' _Statistical applications in genetics and molecular biology_, 6(1).
-#' DOI: 10.2202/1544-6115.1309.
-#'
-#' Sapp, S., van der Laan, M. J., & Canny, J. (2014). Subsemble: an ensemble
-#' method for combining subset-specific algorithm fits. _Journal of applied
-#' statistics_, 41(6), 1247-1259. DOI: 10.1080/02664763.2013.864263
-#'
 #' Hooker, G. (2004, August). Discovering additive structure in black box
 #' functions. In _Proceedings of the tenth ACM SIGKDD international conference
 #' on Knowledge discovery and data mining_ (pp. 575-580).
 #' DOI: 10.1145/1014052.1014122
 #'
-#' Sorokina, D., Caruana, R., Riedewald, M., & Fink, D. (2008, July). Detecting
+#' Morris, M. D., Mitchell, T. J., and Ylvisaker, D. (1993). Bayesian design
+#' and analysis of computer experiments: use of derivatives in surface
+#' prediction. _Technometrics_, 35(3), 243-255.
+#'
+#' Sapp, S., van der Laan, M. J., and Canny, J. (2014). Subsemble: an ensemble
+#' method for combining subset-specific algorithm fits. _Journal of applied
+#' statistics_, 41(6), 1247-1259. DOI: 10.1080/02664763.2013.864263
+#'
+#' Sorokina, D., Caruana, R., Riedewald, M., and Fink, D. (2008, July). Detecting
 #' statistical interactions with additive groves of trees. In _Proceedings of
 #' the 25th international conference on Machine learning_ (pp. 1000-1007).
 #' DOI: 10.1145/1390156.1390282
+#'
+#' Van der Laan, M. J., Polley, E. C., and Hubbard, A. E. (2007). Super learner.
+#' _Statistical applications in genetics and molecular biology_, 6(1).
+#' DOI: 10.2202/1544-6115.1309.
+#'
+#' Worley, B. A. (1987). Deterministic uncertainty analysis (No. ORNL-6428). Oak
+#' Ridge National Lab.(ORNL), Oak Ridge, TN/
+#'
 #'
 #' @examples
 #' set.seed(1)
@@ -324,7 +358,7 @@ sim_classification <- function(num_samples = 100, method = "caret",
 sim_regression <-
   function(num_samples = 100, method = "sapp_2014_1", std_dev = NULL, factors = FALSE, keep_truth = FALSE) {
     reg_methods <- c("sapp_2014_1", "sapp_2014_2", "van_der_laan_2007_1",
-                     "van_der_laan_2007_2", "hooker_2004")
+                     "van_der_laan_2007_2", "hooker_2004", "worley_1987")
     method <- rlang::arg_match0(method, reg_methods, arg_nm = "method")
 
     dat <-
@@ -333,7 +367,8 @@ sim_regression <-
              sapp_2014_2 = sapp_2014_2(num_samples, std_dev),
              van_der_laan_2007_1 = van_der_laan_2007_1(num_samples, std_dev, factors = factors),
              van_der_laan_2007_2 = van_der_laan_2007_2(num_samples, std_dev),
-             hooker_2004 = hooker_2004(num_samples, std_dev)
+             hooker_2004 = hooker_2004(num_samples, std_dev),
+             worley_1987 = worley_1987(num_samples, std_dev)
       )
 
     if (!keep_truth) {
@@ -480,6 +515,48 @@ hooker_2004 <- function(num_samples = 100, std_dev = NULL) {
     dplyr::relocate(outcome)
 
   dat
+}
+
+worley_1987 <- function(num_samples = 100, std_dev = 0.25) {
+  if (is.null(std_dev)) {
+    std_dev <- 0.25
+  }
+  radius_borehole <- runif(num_samples, min = 0.05, max = 0.15)
+  length_borehole <- runif(num_samples, min = 1120, max = 1680)
+  radius_influence <- 10^runif(num_samples, min = 2, max = log10(50000))
+  transmissibility_upper_aq <- 10^runif(num_samples, min = log10(63070), max = log10(115600))
+  potentiometric_upper_aq <- runif(num_samples, min = 990, max = 1110)
+  transmissibility_lower_aq <- runif(num_samples, min = 63.1, max = 116)
+  potentiometric_lower_aq <- runif(num_samples, min = 700, max = 820)
+  # conductivity_borehole <- runif(num_samples, min = 9855, max = 12045)
+  # expanded range from Moriss at al
+  conductivity_borehole <- 10^runif(num_samples, min = log10(1500), max = log10(15000))
+
+  numer <- 2 * pi * transmissibility_upper_aq *
+    (potentiometric_upper_aq - potentiometric_lower_aq)
+
+  denom_1 <- log( radius_influence / radius_borehole )
+
+  denom_2 <- 2 * length_borehole * transmissibility_upper_aq /
+    ( denom_1 * radius_borehole^2 * conductivity_borehole)
+
+  denom_3 <- transmissibility_upper_aq / transmissibility_lower_aq
+
+  error <- exp(rnorm(num_samples, mean = 0, sd = std_dev))
+
+  tibble::tibble(
+    .truth = numer / ( denom_1 * ( 1 + denom_2 + denom_3 ) ),
+    outcome = .truth * error,
+    radius_borehole = radius_borehole,
+    length_borehole = length_borehole,
+    radius_influence = radius_influence,
+    transmissibility_upper_aq = transmissibility_upper_aq,
+    potentiometric_upper_aq = potentiometric_upper_aq,
+    transmissibility_lower_aq = transmissibility_lower_aq,
+    potentiometric_lower_aq = potentiometric_lower_aq,
+    conductivity_borehole = conductivity_borehole
+  )
+
 }
 
 # ------------------------------------------------------------------------------
