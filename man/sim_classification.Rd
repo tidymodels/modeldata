@@ -49,8 +49,9 @@ sim_multinomial(
 
 \item{method}{A character string for the simulation method. For
 classification, the single current option is "caret". For regression,
-values can be "sapp_2014_1", "sapp_2014_2", "van_der_laan_2007_1", or
-"van_der_laan_2007_2". See Details below.}
+values can be \code{"sapp_2014_1"}, \code{"sapp_2014_2"}, \code{"van_der_laan_2007_1"},
+\code{"van_der_laan_2007_2"}, \code{"hooker_2004"}, or \code{"worley_1987"}. See Details
+below.}
 
 \item{intercept}{The intercept for the linear predictor.}
 
@@ -211,6 +212,34 @@ uniform on \verb{[0.6, 1.0]}. The errors are normal with mean zero and default
 standard deviation of 0.25.
 }
 
+\subsection{\code{method = "worley_1987"}}{
+
+The simulation system from Worley (1987) is based on a mechanistic model for
+the flow rate of liquids from two aquifers positioned vertically (i.e.,
+the "upper" and "lower" aquifers). There are two sets of predictors:
+\itemize{
+\item the borehole radius (\code{radius_borehole} from 0.05 to 0.15) and length
+(\code{length_borehole} from 1,120 to 1,680) .
+\item The radius of effect that the system has on collecting water
+(\code{radius_influence} from 100 to 50,000)
+}
+
+and physical properties:
+\itemize{
+\item \code{transmissibility_upper_aq}
+\item \code{potentiometric_upper_aq}
+\item \code{transmissibility_lower_aq}
+\item \code{potentiometric_lower_aq}
+\item \code{conductivity_borehole}
+}
+
+A multiplicative error structure is used; the mechanistic equation is
+multiplied by an expoentiated Gaussian random error.
+
+The references give feasible ranges for each of these variables. See also
+Morris \emph{et al} (1993).
+}
+
 }
 
 \subsection{\code{sim_noise()}}{
@@ -293,21 +322,28 @@ if (rlang::is_installed("ggplot2")) {
 }
 }
 \references{
-Van der Laan, M. J., Polley, E. C., & Hubbard, A. E. (2007). Super learner.
-\emph{Statistical applications in genetics and molecular biology}, 6(1).
-DOI: 10.2202/1544-6115.1309.
-
-Sapp, S., van der Laan, M. J., & Canny, J. (2014). Subsemble: an ensemble
-method for combining subset-specific algorithm fits. \emph{Journal of applied
-statistics}, 41(6), 1247-1259. DOI: 10.1080/02664763.2013.864263
-
 Hooker, G. (2004, August). Discovering additive structure in black box
 functions. In \emph{Proceedings of the tenth ACM SIGKDD international conference
 on Knowledge discovery and data mining} (pp. 575-580).
 DOI: 10.1145/1014052.1014122
 
-Sorokina, D., Caruana, R., Riedewald, M., & Fink, D. (2008, July). Detecting
+Morris, M. D., Mitchell, T. J., and Ylvisaker, D. (1993). Bayesian design
+and analysis of computer experiments: use of derivatives in surface
+prediction. \emph{Technometrics}, 35(3), 243-255.
+
+Sapp, S., van der Laan, M. J., and Canny, J. (2014). Subsemble: an ensemble
+method for combining subset-specific algorithm fits. \emph{Journal of applied
+statistics}, 41(6), 1247-1259. DOI: 10.1080/02664763.2013.864263
+
+Sorokina, D., Caruana, R., Riedewald, M., and Fink, D. (2008, July). Detecting
 statistical interactions with additive groves of trees. In \emph{Proceedings of
 the 25th international conference on Machine learning} (pp. 1000-1007).
 DOI: 10.1145/1390156.1390282
+
+Van der Laan, M. J., Polley, E. C., and Hubbard, A. E. (2007). Super learner.
+\emph{Statistical applications in genetics and molecular biology}, 6(1).
+DOI: 10.2202/1544-6115.1309.
+
+Worley, B. A. (1987). Deterministic uncertainty analysis (No. ORNL-6428). Oak
+Ridge National Lab.(ORNL), Oak Ridge, TN/
 }
