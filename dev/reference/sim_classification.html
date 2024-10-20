@@ -90,8 +90,9 @@
 <dt id="arg-method">method<a class="anchor" aria-label="anchor" href="#arg-method"></a></dt>
 <dd><p>A character string for the simulation method. For
 classification, the single current option is "caret". For regression,
-values can be "sapp_2014_1", "sapp_2014_2", "van_der_laan_2007_1", or
-"van_der_laan_2007_2". See Details below.</p></dd>
+values can be <code>"sapp_2014_1"</code>, <code>"sapp_2014_2"</code>, <code>"van_der_laan_2007_1"</code>,
+<code>"van_der_laan_2007_2"</code>, <code>"hooker_2004"</code>, or <code>"worley_1987"</code>. See Details
+below.</p></dd>
 
 
 <dt id="arg-intercept">intercept<a class="anchor" aria-label="anchor" href="#arg-intercept"></a></dt>
@@ -273,6 +274,27 @@ uniform on <code>[0.6, 1.0]</code>. The errors are normal with mean zero and def
 standard deviation of 0.25.</p>
 </div>
 
+<div class="section">
+<h4 id="method-worley-"><code>method = "worley_1987"</code><a class="anchor" aria-label="anchor" href="#method-worley-"></a></h4>
+
+
+<p>The simulation system from Worley (1987) is based on a mechanistic model for
+the flow rate of liquids from two aquifers positioned vertically (i.e.,
+the "upper" and "lower" aquifers). There are two sets of predictors:</p><ul><li><p>the borehole radius (<code>radius_borehole</code> from 0.05 to 0.15) and length
+(<code>length_borehole</code> from 1,120 to 1,680) .</p></li>
+<li><p>The radius of effect that the system has on collecting water
+(<code>radius_influence</code> from 100 to 50,000)</p></li>
+</ul><p>and physical properties:</p><ul><li><p><code>transmissibility_upper_aq</code></p></li>
+<li><p><code>potentiometric_upper_aq</code></p></li>
+<li><p><code>transmissibility_lower_aq</code></p></li>
+<li><p><code>potentiometric_lower_aq</code></p></li>
+<li><p><code>conductivity_borehole</code></p></li>
+</ul><p>A multiplicative error structure is used; the mechanistic equation is
+multiplied by an expoentiated Gaussian random error.</p>
+<p>The references give feasible ranges for each of these variables. See also
+Morris <em>et al</em> (1993).</p>
+</div>
+
 
 </div>
 
@@ -321,20 +343,25 @@ values.</p>
     </div>
     <div class="section level2">
     <h2 id="references">References<a class="anchor" aria-label="anchor" href="#references"></a></h2>
-    <p>Van der Laan, M. J., Polley, E. C., &amp; Hubbard, A. E. (2007). Super learner.
-<em>Statistical applications in genetics and molecular biology</em>, 6(1).
-DOI: 10.2202/1544-6115.1309.</p>
-<p>Sapp, S., van der Laan, M. J., &amp; Canny, J. (2014). Subsemble: an ensemble
-method for combining subset-specific algorithm fits. <em>Journal of applied
-statistics</em>, 41(6), 1247-1259. DOI: 10.1080/02664763.2013.864263</p>
-<p>Hooker, G. (2004, August). Discovering additive structure in black box
+    <p>Hooker, G. (2004, August). Discovering additive structure in black box
 functions. In <em>Proceedings of the tenth ACM SIGKDD international conference
 on Knowledge discovery and data mining</em> (pp. 575-580).
 DOI: 10.1145/1014052.1014122</p>
-<p>Sorokina, D., Caruana, R., Riedewald, M., &amp; Fink, D. (2008, July). Detecting
+<p>Morris, M. D., Mitchell, T. J., and Ylvisaker, D. (1993). Bayesian design
+and analysis of computer experiments: use of derivatives in surface
+prediction. <em>Technometrics</em>, 35(3), 243-255.</p>
+<p>Sapp, S., van der Laan, M. J., and Canny, J. (2014). Subsemble: an ensemble
+method for combining subset-specific algorithm fits. <em>Journal of applied
+statistics</em>, 41(6), 1247-1259. DOI: 10.1080/02664763.2013.864263</p>
+<p>Sorokina, D., Caruana, R., Riedewald, M., and Fink, D. (2008, July). Detecting
 statistical interactions with additive groves of trees. In <em>Proceedings of
 the 25th international conference on Machine learning</em> (pp. 1000-1007).
 DOI: 10.1145/1390156.1390282</p>
+<p>Van der Laan, M. J., Polley, E. C., and Hubbard, A. E. (2007). Super learner.
+<em>Statistical applications in genetics and molecular biology</em>, 6(1).
+DOI: 10.2202/1544-6115.1309.</p>
+<p>Worley, B. A. (1987). Deterministic uncertainty analysis (No. ORNL-6428). Oak
+Ridge National Lab.(ORNL), Oak Ridge, TN/</p>
     </div>
 
     <div class="section level2">
