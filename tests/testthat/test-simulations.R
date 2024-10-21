@@ -40,9 +40,25 @@ test_that("classification simulation", {
 
   expect_equal(sum(dat_3 == "class_2"), 0)
   expect_equal(levels(dat_3$class), paste0("class_", 1:2))
-  expect_error(
+  expect_snapshot(
     sim_classification(5, method = "potato"),
-    "must be one of"
+    error = TRUE
+  )
+  expect_snapshot(
+    sim_classification(500, num_linear = -1),
+    error = TRUE
+  )
+  expect_snapshot(
+    sim_classification(-1),
+    error = TRUE
+  )
+  expect_snapshot(
+    sim_classification(1, intercept = NA),
+    error = TRUE
+  )
+  expect_snapshot(
+    sim_classification(1, keep_truth = NA),
+    error = TRUE
   )
 })
 
@@ -54,9 +70,9 @@ test_that("sapp_2014_1 simulation", {
   expect_equal(names(dat_2), c("outcome", modeldata:::names0(20, "predictor_"), ".truth"))
   expect_equal(nrow(dat_1), 10)
   expect_true(all(vapply(dat_1, is.numeric, logical(1))))
-  expect_error(
+  expect_snapshot(
     sim_regression(5, method = "potato"),
-    "must be one of"
+    error = TRUE
   )
 })
 
@@ -135,6 +151,31 @@ test_that("noise simulation", {
 
   expect_equal(levels(dat_4$class), paste0("class_", 1:2))
   expect_equal(levels(dat_5$class), modeldata:::names0(10, "class_"))
+
+  expect_snapshot(
+    sim_noise(5, cov_type = "potato"),
+    error = TRUE
+  )
+  expect_snapshot(
+    sim_noise(5, outcome = "potato"),
+    error = TRUE
+  )
+  expect_snapshot(
+    sim_noise(num_vars, num_linear = -1),
+    error = TRUE
+  )
+  expect_snapshot(
+    sim_noise(-1),
+    error = TRUE
+  )
+  expect_snapshot(
+    sim_noise(1, num_classes = 1),
+    error = TRUE
+  )
+  expect_snapshot(
+    sim_noise(1, cov_param = NA),
+    error = TRUE
+  )
 })
 
 
@@ -145,6 +186,21 @@ test_that("logistic simulation", {
   expect_equal(names(dat_1), c(LETTERS[1:2], "class"))
   expect_equal(names(dat_2), c(LETTERS[1:2], ".linear_pred", ".truth", "class"))
   expect_equal(nrow(dat_1), 10)
+
+
+  expect_snapshot(
+    sim_logistic(10, ~ A, correlation = NA),
+    error = TRUE
+  )
+  expect_snapshot(
+    sim_logistic(-1),
+    error = TRUE
+  )
+  expect_snapshot(
+    sim_logistic(10, ~ A, keep_truth = 1),
+    error = TRUE
+  )
+
 })
 
 
@@ -156,6 +212,19 @@ test_that("multinomial simulation", {
   expect_equal(names(dat_1), c(LETTERS[1:2], "class"))
   expect_equal(names(dat_2), c(LETTERS[1:2], "class", ".truth_one", ".truth_two", ".truth_three"))
   expect_equal(nrow(dat_1), 10)
+
+  expect_snapshot(
+    sim_multinomial(10, ~ A, correlation = NA),
+    error = TRUE
+  )
+  expect_snapshot(
+    sim_multinomial(-1),
+    error = TRUE
+  )
+  expect_snapshot(
+    sim_multinomial(10, ~ A, keep_truth = 1),
+    error = TRUE
+  )
 })
 
 
