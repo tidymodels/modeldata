@@ -248,7 +248,7 @@
 #'   library(dplyr)
 #'   library(ggplot2)
 #'
-#'   sim_logistic(1000, ~ .1 + 2 * A - 3 * B + 1 * A *B, corr = .7) %>%
+#'   sim_logistic(1000, ~ .1 + 2 * A - 3 * B + 1 * A *B, corr = .7) |>
 #'     ggplot(aes(A, B, col = class)) +
 #'     geom_point(alpha = 1/2) +
 #'     coord_equal()
@@ -257,7 +257,7 @@
 #'   # or
 #'   f_xor <- rlang::expr(10 * xor(A > 0, B < 0))
 #'
-#'   sim_logistic(1000, f_xor, keep_truth = TRUE) %>%
+#'   sim_logistic(1000, f_xor, keep_truth = TRUE) |>
 #'     ggplot(aes(A, B, col = class)) +
 #'     geom_point(alpha = 1/2) +
 #'     coord_equal() +
@@ -283,7 +283,7 @@
 #       ~ ifelse(A > 0 & B > 0, 1.0 + 0.2 * A / B, - 2),
 #       ~ -0.6 * A + 0.50 * B -  A * B)
 #
-#   three_classes %>%
+#   three_classes |>
 #     ggplot(aes(A, B, col = class, pch = class)) +
 #     geom_point(alpha = 3/4) +
 #     facet_wrap(~ class) +
@@ -327,23 +327,25 @@ sim_classification <- function(num_samples = 100, method = "caret",
         seq(10, 1, length = num_linear) / 4 *
         rep_len(c(-1, 1), length.out = num_linear)
       lin_expr <-
-        purrr::map2(lin_coefs, lin_symbols, ~ rlang::expr(!!.x * !!.y)) %>%
+        purrr::map2(lin_coefs, lin_symbols, ~ rlang::expr(!!.x * !!.y)) |>
         purrr::reduce(function(l, r) rlang::expr(!!l + !!r))
       .truth <- rlang::expr(!!linear_pred + !!lin_expr)
       dat <- cbind(dat, dat_linear)
     }
   }
 
+  dat <- tibble::as_tibble(dat)
+
   dat <-
-    tibble::as_tibble(dat) %>%
+    dat |>
     dplyr::mutate(
-      linear_pred = rlang::eval_tidy(linear_pred, data = .),
+      linear_pred = rlang::eval_tidy(linear_pred, data = dat),
       .truth = stats::binomial()$linkinv(linear_pred),
       rand = stats::runif(num_samples),
       class = ifelse(rand <= .truth, "class_1", "class_2"),
       class = factor(class, levels = c("class_1", "class_2"))
-    ) %>%
-    dplyr::select(-linear_pred, -rand) %>%
+    ) |>
+    dplyr::select(-linear_pred, -rand) |>
     dplyr::relocate(class)
 
   if (!keep_truth) {
@@ -398,11 +400,11 @@ sapp_2014_1 <- function(num_samples = 100, std_dev = NULL) {
   )
 
   dat <-
-    tibble::as_tibble(dat) %>%
+    dat |>
     dplyr::mutate(
-      .truth = rlang::eval_tidy(slc_14, data = .),
+      .truth = rlang::eval_tidy(slc_14, data = dat),
       outcome = .truth + stats::rnorm(num_samples, sd = std_dev)
-    ) %>%
+    ) |>
     dplyr::relocate(outcome)
 
   dat
@@ -442,16 +444,16 @@ van_der_laan_2007_1 <- function(num_samples = 100, std_dev = NULL, factors = FAL
   )
 
   dat <-
-    tibble::as_tibble(dat) %>%
+    dat |>
     dplyr::mutate(
-      .truth = rlang::eval_tidy(lph_07, data = .),
+      .truth = rlang::eval_tidy(lph_07, data = dat),
       outcome = .truth + stats::rnorm(num_samples, sd = std_dev)
-    ) %>%
+    ) |>
     dplyr::relocate(outcome)
 
   if (factors) {
     dat <-
-      dat %>%
+      dat |>
       dplyr::mutate(
         dplyr::across(2:11, ~ ifelse(.x == 1, "yes", "no")),
         dplyr::across(2:11, ~ factor(.x, levels = c("yes", "no")))
@@ -476,11 +478,11 @@ van_der_laan_2007_2 <- function(num_samples = 100, std_dev = NULL) {
   )
 
   dat <-
-    tibble::as_tibble(dat) %>%
+    dat |>
     dplyr::mutate(
-      .truth = rlang::eval_tidy(lph_07, data = .),
+      .truth = rlang::eval_tidy(lph_07, data = dat),
       outcome = .truth + stats::rnorm(num_samples, sd = std_dev)
-    ) %>%
+    ) |>
     dplyr::relocate(outcome)
 
   dat
@@ -497,7 +499,7 @@ hooker_2004 <- function(num_samples = 100, std_dev = NULL) {
   colnames(uni_1) <- all_names[c(1, 2, 3, 6, 7, 9)]
   colnames(uni_2) <- all_names[c(4, 5, 8, 10)]
   dat <- cbind(uni_1, uni_2)
-  dat <- tibble::as_tibble(dat) %>% dplyr::select(dplyr::all_of(all_names))
+  dat <- tibble::as_tibble(dat) |> dplyr::select(dplyr::all_of(all_names))
 
   hooker_2004 <- rlang::expr(
     pi ^ (predictor_01 * predictor_02) * sqrt( 2 * predictor_03 ) -
@@ -507,11 +509,11 @@ hooker_2004 <- function(num_samples = 100, std_dev = NULL) {
   )
 
   dat <-
-    tibble::as_tibble(dat) %>%
+    dat |>
     dplyr::mutate(
-      .truth = rlang::eval_tidy(hooker_2004, data = .),
+      .truth = rlang::eval_tidy(hooker_2004, data = dat),
       outcome = .truth + stats::rnorm(num_samples, sd = std_dev)
-    ) %>%
+    ) |>
     dplyr::relocate(outcome)
 
   dat
@@ -588,16 +590,16 @@ sim_noise <- function(num_samples, num_vars, cov_type = "exchangeable",
     }
     cls <- names0(num_classes, "class_")
     dat <-
-      dat %>%
+      dat |>
       dplyr::mutate(
         class = sample(cls, num_samples, replace = TRUE),
         class = factor(class, levels = cls)
-      ) %>%
+      ) |>
       dplyr::relocate(class)
   } else if (outcome == "regression") {
     dat <-
-      dat %>%
-      dplyr::mutate(outcome = stats::rnorm(num_samples)) %>%
+      dat |>
+      dplyr::mutate(outcome = stats::rnorm(num_samples)) |>
       dplyr::relocate(outcome)
   }
   dat
@@ -612,21 +614,25 @@ sim_logistic <- function(num_samples, eqn, correlation = 0, keep_truth = FALSE) 
   eqn <- rlang::get_expr(eqn)
   check_equations(eqn)
   dat <-
-    data.frame(MASS::mvrnorm(n = num_samples, c(0, 0), sigma)) %>%
-    stats::setNames(LETTERS[1:2]) %>%
+    data.frame(MASS::mvrnorm(n = num_samples, c(0, 0), sigma)) |>
+    stats::setNames(LETTERS[1:2]) |>
+    tibble::as_tibble()
+
+  dat <-
+    dat |>
     dplyr::mutate(
-      .linear_pred = rlang::eval_tidy(eqn, data = .),
+      .linear_pred = rlang::eval_tidy(eqn, data = dat),
       .linear_pred = as.numeric(.linear_pred),
       .truth = stats::binomial()$linkinv(.linear_pred),
       .rand = stats::runif(num_samples),
       class = ifelse(.rand <= .truth, "one", "two"),
       class = factor(class, levels = c("one", "two"))
-    ) %>%
-    dplyr::select(-.rand) %>%
+    ) |>
+    dplyr::select(-.rand) |>
     tibble::as_tibble()
 
   if (!keep_truth) {
-    dat <- dat %>% dplyr::select(-.truth, -.linear_pred)
+    dat <- dat |> dplyr::select(-.truth, -.linear_pred)
   }
   dat
 }
@@ -642,13 +648,16 @@ sim_multinomial <- function(num_samples, eqn_1, eqn_2, eqn_3, correlation = 0, k
   eqn_3 <- rlang::get_expr(eqn_3)
   purrr::map_lgl(list(eqn_1, eqn_2, eqn_3), check_equations)
 
+  dat <- data.frame(MASS::mvrnorm(n = num_samples, c(0, 0), sigma)) |>
+    stats::setNames(LETTERS[1:2]) |>
+    tibble::as_tibble()
+
   dat <-
-    data.frame(MASS::mvrnorm(n = num_samples, c(0, 0), sigma)) %>%
-    stats::setNames(LETTERS[1:2]) %>%
+    dat |>
     dplyr::mutate(
-      .formula_1 = rlang::eval_tidy(eqn_1, data = .),
-      .formula_2 = rlang::eval_tidy(eqn_2, data = .),
-      .formula_3 = rlang::eval_tidy(eqn_3, data = .),
+      .formula_1 = rlang::eval_tidy(eqn_1, data = dat),
+      .formula_2 = rlang::eval_tidy(eqn_2, data = dat),
+      .formula_3 = rlang::eval_tidy(eqn_3, data = dat),
       dplyr::across(c(dplyr::starts_with(".formula_")), ~ exp(.x))
     )
   probs <- as.matrix(dplyr::select(dat, dplyr::starts_with(".formula_")))
@@ -657,7 +666,7 @@ sim_multinomial <- function(num_samples, eqn_1, eqn_2, eqn_3, correlation = 0, k
   index <- apply(probs, 1, which_class)
   lvls <- c("one", "two", "three")
   dat$class <- factor(lvls[index], levels = lvls)
-  dat <- dat %>% dplyr::select(-dplyr::starts_with(".formula_"))
+  dat <- dat |> dplyr::select(-dplyr::starts_with(".formula_"))
   if (keep_truth) {
     colnames(probs) <- paste0(".truth_", lvls)
     probs <- tibble::as_tibble(probs)
@@ -685,4 +694,3 @@ names0 <- function(num, prefix = "x") {
   ind <- gsub(" ", "0", ind)
   paste0(prefix, ind)
 }
-
