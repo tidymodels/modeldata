@@ -8,29 +8,48 @@ test_that("classification simulation", {
   expect_equal(
     names(dat_1),
     c(
-      "class", "two_factor_1", "two_factor_2", "non_linear_1", "non_linear_2",
+      "class",
+      "two_factor_1",
+      "two_factor_2",
+      "non_linear_1",
+      "non_linear_2",
       "non_linear_3"
     )
   )
   expect_equal(
     names(dat_2),
     c(
-      "class", "two_factor_1", "two_factor_2", "non_linear_1", "non_linear_2",
-      "non_linear_3", modeldata:::names0(11, "linear_")
+      "class",
+      "two_factor_1",
+      "two_factor_2",
+      "non_linear_1",
+      "non_linear_2",
+      "non_linear_3",
+      modeldata:::names0(11, "linear_")
     )
   )
   expect_equal(
     names(dat_3),
     c(
-      "class", "two_factor_1", "two_factor_2", "non_linear_1", "non_linear_2",
-      "non_linear_3", "linear_1"
+      "class",
+      "two_factor_1",
+      "two_factor_2",
+      "non_linear_1",
+      "non_linear_2",
+      "non_linear_3",
+      "linear_1"
     )
   )
   expect_equal(
     names(dat_4),
     c(
-      "class", "two_factor_1", "two_factor_2", "non_linear_1", "non_linear_2",
-      "non_linear_3", ".truth"
+      "class",
+      "two_factor_1",
+      "two_factor_2",
+      "non_linear_1",
+      "non_linear_2",
+      "non_linear_3",
+      ".truth"
     )
   )
   expect_equal(nrow(dat_1), 500)
@@ -51,7 +70,10 @@ test_that("sapp_2014_1 simulation", {
   dat_1 <- sim_regression(10, method = "sapp_2014_1")
   dat_2 <- sim_regression(10, method = "sapp_2014_1", keep_truth = TRUE)
   expect_equal(names(dat_1), c("outcome", modeldata:::names0(20, "predictor_")))
-  expect_equal(names(dat_2), c("outcome", modeldata:::names0(20, "predictor_"), ".truth"))
+  expect_equal(
+    names(dat_2),
+    c("outcome", modeldata:::names0(20, "predictor_"), ".truth")
+  )
   expect_equal(nrow(dat_1), 10)
   expect_true(all(vapply(dat_1, is.numeric, logical(1))))
   expect_error(
@@ -64,8 +86,14 @@ test_that("sapp_2014_2 simulation", {
   set.seed(1)
   dat_1 <- sim_regression(10, method = "sapp_2014_2")
   dat_2 <- sim_regression(10, method = "sapp_2014_2", keep_truth = TRUE)
-  expect_equal(names(dat_1), c("outcome", modeldata:::names0(200, "predictor_")))
-  expect_equal(names(dat_2), c("outcome", modeldata:::names0(200, "predictor_"), ".truth"))
+  expect_equal(
+    names(dat_1),
+    c("outcome", modeldata:::names0(200, "predictor_"))
+  )
+  expect_equal(
+    names(dat_2),
+    c("outcome", modeldata:::names0(200, "predictor_"), ".truth")
+  )
   expect_equal(nrow(dat_1), 10)
   expect_true(all(vapply(dat_1, is.numeric, logical(1))))
 })
@@ -76,7 +104,10 @@ test_that("van_der_laan_2007_1 simulation", {
   dat_2 <- sim_regression(10, method = "van_der_laan_2007_1", factors = TRUE)
   dat_3 <- sim_regression(10, method = "van_der_laan_2007_1", keep_truth = TRUE)
   expect_equal(names(dat_1), c("outcome", modeldata:::names0(10, "predictor_")))
-  expect_equal(names(dat_3), c("outcome", modeldata:::names0(10, "predictor_"), ".truth"))
+  expect_equal(
+    names(dat_3),
+    c("outcome", modeldata:::names0(10, "predictor_"), ".truth")
+  )
   expect_equal(nrow(dat_1), 10)
   expect_true(all(vapply(dat_1, is.numeric, logical(1))))
   expect_true(all(vapply(dat_1[, -1], is.integer, logical(1))))
@@ -89,7 +120,10 @@ test_that("van_der_laan_2007_2 simulation", {
   dat_1 <- sim_regression(10, method = "van_der_laan_2007_2")
   dat_2 <- sim_regression(10, method = "van_der_laan_2007_2", keep_truth = TRUE)
   expect_equal(names(dat_1), c("outcome", modeldata:::names0(20, "predictor_")))
-  expect_equal(names(dat_2), c("outcome", modeldata:::names0(20, "predictor_"), ".truth"))
+  expect_equal(
+    names(dat_2),
+    c("outcome", modeldata:::names0(20, "predictor_"), ".truth")
+  )
   expect_equal(nrow(dat_1), 10)
   expect_true(all(vapply(dat_1, is.numeric, logical(1))))
 })
@@ -99,7 +133,10 @@ test_that("hooker_2004 simulation", {
   dat_1 <- sim_regression(10, method = "hooker_2004")
   dat_2 <- sim_regression(10, method = "hooker_2004", keep_truth = TRUE)
   expect_equal(names(dat_1), c("outcome", modeldata:::names0(10, "predictor_")))
-  expect_equal(names(dat_2), c("outcome", modeldata:::names0(10, "predictor_"), ".truth"))
+  expect_equal(
+    names(dat_2),
+    c("outcome", modeldata:::names0(10, "predictor_"), ".truth")
+  )
   expect_equal(nrow(dat_1), 10)
   expect_true(all(vapply(dat_1, is.numeric, logical(1))))
 })
@@ -111,7 +148,12 @@ test_that("noise simulation", {
   dat_2 <- sim_noise(1000, num_vars = 3, cov_param = .5)
   dat_3 <- sim_noise(1000, num_vars = 3, cov_type = "toeplitz", cov_param = .99)
   dat_4 <- sim_noise(10, num_vars = 3, outcome = "classification")
-  dat_5 <- sim_noise(10, num_vars = 3, outcome = "classification", num_classes = 10)
+  dat_5 <- sim_noise(
+    10,
+    num_vars = 3,
+    outcome = "classification",
+    num_classes = 10
+  )
   dat_6 <- sim_noise(10, num_vars = 3, outcome = "regression")
 
   expect_equal(names(dat_1), modeldata:::names0(10, "noise_"))
@@ -140,8 +182,8 @@ test_that("noise simulation", {
 
 test_that("logistic simulation", {
   set.seed(1)
-  dat_1 <- sim_logistic(10, ~ A)
-  dat_2 <- sim_logistic(10, rlang::expr(~ B), keep_truth = TRUE)
+  dat_1 <- sim_logistic(10, ~A)
+  dat_2 <- sim_logistic(10, rlang::expr(~B), keep_truth = TRUE)
   expect_equal(names(dat_1), c(LETTERS[1:2], "class"))
   expect_equal(names(dat_2), c(LETTERS[1:2], ".linear_pred", ".truth", "class"))
   expect_equal(nrow(dat_1), 10)
@@ -149,13 +191,14 @@ test_that("logistic simulation", {
 
 
 test_that("multinomial simulation", {
-  expect_snapshot_error(sim_multinomial(10, ~ A + C, ~ B, ~ A + B))
+  expect_snapshot_error(sim_multinomial(10, ~ A + C, ~B, ~ A + B))
   set.seed(1)
-  dat_1 <- sim_multinomial(10, ~ A, ~ B, ~ A + B)
-  dat_2 <- sim_multinomial(10, ~ A, ~ B, ~ A + B, keep_truth = TRUE)
+  dat_1 <- sim_multinomial(10, ~A, ~B, ~ A + B)
+  dat_2 <- sim_multinomial(10, ~A, ~B, ~ A + B, keep_truth = TRUE)
   expect_equal(names(dat_1), c(LETTERS[1:2], "class"))
-  expect_equal(names(dat_2), c(LETTERS[1:2], "class", ".truth_one", ".truth_two", ".truth_three"))
+  expect_equal(
+    names(dat_2),
+    c(LETTERS[1:2], "class", ".truth_one", ".truth_two", ".truth_three")
+  )
   expect_equal(nrow(dat_1), 10)
 })
-
-

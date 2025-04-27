@@ -5,7 +5,9 @@ library(tidymodels)
 library(janitor)
 
 # https://data.cityofchicago.org/Transportation/Taxi-Trips-2022/npd7-ywjz
-taxi_raw <- read_csv("https://data.cityofchicago.org/api/views/e55j-2ewb/rows.csv?accessType=DOWNLOAD") |>
+taxi_raw <- read_csv(
+  "https://data.cityofchicago.org/api/views/e55j-2ewb/rows.csv?accessType=DOWNLOAD"
+) |>
   clean_names()
 
 set.seed(1234)
@@ -17,25 +19,39 @@ taxi_med <- taxi_raw |>
   mutate(
     tip = if_else(tips > 0, "yes", "no") |> factor(levels = c("yes", "no")),
     trip_start = mdy_hms(trip_start_timestamp),
-    local = if_else(pickup_community_area == dropoff_community_area, "yes", "no") |>
+    local = if_else(
+      pickup_community_area == dropoff_community_area,
+      "yes",
+      "no"
+    ) |>
       factor(levels = c("yes", "no")),
     pickup_community_area = factor(pickup_community_area),
     dropoff_community_area = factor(dropoff_community_area)
   )
 
 taxi_rec_base <- recipe(tip ~ ., data = taxi_med) |>
-  step_date(trip_start, features = c("dow", "month"), keep_original_cols = TRUE) |>
-  step_time(trip_start, features = c("hour", "minute"), keep_original_cols = TRUE) |>
+  step_date(
+    trip_start,
+    features = c("dow", "month"),
+    keep_original_cols = TRUE
+  ) |>
+  step_time(
+    trip_start,
+    features = c("hour", "minute"),
+    keep_original_cols = TRUE
+  ) |>
   step_other(company) |>
-  step_rm(trip_start_timestamp,
-          trip_end_timestamp,
-          taxi_id,
-          tips,
-          trip_start,
-          trip_start_minute,
-          contains("census"),
-          contains("centroid"),
-          contains("community_area")) %>%
+  step_rm(
+    trip_start_timestamp,
+    trip_end_timestamp,
+    taxi_id,
+    tips,
+    trip_start,
+    trip_start_minute,
+    contains("census"),
+    contains("centroid"),
+    contains("community_area")
+  ) %>%
   step_rename(
     id := trip_id,
     duration = trip_seconds,

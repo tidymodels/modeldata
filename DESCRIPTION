@@ -30,3 +30,4 @@ LazyData: true
 LazyDataCompression: xz
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
+Config/usethis/last-upkeep: 2025-04-27
