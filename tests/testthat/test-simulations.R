@@ -59,9 +59,9 @@ test_that("classification simulation", {
 
   expect_equal(sum(dat_3 == "class_2"), 0)
   expect_equal(levels(dat_3$class), paste0("class_", 1:2))
-  expect_error(
-    sim_classification(5, method = "potato"),
-    "must be one of"
+  expect_snapshot(
+    error = TRUE,
+    sim_classification(5, method = "potato")
   )
 })
 
@@ -76,9 +76,9 @@ test_that("sapp_2014_1 simulation", {
   )
   expect_equal(nrow(dat_1), 10)
   expect_true(all(vapply(dat_1, is.numeric, logical(1))))
-  expect_error(
-    sim_regression(5, method = "potato"),
-    "must be one of"
+  expect_snapshot(
+    error = TRUE,
+    sim_regression(5, method = "potato")
   )
 })
 
