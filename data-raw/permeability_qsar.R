@@ -19,7 +19,7 @@ names(fingerprints) <- recipes::names0(ncol(fingerprints), "chem_fp_")
 permeability_qsar <-
   fingerprints %>%
   mutate(
-    permeability = permeability[,1]
+    permeability = permeability[, 1]
   ) %>%
   as_tibble() %>%
   relocate(permeability)
