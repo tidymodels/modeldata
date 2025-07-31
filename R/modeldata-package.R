@@ -3,6 +3,7 @@
 
 ## usethis namespace: start
 #' @importFrom stats rnorm runif
+#' @import rlang
 ## usethis namespace: end
 NULL
 

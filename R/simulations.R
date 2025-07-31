@@ -299,6 +299,11 @@ sim_classification <- function(
   keep_truth = FALSE
 ) {
   method <- rlang::arg_match0(method, "caret", arg_nm = "method")
+  check_number_whole(num_samples, min = 1)
+  check_number_whole(num_linear, min = 0)
+  check_number_decimal(intercept)
+  check_single_logical(keep_truth)
+
 
   if (method == "caret") {
     # Simulate two correlated normal variates
@@ -385,6 +390,10 @@ sim_regression <-
       "worley_1987"
     )
     method <- rlang::arg_match0(method, reg_methods, arg_nm = "method")
+    check_number_whole(num_samples, min = 1)
+    check_number_decimal(std_dev, allow_null = TRUE)
+    check_single_logical(factors)
+    check_single_logical(keep_truth)
 
     dat <-
       switch(
@@ -648,6 +657,12 @@ sim_noise <- function(
     c("none", "classification", "regression"),
     arg_nm = "outcome"
   )
+
+  check_number_whole(num_samples, min = 1)
+  check_number_whole(num_vars, min = 1)
+  check_number_whole(num_classes, min = 2)
+  check_number_decimal(cov_param)
+
   if (cov_type == "exchangeable") {
     var_cov <- matrix(cov_param, ncol = num_vars, nrow = num_vars)
     diag(var_cov) <- 1
@@ -660,9 +675,6 @@ sim_noise <- function(
   dat <- tibble::as_tibble(dat)
 
   if (outcome == "classification") {
-    if (num_classes <= 0) {
-      rlang::abort("'num_classes' should be a positive integer.")
-    }
     cls <- names0(num_classes, "class_")
     dat <-
       dat |>
@@ -690,6 +702,10 @@ sim_logistic <- function(
   correlation = 0,
   keep_truth = FALSE
 ) {
+  check_number_whole(num_samples, min = 1)
+  check_number_decimal(correlation)
+  check_single_logical(keep_truth)
+
   sigma <- matrix(c(1, correlation, correlation, 1), 2, 2)
   eqn <- rlang::get_expr(eqn)
   check_equations(eqn)
@@ -729,6 +745,10 @@ sim_multinomial <- function(
   correlation = 0,
   keep_truth = FALSE
 ) {
+  check_number_whole(num_samples, min = 1)
+  check_number_decimal(correlation)
+  check_single_logical(keep_truth)
+
   sigma <- matrix(c(1, correlation, correlation, 1), 2, 2)
   eqn_1 <- rlang::get_expr(eqn_1)
   eqn_2 <- rlang::get_expr(eqn_2)
@@ -768,18 +788,31 @@ check_equations <- function(x, expected = LETTERS[1:2]) {
   used <- sort(all.vars(x))
   its_fine <- length(setdiff(used, expected)) == 0
   if (!its_fine) {
-    rlang::abort(
-      "The model equations should only use variables/objects `A` and `B`"
-    )
+    cli::cli_abort("The model equations should only use variables/objects
+                   {.code A} and {.code B}.")
   }
   invisible(its_fine)
 }
 
 names0 <- function(num, prefix = "x") {
   if (num < 1) {
-    rlang::abort("`num` should be > 0")
+    cli::cli_abort("{.arg num} should be > 0")
   }
   ind <- format(1:num)
   ind <- gsub(" ", "0", ind)
   paste0(prefix, ind)
 }
+
+check_single_logical <- function(x, call = rlang::caller_env()) {
+  cl <- match.call()
+  arg_nm <- as.character(cl$x)
+  msg <- "{.arg {arg_nm}} should be a single logical value, not {obj_type_friendly(x)}."
+  if (!is.logical(x)) {
+    cli::cli_abort(msg, call = call)
+  }
+  if (length(x) > 1 || any(is.na(x))) {
+    cli::cli_abort(msg, call = call)
+  }
+  invisible(x)
+}
+

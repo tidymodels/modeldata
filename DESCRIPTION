@@ -15,10 +15,11 @@ BugReports: https://github.com/tidymodels/modeldata/issues
 Depends: 
     R (>= 4.1)
 Imports:
+    cli,
     dplyr,
     MASS,
     purrr,
-    rlang,
+    rlang (>= 1.1.0),
     tibble
 Suggests: 
     covr,
