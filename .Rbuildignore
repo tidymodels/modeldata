@@ -11,3 +11,5 @@
 ^data-raw$
 ^revdep$
 ^.Rhistory$
+^[\.]?air\.toml$
+^\.vscode$

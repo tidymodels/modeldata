@@ -38,6 +38,14 @@
       Error in `sim_classification()`:
       ! `keep_truth` should be a single logical value, not `NA`.
 
+---
+
+    Code
+      sim_classification(5, method = "potato")
+    Condition
+      Error in `sim_classification()`:
+      ! `method` must be one of "caret", not "potato".
+
 # sapp_2014_1 simulation
 
     Code

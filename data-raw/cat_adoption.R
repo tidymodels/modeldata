@@ -69,11 +69,13 @@ harmonize_colors <- function(x) {
 
 raw <- read_csv("data-raw/animal-shelter-intakes-and-outcomes.csv") %>%
   clean_names() %>%
-  filter(animal_type == "CAT" &
-          !is.na(outcome_type) &
-          intake_is_dead == "Alive on Intake" &
-          primary_color != "UNKNOWN" &
-          secondary_color != "UNKNOWN") %>%
+  filter(
+    animal_type == "CAT" &
+      !is.na(outcome_type) &
+      intake_is_dead == "Alive on Intake" &
+      primary_color != "UNKNOWN" &
+      secondary_color != "UNKNOWN"
+  ) %>%
   filter(
     # These animals would not have been up for being homed
     !(outcome_type %in% c("DISPOSAL", "EUTHANASIA", "MISSING", "DUPLICATE"))
@@ -83,9 +85,17 @@ raw <- read_csv("data-raw/animal-shelter-intakes-and-outcomes.csv") %>%
   slice_head(by = c(animal_id), n = 1)
 
 event_list <-
-  c("adoption", "community cat", "foster", "foster to adopt", "homefirst",
-    "return to owner", "return to wild habitat", "shelter, neuter, return",
-    "trap, neuter, release")
+  c(
+    "adoption",
+    "community cat",
+    "foster",
+    "foster to adopt",
+    "homefirst",
+    "return to owner",
+    "return to wild habitat",
+    "shelter, neuter, return",
+    "trap, neuter, release"
+  )
 
 other_list <-
   c("died", "rescue", "return to rescue", "transfer", "transport")
@@ -99,8 +109,18 @@ cats <- raw %>%
     event = if_else(outcome_type %in% event_list, 1, 0),
   ) %>%
   filter(outcome_type %in% c(event_list, other_list) & time > 7) %>%
-  select(time, event, contains("color"), sex, intake_condition, intake_type,
-         jurisdiction, latitude, longitude, animal_id) %>%
+  select(
+    time,
+    event,
+    contains("color"),
+    sex,
+    intake_condition,
+    intake_type,
+    jurisdiction,
+    latitude,
+    longitude,
+    animal_id
+  ) %>%
   mutate(
     neutered = case_when(
       sex %in% c("neutered", "spayed") ~ "yes",
@@ -130,7 +150,11 @@ col_names <- function(var, lvl, ...) {
 }
 cats_with_color_dummies <- cats %>%
   recipe() %>%
-  step_dummy_multi_choice(ends_with("color"), threshold = 0.0, naming = col_names) %>%
+  step_dummy_multi_choice(
+    ends_with("color"),
+    threshold = 0.0,
+    naming = col_names
+  ) %>%
   step_other(intake_condition, intake_type, threshold = 0.02) %>%
   step_zv() %>%
   prep() %>%

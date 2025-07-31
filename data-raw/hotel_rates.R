@@ -15,14 +15,26 @@ options(pillar.advice = FALSE, pillar.min_title_chars = Inf)
 # See "Hotel booking demand datasets"
 # https://scholar.google.com/scholar?hl=en&as_sdt=0%2C7&q=%22Hotel+booking+demand+datasets%22
 hotel_raw <-
-  readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-02-11/hotels.csv") %>%
+  readr::read_csv(
+    "https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-02-11/hotels.csv"
+  ) %>%
   as_tibble() %>%
   mutate(
-    arrival_date = paste(arrival_date_year, arrival_date_month, arrival_date_day_of_month, sep = "_"),
+    arrival_date = paste(
+      arrival_date_year,
+      arrival_date_month,
+      arrival_date_day_of_month,
+      sep = "_"
+    ),
     arrival_date = ymd(arrival_date),
     arrival_date_num = decimal_date(arrival_date),
 
-    market_segment = gsub("TA/TO", "_travel_agent", market_segment, fixed = TRUE),
+    market_segment = gsub(
+      "TA/TO",
+      "_travel_agent",
+      market_segment,
+      fixed = TRUE
+    ),
     market_segment = gsub("TA", "_travel_agent", market_segment),
     market_segment = gsub("[[:space:]]", "", market_segment),
 
@@ -33,13 +45,12 @@ hotel_raw <-
       TRUE ~ "no meal package"
     ),
 
-    near_christmas =
-      arrival_date_month == "December" &
+    near_christmas = arrival_date_month == "December" &
       arrival_date_day_of_month <= 26 &
       arrival_date_day_of_month >= 24,
     near_christmas = as.numeric(near_christmas),
-    near_new_years =
-      (arrival_date_month == "December" & arrival_date_day_of_month >= 30) |
+    near_new_years = (arrival_date_month == "December" &
+      arrival_date_day_of_month >= 30) |
       (arrival_date_month == "January" & arrival_date_day_of_month <= 2),
     near_new_years = as.numeric(near_new_years)
   )
@@ -47,7 +58,6 @@ hotel_raw <-
 # ------------------------------------------------------------------------------
 # instead of codes, use random names for agents and companies. Stratify by
 # ethnicity to avoid overlap
-
 
 agents <- tibble(agent = unique(hotel_raw$agent))
 
@@ -107,9 +117,15 @@ hotel_rates_all <-
       deposit_type == "No Deposit" &
       !(market_segment %in% c("Complementary", "Undefined"))
   ) %>%
-  select(-reservation_status, -is_canceled, avg_price_per_room = adr,
-         -reservation_status_date, -hotel, -arrival_date_month,
-         -deposit_type) %>%
+  select(
+    -reservation_status,
+    -is_canceled,
+    avg_price_per_room = adr,
+    -reservation_status_date,
+    -hotel,
+    -arrival_date_month,
+    -deposit_type
+  ) %>%
   mutate(year_day = yday(arrival_date)) %>%
   relocate(avg_price_per_room) %>%
   recipe() %>%
@@ -134,11 +150,19 @@ year_2016_stats <-
   arrange(year_day)
 
 year_2016_stats$historical_adr <-
-  loess(hist_adr_raw ~ year_day, data = year_2016_stats, span = .1, degree = 2)$fitted
+  loess(
+    hist_adr_raw ~ year_day,
+    data = year_2016_stats,
+    span = .1,
+    degree = 2
+  )$fitted
 
 # Add a value for the leap year
 year_2016_stats_leap <-
-  tibble(year_day = 366, historical_adr = year_2016_stats$hist_adr_raw[nrow(year_2016_stats)])
+  tibble(
+    year_day = 366,
+    historical_adr = year_2016_stats$hist_adr_raw[nrow(year_2016_stats)]
+  )
 
 year_2016_stats <-
   bind_rows(year_2016_stats, year_2016_stats_leap) %>%
@@ -149,8 +173,11 @@ hotel_rates <-
   filter(arrival_date > min(arrival_date) + years(1)) %>%
   left_join(year_2016_stats, by = "year_day") %>%
   arrange(arrival_date) %>%
-  select(-arrival_date_year, -arrival_date_week_number,
-         -arrival_date_day_of_month, -year_day)
+  select(
+    -arrival_date_year,
+    -arrival_date_week_number,
+    -arrival_date_day_of_month,
+    -year_day
+  )
 
 usethis::use_data(hotel_rates, overwrite = TRUE)
-

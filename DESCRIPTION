@@ -3,7 +3,8 @@ Title: Data Sets Useful for Modeling Examples
 Version: 1.4.0.9000
 Authors@R: c(
     person("Max", "Kuhn", , "max@posit.co", role = c("aut", "cre")),
-    person(given = "Posit Software, PBC", role = c("cph", "fnd"))
+    person("Posit Software, PBC", role = c("cph", "fnd"),
+           comment = c(ROR = "03wc8by49"))
   )
 Description: Data sets used for demonstrating or testing model-related
     packages are contained in this package.
@@ -12,7 +13,7 @@ URL: https://modeldata.tidymodels.org,
     https://github.com/tidymodels/modeldata
 BugReports: https://github.com/tidymodels/modeldata/issues
 Depends: 
-    R (>= 3.4)
+    R (>= 4.1)
 Imports:
     cli,
     dplyr,
@@ -22,10 +23,11 @@ Imports:
     tibble
 Suggests: 
     covr,
-    testthat (>= 3.0.0),
-    ggplot2
+    ggplot2,
+    testthat (>= 3.0.0)
 Config/Needs/website: tidyverse/tidytemplate, tidymodels/tidymodels
 Config/testthat/edition: 3
+Config/usethis/last-upkeep: 2025-04-27
 Encoding: UTF-8
 LazyData: true
 LazyDataCompression: xz

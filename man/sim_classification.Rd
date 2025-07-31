@@ -292,7 +292,7 @@ if (rlang::is_installed("ggplot2")) {
   library(dplyr)
   library(ggplot2)
 
-  sim_logistic(1000, ~ .1 + 2 * A - 3 * B + 1 * A *B, corr = .7) \%>\%
+  sim_logistic(1000, ~ .1 + 2 * A - 3 * B + 1 * A *B, corr = .7) |>
     ggplot(aes(A, B, col = class)) +
     geom_point(alpha = 1/2) +
     coord_equal()
@@ -301,7 +301,7 @@ if (rlang::is_installed("ggplot2")) {
   # or
   f_xor <- rlang::expr(10 * xor(A > 0, B < 0))
 
-  sim_logistic(1000, f_xor, keep_truth = TRUE) \%>\%
+  sim_logistic(1000, f_xor, keep_truth = TRUE) |>
     ggplot(aes(A, B, col = class)) +
     geom_point(alpha = 1/2) +
     coord_equal() +
