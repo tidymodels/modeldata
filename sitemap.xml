@@ -1,171 +1,58 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://modeldata.tidymodels.org/404.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/CODE_OF_CONDUCT.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/authors.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/index.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/news/index.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/Chicago.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/Sacramento.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/Smithsonian.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/ad_data.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/ames.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/attrition.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/biomass.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/bivariate.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/car_prices.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/cat_adoption.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/cells.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/check_times.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/chem_proc_yield.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/concrete.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/covers.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/credit_data.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/crickets.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/deliveries.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/drinks.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/grants.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/hepatic_injury_qsar.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/hotel_rates.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/hpc_cv.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/hpc_data.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/ischemic_stroke.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/leaf_id_flavia.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/lending_club.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/meats.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/mlc_churn.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/modeldata-package.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/oils.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/parabolic.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/pathology.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/pd_speech.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/penguins.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/permeability_qsar.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/reexports.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/scat.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/sim_classification.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/small_fine_foods.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/solubility_test.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/stackoverflow.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/steroidogenic_toxicity.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/tate_text.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/taxi.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/two_class_dat.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/two_class_example.html</loc>
-  </url>
-  <url>
-    <loc>https://modeldata.tidymodels.org/reference/wa_churn.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://modeldata.tidymodels.org/404.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/CODE_OF_CONDUCT.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/LICENSE-text.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/LICENSE.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/authors.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/index.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/news/index.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/Chicago.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/Sacramento.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/Smithsonian.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/ad_data.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/ames.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/attrition.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/biomass.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/bivariate.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/car_prices.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/cat_adoption.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/cells.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/check_times.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/chem_proc_yield.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/concrete.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/covers.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/credit_data.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/crickets.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/deliveries.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/drinks.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/grants.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/hepatic_injury_qsar.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/hotel_rates.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/hpc_cv.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/hpc_data.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/index.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/ischemic_stroke.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/leaf_id_flavia.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/lending_club.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/meats.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/mlc_churn.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/modeldata-package.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/oils.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/parabolic.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/pathology.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/pd_speech.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/penguins.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/permeability_qsar.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/scat.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/sim_classification.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/small_fine_foods.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/solubility_test.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/stackoverflow.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/steroidogenic_toxicity.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/tate_text.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/taxi.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/two_class_dat.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/two_class_example.html</loc></url>
+<url><loc>https://modeldata.tidymodels.org/reference/wa_churn.html</loc></url>
 </urlset>
+
