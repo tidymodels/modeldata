@@ -10,7 +10,7 @@
 #'  \code{Saturn}, \code{convertible}, \code{coupe}, \code{hatchback}, \code{sedan} and \code{wagon})}
 #' @source Kuiper, S. (2008). Introduction to Multiple Regression: How Much Is Your Car Worth?,
 #' \emph{Journal of Statistics Education}, Vol. 16
-#' \url{http://jse.amstat.org/jse_archive.htm#2008}.
+#' \url{https://jse.amstat.org/jse_archive.htm#2008}.
 #' @keywords datasets
 #' @examples
 #' data(car_prices)

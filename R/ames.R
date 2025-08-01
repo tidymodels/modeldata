@@ -16,9 +16,9 @@
 #' @return \item{ames}{a tibble}
 #' @source De Cock, D. (2011). "Ames, Iowa: Alternative to the Boston Housing Data as an End of Semester Regression Project," \emph{Journal of Statistics Education},  Volume 19, Number 3.
 #'
-#' \url{http://jse.amstat.org/v19n3/decock/DataDocumentation.txt}
+#' \url{https://jse.amstat.org/v19n3/decock/DataDocumentation.txt}
 #'
-#' \url{http://jse.amstat.org/v19n3/decock.pdf}
+#' \url{https://jse.amstat.org/v19n3/decock.pdf}
 #' @keywords datasets
 #' @examples
 #' data(ames)
