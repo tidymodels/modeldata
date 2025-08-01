@@ -1,4 +1,4 @@
-# modeldata (development version)
+# modeldata 1.5.0
 
 * Added a new regression simulation function via `method = "worley_1987"`.
 
