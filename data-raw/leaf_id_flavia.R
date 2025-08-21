@@ -59,6 +59,7 @@ leaf_id_flavia <-
   rename_with(~ gsub("_b_", "_blue_", .x)) %>%
   rename_with(~ gsub("_r_", "_red_", .x)) %>%
   rename_with(~ gsub("^no_of_", "num_", .x)) %>%
+  rename(num_max_points = num_max_ponits, eccentricity = eccentriciry) |>
   relocate(
     species,
     apex,
@@ -73,4 +74,4 @@ leaf_id_flavia <-
 
 # ------------------------------------------------------------------------------
 
-usethis::use_data(leaf_id_flavia)
+usethis::use_data(leaf_id_flavia, overwrite = TRUE)
