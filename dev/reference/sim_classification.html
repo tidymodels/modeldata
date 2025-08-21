@@ -179,7 +179,7 @@ effects and an interaction:</p>
 
 <p>The intercept is a parameter for the simulation and can be used to control
 the amount of class imbalance.</p>
-<p>The second set of effects are linear with coefficients that alternate signs
+<p>The effects in the second set are linear with coefficients that alternate signs
 and have a sequence of values between 2.5 and 0.25. For example, if there
 were four predictors in this set, their contribution to the log-odds would
 be</p>
@@ -190,7 +190,7 @@ be</p>
 <code>[0, 1]</code> called <code>non_linear_1</code> here:</p>
 <div class="sourceCode"><pre><code><span>  <span class="op">(</span><span class="va">non_linear_1</span><span class="op">^</span><span class="fl">3</span><span class="op">)</span> <span class="op">+</span> <span class="fl">2</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html" class="external-link">exp</a></span><span class="op">(</span><span class="op">-</span><span class="fl">6</span> <span class="op">*</span> <span class="op">(</span><span class="va">non_linear_1</span> <span class="op">-</span> <span class="fl">0.3</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span> </span></code></pre></div>
 
-<p>The fourth set of informative predictors are copied from one of Friedman's
+<p>The fourth set of informative predictors is copied from one of Friedman's
 systems and use two more predictors (<code>non_linear_2</code> and <code>non_linear_3</code>):</p>
 <div class="sourceCode"><pre><code><span>  <span class="fl">2</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/base/Trig.html" class="external-link">sin</a></span><span class="op">(</span><span class="va">non_linear_2</span> <span class="op">*</span> <span class="va">non_linear_3</span><span class="op">)</span> </span></code></pre></div>
 
@@ -290,7 +290,7 @@ the "upper" and "lower" aquifers). There are two sets of predictors:</p><ul><li>
 <li><p><code>potentiometric_lower_aq</code></p></li>
 <li><p><code>conductivity_borehole</code></p></li>
 </ul><p>A multiplicative error structure is used; the mechanistic equation is
-multiplied by an expoentiated Gaussian random error.</p>
+multiplied by an exponentiated Gaussian random error.</p>
 <p>The references give feasible ranges for each of these variables. See also
 Morris <em>et al</em> (1993).</p>
 </div>
