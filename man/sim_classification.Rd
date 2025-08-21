@@ -114,7 +114,7 @@ effects and an interaction:
 The intercept is a parameter for the simulation and can be used to control
 the amount of class imbalance.
 
-The second set of effects are linear with coefficients that alternate signs
+The effects in the second set are linear with coefficients that alternate signs
 and have a sequence of values between 2.5 and 0.25. For example, if there
 were four predictors in this set, their contribution to the log-odds would
 be
@@ -128,7 +128,7 @@ The third set is a nonlinear function of a single predictor ranging between
 
 \preformatted{  (non_linear_1^3) + 2 * exp(-6 * (non_linear_1 - 0.3)^2) }
 
-The fourth set of informative predictors are copied from one of Friedman's
+The fourth set of informative predictors is copied from one of Friedman's
 systems and use two more predictors (\code{non_linear_2} and \code{non_linear_3}):
 
 \preformatted{  2 * sin(non_linear_2 * non_linear_3) }
@@ -234,7 +234,7 @@ and physical properties:
 }
 
 A multiplicative error structure is used; the mechanistic equation is
-multiplied by an expoentiated Gaussian random error.
+multiplied by an exponentiated Gaussian random error.
 
 The references give feasible ranges for each of these variables. See also
 Morris \emph{et al} (1993).
