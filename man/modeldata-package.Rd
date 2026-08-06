@@ -20,9 +20,14 @@ Useful links:
 \author{
 \strong{Maintainer}: Max Kuhn \email{max@posit.co}
 
+Authors:
+\itemize{
+  \item Max Kuhn \email{max@posit.co}
+}
+
 Other contributors:
 \itemize{
-  \item Posit Software, PBC (03wc8by49) [copyright holder, funder]
+  \item Posit Software, PBC (\href{https://ror.org/03wc8by49}{ROR}) [copyright holder, funder]
 }
 
 }

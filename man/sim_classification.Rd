@@ -278,7 +278,7 @@ respectfully. Like \code{\link[=sim_logistic]{sim_logistic()}} these equations u
 
 The individual equations are evaluated and exponentiated. After this, their
 values are, for each row of data, normalized to add up to one. These
-probabilities are them passed to \code{\link[stats:Multinom]{stats::rmultinom()}} to generate the outcome
+probabilities are them passed to \code{\link[stats:rmultinom]{stats::rmultinom()}} to generate the outcome
 values.
 }
 }
