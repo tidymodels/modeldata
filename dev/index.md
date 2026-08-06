@@ -10,12 +10,14 @@ You can install the released version of modeldata from
 [CRAN](https://CRAN.R-project.org) with:
 
 ``` r
+
 install.packages("modeldata")
 ```
 
 And the development version from [GitHub](https://github.com/) with:
 
 ``` r
+
 # install.packages("pak")
 pak::pak("tidymodels/modeldata")
 ```

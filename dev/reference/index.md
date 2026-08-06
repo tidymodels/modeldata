@@ -32,6 +32,8 @@
   : Execution time data
 - [`chem_proc_yield`](https://modeldata.tidymodels.org/dev/reference/chem_proc_yield.md)
   : Chemical manufacturing process data set
+- [`cls_data_2026`](https://modeldata.tidymodels.org/dev/reference/cls_data_2026.md)
+  : Two classes, Two predictors 2026 Edition
 - [`concrete`](https://modeldata.tidymodels.org/dev/reference/concrete.md)
   : Compressive strength of concrete mixtures
 - [`covers`](https://modeldata.tidymodels.org/dev/reference/covers.md) :

@@ -18,6 +18,7 @@ Kuhn, M., Johnson, K. (2013) *Applied Predictive Modeling*, Springer.
 ## Examples
 
 ``` r
+
 data(hpc_data)
 str(hpc_data)
 #> tibble [4,331 × 8] (S3: tbl_df/tbl/data.frame)

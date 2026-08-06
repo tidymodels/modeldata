@@ -13,13 +13,13 @@
 Source:
 [`DESCRIPTION`](https://github.com/tidymodels/modeldata/blob/main/DESCRIPTION)
 
-Kuhn M (2025). *modeldata: Data Sets Useful for Modeling Examples*. R
+Kuhn M (2026). *modeldata: Data Sets Useful for Modeling Examples*. R
 package version 1.5.1.9000, <https://modeldata.tidymodels.org>.
 
     @Manual{,
       title = {modeldata: Data Sets Useful for Modeling Examples},
       author = {Max Kuhn},
-      year = {2025},
+      year = {2026},
       note = {R package version 1.5.1.9000},
       url = {https://modeldata.tidymodels.org},
     }

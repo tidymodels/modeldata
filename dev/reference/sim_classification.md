@@ -169,6 +169,7 @@ This regression simulation is from Sapp et al. (2014). There are 20
 independent Gaussian random predictors with mean zero and a variance of
 9. The prediction equation is:
 
+
       predictor_01 + sin(predictor_02) + log(abs(predictor_03)) +
        predictor_04^2 + predictor_05 * predictor_06 +
        ifelse(predictor_07 * predictor_08 * predictor_09 < 0, 1, 0) +
@@ -194,6 +195,7 @@ This is a regression simulation from van der Laan et al. (2007) with ten
 random Bernoulli variables that have a 40% probability of being a value
 of one. The true regression equation is:
 
+
       2 * predictor_01 * predictor_10 + 4 * predictor_02 * predictor_07 +
         3 * predictor_04 * predictor_05 - 5 * predictor_06 * predictor_10 +
         3 * predictor_08 * predictor_09 + predictor_01 * predictor_02 * predictor_04 -
@@ -208,6 +210,7 @@ This is another regression simulation from van der Laan et al. (2007)
 with twenty Gaussians with mean zero and variance 16. The prediction
 equation is:
 
+
       predictor_01 * predictor_02 + predictor_10^2 - predictor_03 * predictor_17 -
         predictor_15 * predictor_04 + predictor_09 * predictor_05 + predictor_19 -
         predictor_20^2 + predictor_09 * predictor_08
@@ -217,6 +220,7 @@ The error term is also Gaussian with mean zero and variance 16.
 #### `method = "hooker_2004"`
 
 Hooker (2004) and Sorokina *at al* (2008) used the following:
+
 
         pi ^ (predictor_01 * predictor_02) * sqrt( 2 * predictor_03 ) -
         asin(predictor_04) + log(predictor_03  + predictor_05) -
@@ -276,6 +280,7 @@ regression model with two multivariate normal variables `A` and `B`
 
 For example, using `eqn = A + B` would specify that the true probability
 of the event was
+
 
        prob = 1 / (1 + exp(A + B))
 
