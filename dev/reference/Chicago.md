@@ -5,7 +5,7 @@ Chicago ridership data
 ## Source
 
 Kuhn and Johnson (2020), *Feature Engineering and Selection*, Chapman
-and Hall/CRC . <https://bookdown.org/max/FES/> and
+and Hall/CRC . <https://feat.engineering/> and
 <https://github.com/topepo/FES>
 
 ## Value

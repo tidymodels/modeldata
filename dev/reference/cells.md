@@ -10,7 +10,7 @@ training and 1010 as a test set (see the column called `case`).
 Hill, LaPan, Li and Haney (2007). Impact of image segmentation on
 high-content screening data quality for SK-BR-3 cells, *BMC
 Bioinformatics*, Vol. 8, pg. 340,
-<https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-8-340>.
+<https://link.springer.com/article/10.1186/1471-2105-8-340>.
 
 ## Value
 

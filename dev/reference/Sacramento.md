@@ -9,8 +9,7 @@ Sacramento Bee." Google was used to fill in missing/incorrect data.
 
 ## Source
 
-SpatialKey website:
-<https://support.spatialkey.com/spatialkey-sample-csv-data/>
+SpatialKey website: <https://support.spatialkey.com/sample-data/>
 
 ## Value
 
