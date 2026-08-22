@@ -7,7 +7,7 @@
 \title{Chicago ridership data}
 \source{
 Kuhn and Johnson (2020), \emph{Feature Engineering and Selection},
-Chapman and Hall/CRC . \url{https://bookdown.org/max/FES/} and
+Chapman and Hall/CRC . \url{https://feat.engineering/} and
 \url{https://github.com/topepo/FES}
 }
 \value{

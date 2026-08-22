@@ -13,3 +13,4 @@
 ^.Rhistory$
 ^[\.]?air\.toml$
 ^\.vscode$
+^\revdep$
